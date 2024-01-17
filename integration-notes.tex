@@ -144,10 +144,16 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 \begin{remarque}
 	$\mu$ mesurable donne l'additivité (finie). Cependant, la reciproque est fausse.
 	\begin{example}
-		Soit $\nu$ la mesure de comptage. Soit
-		\[ A_n = \{ n, n+1, n+2, \dots \} \]
-		On a $\bigcup\limits_{n \in \mathbb{N}} A_n = \emptyset$ et $\nu(A_n) = +\infty$ pour tout $n \in \mathbb{N}$.
-		Cependant, $\nu(\bigcup\limits_{n \in \mathbb{N}} A_n) =  0 \neq \sum\limits_{n \in \mathbb{N}} \nu(A_n)$ = +$\infty$.
+		Soit $m: \mathscr{P}(\mathbb{N}) \to \mathbb{R}^+$
+		\begin{equation*}
+			m(A) = \left\{
+			\begin{array}{ll}
+				0       & \text{ si } A \text{ est fini } \\
+				+\infty & \text{ sinon }
+			\end{array}
+			\right.
+		\end{equation*}
+		est additive mais pas $\sigma$-additive.
 	\end{example}
 \end{remarque}
 
@@ -180,11 +186,11 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 	\begin{enumerate}
 		\item Le espace de départ est bien une tribu car $\mathscr{P}(\mathbb{R})$ est une tribu sur $\mathbb{R}$.Le
 		      espace d'arrivée est bien $\mathbb{R}^+ \cup \{+\infty\}$ car $\#A \in \mathbb{R}^+ \cup \{+\infty\}$.
-		\item $\nu(\emptyset) = #\emptyset = 0$
+		\item $\nu(\emptyset) = \#\emptyset = 0$
 		\item Si $(A_n)_{n \in \mathbb{N}}$ est une suite de boréliens disjoints:
 		      \begin{equation*}
 			      \mu(\bigcup\limits_{n \in \mathbb{N}} A_n) = \left\{\begin{array}{ll}
-				      #A      & \text{ si } \bigcup\limits_{n \in \mathbb{N}} A_n \text{ est fini } \\
+				      \#A     & \text{ si } \bigcup\limits_{n \in \mathbb{N}} A_n \text{ est fini } \\
 				      +\infty & \text{ sinon }
 			      \end{array}
 			      \right.
@@ -203,23 +209,99 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 	\end{enumerate}
 \end{proof}
 
-\begin{proposition}[Propriétés élémentaires]
-\begin{enumerate}
-	\item Croissance. Si $A$ et $B$ mesurables, avec $A \subset B$, alors $\mu(B) = \mu(A) + \mu(B \setminus A)$. De plus, si $\mu(B)$ est finie, alors $\mu(B\setminus A) = \mu(B) - \mu(A)$.
-	\item Crible. Si $A$ et $B$ mesurables
-	      \[\mu(A\cup B) + \mu(A \cap B) = \mu(A) + \mu(B)\]
-	\item Continuité croissante. Soit $A_n$ une suite croissante d'ensembles mesurables $A_n \subset A_{n+1}$,
-	      alors
-	      \[\mu(\bigcup\limits_{n \in \mathbb{N}} A_n) = \lim\limits_{n \to \infty} \mu(A_n)\]
-	      \iten Continuité décroissante. Soit $A_n$ une suite décroissante d'ensembles mesurables $A_{n+1} \subset A_n$, telle que $\mu(A_0) < +\infty$,
-	      alors:
-	      \[\mu(\bigcap\limits_{n \in \mathbb{N}} A_n) = \lim\limits_{n \to \infty} \mu(A_n)\]
-	\item Sous-aditivité. Soit $(A_n)_{n \in \mathbb{N}}$ une suite d'ensembles mesurables, alors:
-	      \[\mu(\bigcup\limits_{n \in \mathbb{N}} A_n) \leq \sum\limits_{n \in \mathbb{N}} \mu(A_n)\]
+\begin{prop}[Propriétés élémentaires]\label{prop:mesure:elementaire}
+	Nous avons 5 propriétés élémentaires:
+	\begin{enumerate}
+		\item Croissance. Si $A$ et $B$ mesurables, avec $A \subset B$, alors $\mu(B) = \mu(A) + \mu(B \setminus A)$. De plus,
+		      si $\mu(B)$ est finie, alors $\mu(B\setminus A) = \mu(B) - \mu(A)$.
+		\item Crible. Si $A$ et $B$ mesurables
+		      \[\mu(A\cup B) + \mu(A \cap B) = \mu(A) + \mu(B)\]
+		\item Continuité croissante. Soit $A_n$ une suite croissante d'ensembles mesurables $A_n \subset A_{n+1}$,
+		      alors
+		      \[\mu(\bigcup\limits_{n \in \mathbb{N}} A_n) = \lim\limits_{n \to \infty} \mu(A_n)\]
+		\item Continuité décroissante. Soit $A_n$ une suite décroissante d'ensembles mesurables $A_{n+1}
+			      \subset A_n$, telle que $\mu(A_0) < +\infty$, alors:
+		      \[\mu(\bigcap\limits_{n \in \mathbb{N}} A_n) = \lim\limits_{n \to \infty} \mu(A_n)\]
+		\item Sous-aditivité. Soit $(A_n)_{n \in \mathbb{N}}$ une suite d'ensembles mesurables, alors:
+		      \[\mu(\bigcup\limits_{n \in \mathbb{N}} A_n) \leq \sum\limits_{n \in \mathbb{N}} \mu(A_n)\]
 
-\end{enumerate}
+	\end{enumerate}
+\end{prop}
+
+\begin{proof}
+	TODO
+\end{proof}
+
+\begin{remarque}
+	Dans le (4)\ref{prop:mesure:elementaire}, l'hypothèse $\mu(A_0) < +\infty$ est nécessaire. En effet, soit
+	$\nu$ la mesure de comptage. Soit
+	\[ A_n = \{ n, n+1, n+2, \dots \} \]
+	On a $\bigcup\limits_{n \in \mathbb{N}} A_n = \emptyset$ et $\nu(A_n) = +\infty$ pour tout $n \in \mathbb{N}$.
+\end{remarque}
+
+\begin{definition}[Vocabulaire des mesures]
+	Soit $\mu$ une mesure sur $(E, \mathscr{A})$.
+	\begin{itemize}
+		\item $(E,A\mu)$ est un space mesuré si $(E,\mathscr{A})$ est un espace mesurable et $\mu$ est une mesure sur $ (E, \mathscr{A} ) $.
+		\item $\mu$ est dite finie si $\mu(E) < +\infty$.
+		\item $\mu$ est une probabilité si $\mu(E) = 1$.
+		\item $\mu$ est $\sigma$-finie si $E = \bigcup\limits_{n \in \mathbb{N}} A_n$ avec $A_n \in \mathscr{A}$ et $\mu(A_n) < +\infty$.
+		\item On dit que $x$ est un atome de $\mu$ si $\mu(\{x\}) > 0$.
+		\item $\mu$ est diffuse si elle n'a pas d'atomes.
+	\end{itemize}
+\end{definition}
+
+\subsection{Fonctions mesurables}
+
+\begin{definition}
+	Soient $(E, \mathscr{A})$ et $(F, \mathscr{B})$ deux espaces mesurables. Une fonction $f: E \to F$ est dite mesurable si
+	$f^{-1}(B) \in \mathscr{A}$ pour tout $B \in \mathscr{B}$.
+	Dans le cas ou $E$ et $F$ sont munis de leur tribus boréliennes (si elles existent), on dit que $f$ est borélienne.
+\end{definition}
 
 
+\begin{prop}
+	Si $f: (E, \mathscr{A}) \to (F, \mathscr{B})$ et $g: (F, \mathscr{B}) \to (G, \mathscr{C})$
+	sont mesurables, alors $g \circ f : (E, \mathscr{A}) \to (G, \mathscr{C})$ est mesurable.
+\end{prop}
+
+\begin{proof}
+	Soitn $C \in \mathscr{C}$. On a que $g^{-1}(C) \in \mathscr{B}$ car $g$ est mesurable et
+	$f^{-1}(g^{-1}(C)) \in \mathscr{A}$ car $f$ est mesurable.
+	Comme $f^{-1}(g^{-1}(C)) = (g \circ f)^{-1}(C)$, on a que $g \circ f$ est mesurable.
+\end{proof}
+
+
+\begin{prop}
+	Pour que $f : (E, \mathscr{A}) \to (F, \mathscr{B})$ soit mesurable, il suffit qu'il existe $\mathscr{C} \subset \mathscr{B}$ telle que:
+	\begin{enumerate}
+		\item $f^{-1}(C) \in \mathscr{A}$ pour tout $C \in \mathscr{C}$.
+		\item $\sigma(\mathscr{C}) = \mathscr{B}$
+	\end{enumerate}
+\end{prop}
+
+\begin{proof}
+	Posons $\mathscr{G} = \{ B \in \mathscr{B} \, | \, f^{-1}(B) \in \mathscr{A} \}$. On a que $\mathscr{C} \subset \mathscr{G}$.
+	Montonrs qu $\mathscr{G}$ est une tribu sur $F$.
+	\begin{enumerate}
+		\item $f^{-1}(\emptyset) = \emptyset \in \mathscr{A}$ donc $\emptyset \in \mathscr{G}$.
+		\item Soit $B \in \mathscr{G}$, alors $f^{-1}(B^c) = (f^{-1}(B))^c \in \mathscr{A}$ donc $B^c \in \mathscr{G}$.
+		\item Soit $(B_n)_{n \in \mathbb{N}}$ une suite d'éléments de $\mathscr{G}$, alors
+		      $f^{-1}(\bigcup\limits_{n \in \mathbb{N}} B_n) = \bigcup\limits_{n \in \mathbb{N}} f^{-1}(B_n) \in \mathscr{A}$ donc
+		      $\bigcup\limits_{n \in \mathbb{N}} B_n \in \mathscr{G}$.
+	\end{enumerate}
+	Ainsi $\mathscr{G}$ est une tribu sur $F$ et $\mathscr{C} \subset \mathscr{G}$.
+	On a donc
+	\[ \sigma(\mathscr{B}) = \sigma(\mathscr{C}) \subset \sigma(\mathscr{G}) = \mathscr{G} \]
+	Donc $\mathscr{B} \subset \mathscr{G} \subset \mathscr{B}$, donc $\mathscr{B} = \mathscr{G}$.
+	On a donc que $f$ est mesurable.
+\end{proof}
+
+
+\begin{example}[Application]
+	Si $F, \mathscr{B}) = (\mathbb{R}, \mathscr{B}(\mathbb{R}))$, on peut prendre $\mathscr{C} = \{ ]-\infty,\   t[ \, | \, t \in \mathbb{R} \}$. On a que
+				$\sigma(\mathscr{C}) = \mathscr{B}(\mathbb{R})$. Et donc il suffit d'étudier la mesurabilité de $f^{-1}(]-\infty, t[)$.
+\end{example}
 
 
 \end{document}
