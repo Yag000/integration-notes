@@ -224,12 +224,23 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 		      \[\mu(\bigcap\limits_{n \in \mathbb{N}} A_n) = \lim\limits_{n \to \infty} \mu(A_n)\]
 		\item Sous-aditivité. Soit $(A_n)_{n \in \mathbb{N}}$ une suite d'ensembles mesurables, alors:
 		      \[\mu(\bigcup\limits_{n \in \mathbb{N}} A_n) \leq \sum\limits_{n \in \mathbb{N}} \mu(A_n)\]
-
 	\end{enumerate}
 \end{prop}
 
 \begin{proof}
-	TODO
+	Nous allons démontrer les propriétés dans l'ordre.
+	\begin{enumerate}
+		\item Soit $B = A \cup (B \setminus A)$, alors $A$ et $B \setminus A$ sont disjoints. Donc
+		      \[\mu(B) = \mu(A) + \mu(B \setminus A)\]
+		      Donc $\mu(B) \geq \mu(A)$. Donc $\mu(B) < \infty$ alors $\mu(A)< \infty$ et $\mu(B \setminus A) = \mu(B) - \mu(A)$.
+		\item \begin{eqnarray*}
+			      \mu(A) + \mu (B) &=& \mu( A \setminus (A \cap B)) + \mu(A \cap B) + \mu(A \setminus B) \\
+			      \mu(A\cup B)&=& \mu(A \setminus (A \cap B)) + \mu(A \cap B) + \mu(B \setminus (A \cap B))
+		      \end{eqnarray*}
+		\item TODO
+		\item TODO
+		\item TODO
+	\end{enumerate}
 \end{proof}
 
 \begin{remarque}
