@@ -197,9 +197,27 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 			            $\forall n \in \mathbb{N}, \, \nu(A_n) \in \mathbb{N}$ et $\nu(A_n)$ ne stationne pas en 0l Donc il existe une suite
 			            infinie d'éléments non vides, donc tels que $\nu(A_n) \geq 1$. Donc la some diverge.
 		      \end{enumerate}
+		      Par contre si $\bigcup\limits_{n \in \mathbb{N}} A_n$ est fini, alors $A_n = \emptyset$ à partir d'un certain rang.
+		      Donc le cardinal de $\bigcup\limits_{n \in \mathbb{N}} A_n$ est fini et $\sum\limits_{n \in \mathbb{N}} \nu(A_n) = \nu(\bigcup\limits_{n \in \mathbb{N}} A_n)$ car ils
+		      sont deux a deux disjoints.
 	\end{enumerate}
 \end{proof}
 
+\begin{proposition}[Propriétés élémentaires]
+\begin{enumerate}
+	\item Croissance. Si $A$ et $B$ mesurables, avec $A \subset B$, alors $\mu(B) = \mu(A) + \mu(B \setminus A)$. De plus, si $\mu(B)$ est finie, alors $\mu(B\setminus A) = \mu(B) - \mu(A)$.
+	\item Crible. Si $A$ et $B$ mesurables
+	      \[\mu(A\cup B) + \mu(A \cap B) = \mu(A) + \mu(B)\]
+	\item Continuité croissante. Soit $A_n$ une suite croissante d'ensembles mesurables $A_n \subset A_{n+1}$,
+	      alors
+	      \[\mu(\bigcup\limits_{n \in \mathbb{N}} A_n) = \lim\limits_{n \to \infty} \mu(A_n)\]
+	      \iten Continuité décroissante. Soit $A_n$ une suite décroissante d'ensembles mesurables $A_{n+1} \subset A_n$, telle que $\mu(A_0) < +\infty$,
+	      alors:
+	      \[\mu(\bigcap\limits_{n \in \mathbb{N}} A_n) = \lim\limits_{n \to \infty} \mu(A_n)\]
+	\item Sous-aditivité. Soit $(A_n)_{n \in \mathbb{N}}$ une suite d'ensembles mesurables, alors:
+	      \[\mu(\bigcup\limits_{n \in \mathbb{N}} A_n) \leq \sum\limits_{n \in \mathbb{N}} \mu(A_n)\]
+
+\end{enumerate}
 
 
 
