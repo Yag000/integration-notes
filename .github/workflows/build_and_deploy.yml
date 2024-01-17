@@ -14,9 +14,9 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: algebre-II-notes.tex
+          root_file: integration-notes.tex
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
           name: PDF
-          path: algebre-II-notes.pdf
+          path: integration-notes.pdf
