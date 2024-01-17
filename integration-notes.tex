@@ -237,9 +237,38 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 			      \mu(A) + \mu (B) &=& \mu( A \setminus (A \cap B)) + \mu(A \cap B) + \mu(A \setminus B) \\
 			      \mu(A\cup B)&=& \mu(A \setminus (A \cap B)) + \mu(A \cap B) + \mu(B \setminus (A \cap B))
 		      \end{eqnarray*}
-		\item TODO
-		\item TODO
-		\item TODO
+		\item On pose $B_0 = A_0$ et $B_n = A_n \setminus A_{n-1}$ pour $n \geq 1$. On a que les $B_n$ sont disjoints et
+		      $\bigcup\limits_{n \in \mathbb{N}} B_n = \bigcup\limits_{n \in \mathbb{N}} A_n$. Donc
+		      \begin{eqnarray*}
+			      $\bigcup\limits_{n \in \mathbb{N}} \mu(A_n) &=& \bigcup\limits_{n \in \mathbb{N}} \mu(B_n)\\
+			      &=& \sum\limits_{n \in \mathbb{N}} \mu(B_n) \text{par }\quad \sigma\text{-additivité}
+		      \end{eqnarray*}
+		      Si l'un des $A_n$ vérifie $\mu(A_n) = +\infty$, alors $\mu(\bigcup\limits_{n \in \mathbb{N}} A_n) = +\infty$
+		      et l'égalité est donc vraie.
+		      \\
+		      Si tous les $A_n$ sont finis, on a :
+		      \begin{eqnarray*}
+			      \mu(B_n) &=& \mu(A_n) - \mu(A_{n-1}) \\
+			      \mu(\bigcup\limits_{n \in \mathbb{N}} A_n) &=& \sum\limits_{n \in \mathbb{N}} \left( \mu(A_n) - \mu(A_{n-1}) \right)+ \mu(A_0) \\
+			      &=& \lim\limits_{n \to \infty} \mu(A_0) + \sum\limits_{n = 1}^N \left( \mu(A_n} - \mu(A_{n-1}) \right) \\
+			      &=& \lim\limits_{n \to \infty} \mu(A_n)
+		      \end{eqnarray*}
+		\item On définit $C_n = A_0 \setminus A_n $, alors les $C_n$ sont croissants et mesurables. Donc
+		      \begin{eqnarray*}
+			      \mu(\bigcup\limits_{n \in \mathbb{N}} C_n) &=& \lim\limits_{n \to \infty} \mu(C_n) \\
+			      &=& \lim\limits_{n \to \infty} \mu(A_0\setminus A_n) \\
+			      &=& \lim\limits_{n \to \infty} \mu(A_0) - \mu(A_n) \\
+			      &=& \mu(A_0) - \lim\limits_{n \to \infty} \mu(A_n)
+		      \end{eqnarray*}
+		      Or $\bigcup\limits_{n \in \mathbb{N}} C_n = A_0 \setminus \bigcup\limits_{n \in \mathbb{N}} A_n$ et donc
+		      $\mu(\bigcup\limits_{n \in \mathbb{N}} C_n) = \mu(A_0) - \mu(\bigcup\limits_{n \in \mathbb{N}} A_n)$.
+		\item On pose $D_n = A_n \cap \left( \bigcup\limits_{i=0}^{n-1} A_i \right)^c$. Les $D_n$ sont disjoints et mesurables par
+		      $\sigma$-additivité.
+		      \begin{eqnarray*}
+			      \mu(\bigcup\limits_{n \in \mathbb{N}} A_n) &=& \mu(\bigcup\limits_{n \in \mathbb{N}} D_n) \\
+			      &=& \sum\limits_{n \in \mathbb{N}} \mu(D_n) \quad \text{ par } \sigma\text{-additivité}
+		      \end{eqnarray*}
+		      et $D_n \subset A_n$ donc $\mu(D_n) \leq \mu(A_n) \leq \sum\limits_{n \in \mathbb{N}} \mu(A_n)$.
 	\end{enumerate}
 \end{proof}
 
