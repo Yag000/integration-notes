@@ -1,0 +1,72 @@
+
+\subsection{Tribus}
+
+
+\begin{definition}[Tribu]
+	Soit $E$ un ensemble. Une tribu $\mathscr{A}$ sur $E$ est une partie de $\mathscr{P}(E)$ vérifiant:
+	\begin{enumerate}
+		\item $E \in \mathscr{A}$
+		\item $A \in \mathscr{A} \implies A^c \in \mathscr{A}$
+		\item $ \forall n \in \mathbb{N}, A_n \in \mathscr{A} \implies \bigcup\limits_{n \in \mathbb{N}} A_n \in \mathscr{A}$
+	\end{enumerate}
+\end{definition}
+
+
+\begin{prop}
+	Toute intsersection de tribus sur $E$ est une tribu sur $E$.
+\end{prop}
+
+\begin{proof}
+	Soit $i \in I$, $\mathscr{A}_i \forall i$ une tribu sur $E$. On a:
+	\begin{itemize}
+		\item $\forall  i \in I, E \in \mathscr{A}_i \implies E \in \bigcap\limits_{i \in I} \mathscr{A}_i$
+		\item $\forall i \in I, A \in \mathscr{A}_i \implies \forall i \in I, \, A^c \in \mathscr{A}_i
+			      \implies A^c \in \bigcap\limits_{i \in I} \mathscr{A}_i$
+		\item $\forall i \in I, \forall n \in \mathbb{N}, A_n \in \mathscr{A}_i \implies
+			      \forall i \in I, \,\bigcup\limits_{n \in \mathbb{N}} A_n \in \mathscr{A}_i \implies
+			      \bigcup\limits_{n \in \mathbb{N}} A_n \in \bigcap\limits_{i \in I} \mathscr{A}_i$
+	\end{itemize}
+\end{proof}
+
+\begin{definition}
+	Soit $\mathscr{C}$ un sous ensemble de $\mathscr{P}(E)$. On note la tribu
+	engrndrée par $\mathscr{C}$, $\sigma(\mathscr{C})$ avec
+	\begin{equation*}
+		\sigma(\mathscr{C}) = \bigcap\limits_{\mathscr{A} \in \mathscr{A}, \mathscr{C} \subset \mathscr{A}} \mathscr{A}
+	\end{equation*}
+\end{definition}
+
+\begin{remarque}
+	$\sigma(\mathscr{C})$ est bien une tribu comme intersection non vide de tribus,
+	car $\mathscr{P}(E)$ est une tribu sur $E$ qui contient $\mathscr{C}$.
+\end{remarque}
+
+\begin{definition}[Tribu borélienne]
+	On note $\omega$ l'ensemble des ouverst ed $\mathbb{R}$. La tribu borélienne sur
+	$\mathbb{R}$ est la tribu $\sigma(\omega)$, notée $\mathscr{B}(\mathbb{R})$.
+\end{definition}
+
+
+\begin{remarque}
+	On peut ettendre cette définition à tout space topologique (ou moins fort, tout space métrique). En particulier
+	$\mathbb{R}^d$.
+\end{remarque}
+
+\begin{remarque}
+	$\mathscr{B}(\mathbb{R})$ est aussi engrendrée par :
+	\begin{itemize}
+		\item $\{ ]-\infty, a[\,,\, a \in \mathbb{R} \}$
+		\item $\{ ]a, b[\,,\, a < b \in \mathbb{R} \}$
+		\item $\{ ]a, b[\,,\, a < b \in \mathbb{Q} \}$
+	\end{itemize}
+\end{remarque}
+
+
+\begin{definition}[Tribu produit]
+	Si $(E_1, \mathscr{A}_1)$ et $(E_2, \mathscr{A}_2)$ sont deux espaces mesurables ( couple ensemble-tribu compatible)
+	on note $\mathscr{A}_1 \otimes \mathscr{A}_2$ la tribu sur $E_1 \times E_2$ engendrée
+	par les rectangles $A_1 \times A_2$ avec $A_1 \in \mathscr{A}_1$ et $A_2 \in \mathscr{A}_2$.
+
+\end{definition}
+
+
