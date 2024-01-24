@@ -1,11 +1,11 @@
 \subsection{Classes monotones}
 
 \begin{definition}
-	$\mathscr{M} \subset \mathscr{P}(E)$ est une classe monotone si
+	$\triM \subset \mathscr{P}(E)$ est une classe monotone si
 	\begin{itemize}
-		\item $E\in \mathscr{M}$
-		\item si $A,B \in \mathscr{M} et A \subset B alors B\setminus A \in \mathscr{M}$
-		\item si $A_{n\in\mathbb{N}} \in \mathscr{M}$ est croissante par l'inclusion, alors $\cup A_n \in \mathscr{M}$
+		\item $E\in \triM$
+		\item si $A,B \in \mathscr{M} et A \subset B$ alors $B\setminus A \in \triM$
+		\item si $A_{n\in\N} \in \triM$ est croissante par l'inclusion, alors $\cup A_n \in \triM$
 	\end{itemize}
 \end{definition}
 
@@ -14,8 +14,8 @@
 \end{remarque}
 
 \begin{definition}
-	On définit la classe monotone engendrée par $\mathscr{C} \subset \mathscr{P}(E)$
-	$$ \mathscr{M}(\mathscr{C}) = \bigcup\limits_{\mathscr{M} \text{classe monotone et} \mathscr{C} \subset \mathscr{M}} \mathscr{} $$
+	On définit la classe monotone engendrée par $\triC \subset \mathscr{P}(E)$
+	$$ \triM(\triC) = \bigcup\limits_{\triM \text{classe monotone et} \mathscr{C} \subset \triM} \triM $$
 \end{definition}
 
 \begin{proof}
@@ -24,38 +24,38 @@
 
 \begin{theorem}[Lemme de classe monotone]
 	Si $\mathscr{C}$ est stable par intersections finies, alors
-	$$ \mathscr{M}\mathscr{C} = \sigma(\mathscr{C}) $$
+	$$ \mathscr{M}(\mathscr{C}) = \sigma(\mathscr{C}) $$
 \end{theorem}
 
 
 \begin{proof}
 	\begin{itemize}
 		\item
-		      $$ \mathscr{M}\mathscr{C} \subset \sigma(\mathscr{C}) $$
+		      $$ \triM(\triC) \subset \sigma(\triC) $$
 		      car $\sigma(\mathscr{C})$ contient $\mathscr{C}$ et $\sigma(\mathscr{C}) $ est une
 		      tribu car elle est une classe monotone.
 		\item
 		      $$\sigma(\mathscr{C})  \subset \mathscr{M}\mathscr{C}$$
-		      On a  que $\mathscr{M}\mathscr{C}$ contient $\mathscr{C}$. Il
+		      On a  que $\mathscr{M}(\mathscr{C})$ contient $\mathscr{C}$. Il
 		      suffit de montrerque$\mathscr{M}\mathscr{C}$ est une tribu. \\
 
 		      \begin{itemize}
-			      \item $E \in \mathscr{M}\mathscr{C}$
-			      \item  $\mathscr{M}\mathscr{C}$ est stable par passage au complementaire car
+			      \item $E \in \mathscr{M}(\mathscr{C})$
+			      \item  $\mathscr{M}(\mathscr{C})$ est stable par passage au complementaire car
 			            on peut prendre $B = E$ et alors $A \subset B$ et $B\setminus A = A^c$
 			      \item Stabilité par union dénombrable: \\
 
-			            Idée: $\cup A_n = \cup_{n\in mathbb{N}} B_n, avec B_n = \cup_{k<n} A_k$ et l'union est croissante.
-			            Il faut montrer que $\mathscr{M}\mathscr{C}$ est stable par union finie.
-			            On peut montrer que $\mathscr{M}\mathscr{C}$ stable par intersection finie. On peut juste montrer qu'elle est stable par intersection de 2 éléments.
+			            Idée: $\cup A_n = \cup_{n\in \N} B_n, avec B_n = \cup_{k<n} A_k$ et l'union est croissante.
+			            Il faut montrer que $\mathscr{M}(\mathscr{C})$ est stable par union finie.
+			            On peut montrer que $\mathscr{M}(\mathscr{C})$ stable par intersection finie. On peut juste montrer qu'elle est stable par intersection de 2 éléments.
 
-			            Fixons $A \in \mathscr{M}\mathscr{C}$. On regarde $\mathscr{M}_A = \{B \in \mathscr{M}\mathscr{C} , A \cap B \in \mathscr{M}\mathscr{C}\}$
+			            Fixons $A \in \mathscr{M}(\mathscr{C})$. On regarde $\mathscr{M}_A = \{B \in \mathscr{M}(\mathscr{C}) , A \cap B \in \mathscr{M}(\mathscr{C})\}$
 			            On veut montrer que $\mathscr{M}_A = \mathscr{M}\mathscr{C}$.
 			            On va montrer que $\mathscr{M}_A$ est une classe monotone. On a deja $\mathscr{C} \subset \mathscr{M}_A$.
 			            \begin{itemize}
 				            \item $E \in \mathscr{M}_A ?$.  On a $A \cap E = A \in \mathscr{C} \subset \mathscr{M}_A$
 				            \item Si $B \in \mathscr{M}_A$ , $B' \in \mathscr{M}_A$, et $B \subset B'$ montrons que $B'\setminus B \in \mathscr{M}_A$
-				                  $A \cap (B'\setminus B) = \underbrace{(A \cap B')}{\in   \mathscr{M}\mathscr{C}} \underbrace{\setminus (A\cap B)}{\mathscr{M}\mathscr{C}} \in \mathscr{M}\mathscr{C}$
+				                  $A \cap (B'\setminus B) = \underbrace{(A \cap B')}_{\in   \mathscr{M}(\mathscr{C})} \setminus \underbrace{ (A\cap B)}_{\in \mathscr{M}(\mathscr{C})} \in \mathscr{M}\mathscr{C}$
 				                  et $A\cap B \subset A \cap B'$
 				            \item Soit $B_n$ a valeur dans $\mathscr{M}_A$ une suite croissante:
 				                  $$ A \cap (\cup B_n) = \cup (A \cap B_n)$$

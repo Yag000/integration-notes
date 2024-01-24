@@ -74,7 +74,6 @@
 \end{prop}
 
 \begin{proof}
-
 	$\mathscr{B_1} \oplus \mathscr{B_2} = \sigma \left\{ B_1 \times B_2, B_1 \in \mathscr{B_1}, B_2 \in \mathscr{B_2} \right\}...$
 	$g^{-1}(B_1 \times B_2) = {x \in E, f_1(x) \in B_1 et f_2(x) \in B_2  }$
 	$f_1^{-1}(B_1) \cap f_2{-1}(B_2)$
@@ -103,26 +102,39 @@
 
 
 \begin{definition}
-	On note $\overline{\mathbb{R}} = \mathbb{R} \cup \{ -\infty, \infty \}$
-	On note $\overline{\mathbb{R^+}} = \mathbb{R}^+ \cup \{  \infty \}$
-	Dans $\overline{\mathbb{R^+}}$
-	$\forall a \in \overline{\mathbb{R^+}} a + (+\infty) = +\infty et a * (+\infty) = 0 si a = 0 +\infty sinon$
+	On note $\Rbar = \R \cup \{ -\infty, \infty \}$
+	On note $\Rbarp = \R^+ \cup \{  \infty \}$
+	Dans $\Rbarp\ \forall a \in \Rbarp: $
+	\begin{itemize}
+		\item $a + (+\infty) = +\infty$
+		\item
+		      $a * (+\infty) = \left\{ \begin{array}{cc}
+                      0       & \text{si} \  a = 0 \\
+                      +\infty & \text{sinon}
+			      \end{array}\right.$
+	\end{itemize}
 \end{definition}
 
 \begin{definition}
-	Si $a_n$ est une suite dans $\overline{\mathbb{R}}$. On définit
+	Si $a_n$ est une suite dans $\Rbar$. On définit
 	\begin{itemize}
-		\item $\sup a_n = +\infty si +\infty$ est dans la suite$, +\infty Si \forall M > o \exists N, a_n > M, \sup a_n \in \mathbb{R}$ si $a_n$ est majoré:w
-		\item De meme pour le $\inf$
-		\item $\limsup a_n = notation chiante = \lim\limits_{n \rightarrow \infty}\downarrow \sup\limits_{k \geq n } a_k \in \overline{\mathbb{R}}$
+		\item $\sup a_n =
+			      \left\{ \begin{array}{cc}
+				      +\infty         & \text{si} \ +\infty \ \text{est dans la suite}   \\
+				      +\infty         & \text{si} \ \forall M > 0 \ \exists N,\, a_n > M \\
+				      \sup a_n \in \R & \text{si} \ a_n\  \text{est majoré}
+			      \end{array}\right.$
 
+		\item De même pour le $\inf$
+		\item $\limsup a_n = notation chiante = \lim\limits_{n \rightarrow \infty}\downarrow \sup\limits_{k \geq n } a_k \in \Rbar$
+		\item $\liminf a_n = notation chiante = \lim\limits_{n \to \infty}\uparrow \inf\limits_{k \geq n } a_k \in \Rbar$
 	\end{itemize}
 \end{definition}
 
 
 \begin{remarque}
-	On travaillera avec $\mathbb{B}(\overline{\mathbb{R}})$, les boreliens de $\overline{\mathbb{R}}$ qui est
-	$$\sigma ({[-\infty, a], a \in \mathbb{R}})$$
+	On travaillera avec $\bor(\Rbar)$, les boreliens de $\Rbar$ qui est
+	$$\sigma (\left\{[-\infty, a], a \in \R\right\})$$
 \end{remarque}
 
 
@@ -133,7 +145,7 @@
 
 \begin{prop}
 	Si $f_n$ est une suite de fonction messurables
-	$$f_n (E,\mathscr{A}) \rightarrow (\mathbb{R},\mathscr{B}(\mathbb{R}))$$
+	$$f_n (E,\triA) \rightarrow (\mathbb{R},\bor(\R))$$
 	alors les fonctions suivantes sont mesurables:
 	\begin{itemize}
 		\item $\sup f_n x\mapsto f_n(x) $
@@ -141,7 +153,7 @@
 		\item $\limsup f_n$
 		\item $\liminf f_n$
 	\end{itemize}
-	En particulier si $f_n$ converge simplement dans $\overline{\mathbb{R}}$ alors
+	En particulier si $f_n$ converge simplement dans $\Rbar$ alors
 	$\lim f_n = \limsup f_n$ est mesurable. De plus $\{ x \in E, f_n(a) \text{converge}\}$ est mesurable.
 \end{prop}
 
@@ -156,7 +168,7 @@
 	de meme pour $\sup$
 
 	\begin{eqnarray*}
-        \liminf f_n &=& \lim \inf f_k\\ %TODO: Add proper def \\
+		\liminf f_n &=& \lim\limits_{n \to \infty}\inf\limits_{k \geq n } a_k\\
 		&=& \sup _{n\in N} \inf_{k \geq k} f_n\\
 		&=& \in \mathscr{A}
 	\end{eqnarray*}
@@ -164,8 +176,7 @@
 	donc $\liminf$ et $\limsup$ sont mesurables.
 
 	\begin{eqnarray*}
-		\{x \in E, f_n Converge \}  &=& (\liminf f_n - \limsup f_n)^{-1}(\{0\}) \\
+		\{x \in E, f_n \  \text{converge} \}  &=& (\liminf f_n - \limsup f_n)^{-1}(\{0\})\\
 	\end{eqnarray*}
-	et $\{ 0 \} \in B(R)$ donc $f_n \in E, f_n(x) converge \} \in \mathscr{A}$.
+	et $\{ 0 \} \in \bor(\R)$ donc $\left\{ f_n \in E, f_n(x) \ \text{converge} \ \right\} \in \mathscr{A}$.
 \end{proof}
-
