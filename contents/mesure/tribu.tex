@@ -3,7 +3,7 @@
 
 
 \begin{definition}[Tribu]
-	Soit $E$ un ensemble. Une tribu $\mathscr{A}$ sur $E$ est une partie de $\mathscr{P}(E)$ vérifiant:
+	Soit $E$ un ensemble. Une tribu (ou $\sigma$-algèbre) $\mathscr{A}$ sur $E$ est une partie de $\mathscr{P}(E)$ vérifiant:
 	\begin{enumerate}
 		\item $E \in \mathscr{A}$
 		\item $A \in \mathscr{A} \implies A^c \in \mathscr{A}$
@@ -13,11 +13,11 @@
 
 
 \begin{prop}
-	Toute intsersection de tribus sur $E$ est une tribu sur $E$.
+	Toute intersection de tribus sur $E$ est une tribu sur $E$.
 \end{prop}
 
 \begin{proof}\label{proof:intersection_tribus}
-	Soit $i \in I$, $\mathscr{A}_i \forall i$ une tribu sur $E$. On a:
+	Si $\forall i \in I$, $\mathscr{A}_i$ est une tribu sur $E$. On a:
 	\begin{itemize}
 		\item $\forall  i \in I, E \in \mathscr{A}_i \implies E \in \bigcap\limits_{i \in I} \mathscr{A}_i$
 		\item $\forall i \in I, A \in \mathscr{A}_i \implies \forall i \in I, \, A^c \in \mathscr{A}_i
@@ -32,7 +32,7 @@
 	Soit $\mathscr{C}$ un sous ensemble de $\mathscr{P}(E)$. On note la tribu
 	engrendrée par $\mathscr{C}$, $\sigma(\mathscr{C})$ avec
 	\begin{equation*}
-		\sigma(\mathscr{C}) = \bigcap\limits_{\mathscr{A} \in \mathscr{A}, \mathscr{C} \subset \mathscr{A}} \mathscr{A}
+		\sigma(\mathscr{C}) = \bigcap\limits_{\mathscr{A} \text{ tribu}, \mathscr{C} \subset \mathscr{A}} \mathscr{A}
 	\end{equation*}
 \end{definition}
 
@@ -42,18 +42,18 @@
 \end{remarque}
 
 \begin{definition}[Tribu borélienne]
-	On note $\omega$ l'ensemble des ouverst ed $\mathbb{R}$. La tribu borélienne sur
-	$\mathbb{R}$ est la tribu $\sigma(\omega)$, notée $\mathscr{B}(\mathbb{R})$.
+	On note $\Omega$ l'ensemble des ouverts de $\mathbb{R}$. La tribu borélienne sur
+	$\mathbb{R}$ est la tribu $\sigma(\Omega)$, notée $\mathscr{B}(\mathbb{R})$.
 \end{definition}
 
 
 \begin{remarque}
-	On peut ettendre cette définition à tout space topologique (ou moins fort, tout space métrique). En particulier
+	On peut étendre cette définition à tout espace topologique (ou moins fort, tout espace métrique). En particulier
 	$\mathbb{R}^d$.
 \end{remarque}
 
 \begin{remarque}
-	$\mathscr{B}(\mathbb{R})$ est aussi engrendrée par :
+	$\mathscr{B}(\mathbb{R})$ est aussi engendrée par :
 	\begin{itemize}
 		\item $\{ ]-\infty, a[\,,\, a \in \mathbb{R} \}$
 		\item $\{ ]a, b[\,,\, a < b \in \mathbb{R} \}$
@@ -63,7 +63,7 @@
 
 
 \begin{definition}[Tribu produit]
-	Si $(E_1, \mathscr{A}_1)$ et $(E_2, \mathscr{A}_2)$ sont deux espaces mesurables ( couple ensemble-tribu compatible)
+	Si $(E_1, \mathscr{A}_1)$ et $(E_2, \mathscr{A}_2)$ sont deux espaces mesurables (couple ensemble-tribu compatible)
 	on note $\mathscr{A}_1 \otimes \mathscr{A}_2$ la tribu sur $E_1 \times E_2$ engendrée
 	par les rectangles $A_1 \times A_2$ avec $A_1 \in \mathscr{A}_1$ et $A_2 \in \mathscr{A}_2$.
 
