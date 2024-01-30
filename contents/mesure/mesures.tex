@@ -26,7 +26,7 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 \begin{remarque}
 	$\mu$ mesurable donne l'additivité (finie). Cependant, la reciproque est fausse.
 	\begin{example}
-		Soit $m: \mathscr{P}(\mathbb{N}) \to \mathbb{R}^+$
+		Soit $m: \mathscr{P}(\mathbb{N}) \to \mathbb{R}^+ \cup \{+\infty\}$
 		\begin{equation*}
 			m(A) = \left\{
 			\begin{array}{ll}
@@ -53,7 +53,7 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 \end{example}
 
 \begin{example}
-	Sur $\mathbb{R}, \mathscr{B}(\mathbb{R})$, on a la mesure de comptable, notée $\nu$, définie par:
+	Sur $\mathbb{R}, \mathscr{B}(\mathbb{R})$, on a la mesure de comptage, notée $\nu$, définie par:
 	\begin{equation*}
 		\nu(A) = \left\{
 		\begin{array}{ll}
@@ -66,10 +66,10 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 
 \begin{proof}
 	\begin{enumerate}
-		\item Le espace de départ est bien une tribu car $\mathscr{P}(\mathbb{R})$ est une tribu sur $\mathbb{R}$.Le
-		      espace d'arrivée est bien $\mathbb{R}^+ \cup \{+\infty\}$ car $\#A \in \mathbb{R}^+ \cup \{+\infty\}$.
+		\item L'espace de départ est bien une tribu car $\mathscr{P}(\mathbb{R})$ est une tribu sur $\mathbb{R}$.
+		      L'espace d'arrivée est bien $\mathbb{R}^+ \cup \{+\infty\}$ car $\#A \in \mathbb{R}^+ \cup \{+\infty\}$.
 		\item $\nu(\emptyset) = \#\emptyset = 0$
-		\item Si $(A_n)_{n \in \mathbb{N}}$ est une suite de boréliens disjoints:
+		\item Si $(A_n)_{n \in \mathbb{N}}$ est une suite de boréliens deux à deux disjoints:
 		      \begin{equation*}
 			      \mu(\bigcup\limits_{n \in \mathbb{N}} A_n) = \left\{\begin{array}{ll}
 				      \#A     & \text{ si } \bigcup\limits_{n \in \mathbb{N}} A_n \text{ est fini } \\
@@ -82,8 +82,8 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 		      \begin{enumerate}
 			      \item Cas 1 : $\sum\limits_{n \in \mathbb{N}} \nu(A_n) \geq \nu(A_k) = +\infty$.
 			      \item Cas 2 : $\sum\limits_{n \in \mathbb{N}} \nu(A_n) = +\infty$ car
-			            $\forall n \in \mathbb{N}, \, \nu(A_n) \in \mathbb{N}$ et $\nu(A_n)$ ne stationne pas en 0l Donc il existe une suite
-			            infinie d'éléments non vides, donc tels que $\nu(A_n) \geq 1$. Donc la some diverge.
+			            $\forall n \in \mathbb{N}, \, \nu(A_n) \in \mathbb{N}$ et $\nu(A_n)$ ne stationne pas en 0. Donc il existe une suite
+			            infinie d'éléments non vides, donc tels que $\nu(A_n) \geq 1$. Donc la somme diverge.
 		      \end{enumerate}
 		      Par contre si $\bigcup\limits_{n \in \mathbb{N}} A_n$ est fini, alors $A_n = \emptyset$ à partir d'un certain rang.
 		      Donc le cardinal de $\bigcup\limits_{n \in \mathbb{N}} A_n$ est fini et $\sum\limits_{n \in \mathbb{N}} \nu(A_n) = \nu(\bigcup\limits_{n \in \mathbb{N}} A_n)$ car ils
@@ -94,7 +94,7 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 \begin{prop}[Propriétés élémentaires]\label{prop:mesure:elementaire}
 	Nous avons 5 propriétés élémentaires:
 	\begin{enumerate}
-		\item Croissance. Si $A$ et $B$ mesurables, avec $A \subset B$, alors $\mu(B) = \mu(A) + \mu(B \setminus A)$. De plus,
+		\item Croissance. Si $A$ et $B$ mesurables, avec $A \subset B$, alors $\mu(B) = \mu(A) + \mu(B \setminus A)$ et $\mu(A) \leq \mu(B)$. De plus,
 		      si $\mu(B)$ est finie, alors $\mu(B\setminus A) = \mu(B) - \mu(A)$.
 		\item Crible. Si $A$ et $B$ mesurables
 		      \[\mu(A\cup B) + \mu(A \cap B) = \mu(A) + \mu(B)\]
@@ -104,7 +104,7 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 		\item Continuité décroissante. Soit $A_n$ une suite décroissante d'ensembles mesurables $A_{n+1}
 			      \subset A_n$, telle que $\mu(A_0) < +\infty$, alors:
 		      \[\mu(\bigcap\limits_{n \in \mathbb{N}} A_n) = \lim\limits_{n \to \infty} \mu(A_n)\]
-		\item Sous-aditivité. Soit $(A_n)_{n \in \mathbb{N}}$ une suite d'ensembles mesurables, alors:
+		\item Sous-additivité. Soit $(A_n)_{n \in \mathbb{N}}$ une suite d'ensembles mesurables, alors:
 		      \[\mu(\bigcup\limits_{n \in \mathbb{N}} A_n) \leq \sum\limits_{n \in \mathbb{N}} \mu(A_n)\]
 	\end{enumerate}
 \end{prop}
@@ -116,14 +116,14 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 		      \[\mu(B) = \mu(A) + \mu(B \setminus A)\]
 		      Donc $\mu(B) \geq \mu(A)$. Donc $\mu(B) < \infty$ alors $\mu(A)< \infty$ et $\mu(B \setminus A) = \mu(B) - \mu(A)$.
 		\item \begin{eqnarray*}
-			      \mu(A) + \mu (B) &=& \mu( A \setminus (A \cap B)) + \mu(A \cap B) + \mu(A \setminus B) \\
+			      \mu(A) + \mu (B) &=& \mu( A \setminus (A \cap B)) + \mu(A \cap B) + \mu(B \setminus (A \cap B)) + \mu(A \cap B) \\
 			      \mu(A\cup B)&=& \mu(A \setminus (A \cap B)) + \mu(A \cap B) + \mu(B \setminus (A \cap B))
 		      \end{eqnarray*}
 		\item On pose $B_0 = A_0$ et $B_n = A_n \setminus A_{n-1}$ pour $n \geq 1$. On a que les $B_n$ sont disjoints et
 		      $\bigcup\limits_{n \in \mathbb{N}} B_n = \bigcup\limits_{n \in \mathbb{N}} A_n$. Donc
 		      \begin{eqnarray*}
 			      \bigcup\limits_{n \in \mathbb{N}} \mu(A_n) &=& \bigcup\limits_{n \in \mathbb{N}} \mu(B_n) \\
-			      &=& \sum\limits_{n \in \mathbb{N}} \mu(B_n) \text{par }\quad \sigma\text{-additivité}
+			      &=& \sum\limits_{n \in \mathbb{N}} \mu(B_n) \quad \text{par } \sigma\text{-additivité}
 		      \end{eqnarray*}
 		      Si l'un des $A_n$ vérifie $\mu(A_n) = +\infty$, alors $\mu(\bigcup\limits_{n \in \mathbb{N}} A_n) = +\infty$
 		      et l'égalité est donc vraie.
@@ -132,8 +132,8 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 		      \begin{eqnarray*}
 			      \mu(B_n) &=& \mu(A_n) - \mu(A_{n-1}) \\
 			      \mu(\bigcup\limits_{n \in \mathbb{N}} A_n) &=& \sum\limits_{n \in \mathbb{N}} \left( \mu(A_n) - \mu(A_{n-1}) \right)+ \mu(A_0) \\
-			      &=& \lim\limits_{n \to \infty} \mu(A_0) + \sum\limits_{n = 1}^N \left( \mu(A_n) - \mu(A_{n-1}) \right) \\
-			      &=& \lim\limits_{n \to \infty} \mu(A_n)
+			      &=& \lim\limits_{N \to \infty} \mu(A_0) + \sum\limits_{n = 1}^N \left( \mu(A_n) - \mu(A_{n-1}) \right) \\
+			      &=& \lim\limits_{N \to \infty} \mu(A_N)
 		      \end{eqnarray*}
 		\item On définit $C_n = A_0 \setminus A_n $, alors les $C_n$ sont croissants et mesurables. Donc
 		      \begin{eqnarray*}
@@ -142,8 +142,8 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 			      &=& \lim\limits_{n \to \infty} \mu(A_0) - \mu(A_n) \\
 			      &=& \mu(A_0) - \lim\limits_{n \to \infty} \mu(A_n)
 		      \end{eqnarray*}
-		      Or $\bigcup\limits_{n \in \mathbb{N}} C_n = A_0 \setminus \bigcup\limits_{n \in \mathbb{N}} A_n$ et donc
-		      $\mu(\bigcup\limits_{n \in \mathbb{N}} C_n) = \mu(A_0) - \mu(\bigcup\limits_{n \in \mathbb{N}} A_n)$.
+		      Or $\bigcup\limits_{n \in \mathbb{N}} C_n = A_0 \setminus \bigcap\limits_{n \in \mathbb{N}} A_n$ et donc
+		      $\mu(\bigcup\limits_{n \in \mathbb{N}} C_n) = \mu(A_0) - \mu(\bigcap\limits_{n \in \mathbb{N}} A_n)$.
 		\item On pose $D_n = A_n \cap \left( \bigcup\limits_{i=0}^{n-1} A_i \right)^c$. Les $D_n$ sont disjoints et mesurables par
 		      $\sigma$-additivité.
 		      \begin{eqnarray*}
@@ -155,7 +155,7 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 \end{proof}
 
 \begin{remarque}
-	Dans le (4)\ref{prop:mesure:elementaire}, l'hypothèse $\mu(A_0) < +\infty$ est nécessaire. En effet, soit
+	Dans le (4) de la proposition \ref{prop:mesure:elementaire}, l'hypothèse $\mu(A_0) < +\infty$ est nécessaire. En effet, soit
 	$\nu$ la mesure de comptage. Soit
 	\[ A_n = \{ n, n+1, n+2, \dots \} \]
 	On a $\bigcup\limits_{n \in \mathbb{N}} A_n = \emptyset$ et $\nu(A_n) = +\infty$ pour tout $n \in \mathbb{N}$.
@@ -164,7 +164,7 @@ On se donne $(E, \mathscr{A})$ un espace mesurable.
 \begin{definition}[Vocabulaire des mesures]
 	Soit $\mu$ une mesure sur $(E, \mathscr{A})$.
 	\begin{itemize}
-		\item $(E,A\mu)$ est un space mesuré si $(E,\mathscr{A})$ est un espace mesurable et $\mu$ est une mesure sur $ (E, \mathscr{A} ) $.
+		\item $(E, \mathscr{A}, \mu)$ est un espace mesuré si $(E,\mathscr{A})$ est un espace mesurable et $\mu$ est une mesure sur $ (E, \mathscr{A} ) $.
 		\item $\mu$ est dite finie si $\mu(E) < +\infty$.
 		\item $\mu$ est une probabilité si $\mu(E) = 1$.
 		\item $\mu$ est $\sigma$-finie si $E = \bigcup\limits_{n \in \mathbb{N}} A_n$ avec $A_n \in \mathscr{A}$ et $\mu(A_n) < +\infty$.
