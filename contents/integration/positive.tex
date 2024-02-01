@@ -120,7 +120,7 @@ Soit  $\mathcal{E}_+$ l'ensemble des fonctions étagées positives.
 \end{proof}
 
 
-\begin{theorem}[Convergence monotone]
+\begin{theorem}[Convergence monotone] \label{thm:convergence_monotone}
 	Soit $(f_n)_{n \in \N}$ une suite corissante de fonctions mesurables positives.\\
 	On note $f = \lim\limits_{n \to \infty}\uparrow f_n$.
 	Alors on a
@@ -164,7 +164,7 @@ Soit  $\mathcal{E}_+$ l'ensemble des fonctions étagées positives.
 \end{proof}
 
 
-\begin{example}[ Contre-exemple à la convergence monotone pour une suite non croissante]
+\begin{example}[Contre-exemple à la convergence monotone pour une suite non croissante]
 	$f_n = \1_{[n, \infty[}$. $f_n \to 0, \ \forall x $.\\
 	Et on a  $\int f_n d\lambda = \infty$ or $\int 0 d\lambda = 0$.
 \end{example}
@@ -186,11 +186,21 @@ Soit  $\mathcal{E}_+$ l'ensemble des fonctions étagées positives.
 
 	En général, $A_n$ et $B_{n,i}$ ne sont pas des intervalles.
 
-	Par construction $f_n \leq fn$ et $f_n$ est une suite croissante, c'est pour cette raison qu'on a subdivisé avec $2^n$ intervalles, et oas $n$ intervalles.\\
+	Par construction $f_n \leq fn$ et $f_n$ est une suite croissante, c'est pour cette raison qu'on a subdivisé avec $2^n$ intervalles, et pas $n$ intervalles.\\
 	A-t-on $f_n \to f$ ?
 
-	TODO
+	\begin{eqnarray*}
+		f_n(x) =  2^{-1} i_n(x)\underbrace{\1_{B_n,i_n(x)}(x)}_{=1} &\text{ Si } \1_n(x) \text{ est tel que } x \in B_{n,i_n(x)} & \\
+		& 2^{-n}i_n(x) \leq f_n(x) \leq 2^{-n}(i_n(x) + 1) &\\
+		& \text{donc } 2_{-n}i_n(x) \to f(x) &
+	\end{eqnarray*}
+	Et donc $f_n(x) \to f(x)$
 \end{proof}
+
+\begin{remarque}
+	Les fonctions données par la proposition précédente vérifient les hypothèses du théorème \ref{thm:convergence_monotone}, donc
+	$$ \int f_n d\mu \to \int f d\mu $$
+\end{remarque}
 
 
 \begin{prop}[Linéarité]
@@ -202,6 +212,8 @@ Soit  $\mathcal{E}_+$ l'ensemble des fonctions étagées positives.
 \begin{proof}
 	$$f_n \in \mathcal{E}_+, f_n \uparrow \to f$$
 	$$ g_n \in \mathcal{E}_+, g_n \uparrow \to g$$
-	TODO
+	$$ \underbrace{\int a f_n + b g_n \,d\mu}_{\text{Par } \ref{thm:convergence_monotone} \to \int a f + b g\,d\mu}
+		= a \underbrace{\int f_n d\mu}_{ \text{Par } \ref{thm:convergence_monotone} \to \int f d\mu}
+		+ b \underbrace{\int g_n d\mu}_{ \text{Par } \ref{thm:convergence_monotone} \to \int g d\mu} $$
 \end{proof}
 
