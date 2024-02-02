@@ -37,15 +37,15 @@
 		\item
 		      $$\sigma(\mathscr{C})  \subset \mathscr{M}\mathscr{C}$$
 		      On a  que $\mathscr{M}(\mathscr{C})$ contient $\mathscr{C}$. Il
-		      suffit de montrerque$\mathscr{M}\mathscr{C}$ est une tribu. \\
+		      suffit de montrer que $\mathscr{M}\mathscr{C}$ est une tribu. \\
 
 		      \begin{itemize}
 			      \item $E \in \mathscr{M}(\mathscr{C})$
-			      \item  $\mathscr{M}(\mathscr{C})$ est stable par passage au complementaire car
+			      \item  $\mathscr{M}(\mathscr{C})$ est stable par passage au complémentaire car
 			            on peut prendre $B = E$ et alors $A \subset B$ et $B\setminus A = A^c$
 			      \item Stabilité par union dénombrable: \\
 
-			            Idée: $\cup A_n = \cup_{n\in \N} B_n, avec B_n = \cup_{k<n} A_k$ et l'union est croissante.
+			            Idée: $\cup A_n = \cup_{n\in \N} B_n$, avec $B_n = \cup_{k<n} A_k$ et l'union est croissante.
 			            Il faut montrer que $\mathscr{M}(\mathscr{C})$ est stable par union finie.
 			            On peut montrer que $\mathscr{M}(\mathscr{C})$ stable par intersection finie. On peut juste montrer qu'elle est stable par intersection de 2 éléments.
 
@@ -63,14 +63,14 @@
 				                  donc $A \cap (\cup B_n) \in \mathscr{M}\mathscr{C}$ et $\cup B_n \in \mathscr{M}_A $
 			            \end{itemize}
 
-			            Donc $\mathscr{M}_A$ est une classe monotone, donc $mathscr{M}_A = mathscr{M}\mathscr{C}$ qui est équivalent à :
+			            Donc $\mathscr{M}_A$ est une classe monotone, donc $\mathscr{M}_A = \mathscr{M}\mathscr{C}$ qui est équivalent à :
 			            $$ \forall A \in \mathscr{C}, \forall B \in \mathscr{M}\mathscr{C}, A \cap B \in \mathscr{M}\mathscr{C} (*)$$
 
 			            Soit $B\in \mathscr{M}\mathscr{C}$.
-			            $$ mathscr{M}_B = \{ A \in mathscr{M}\mathscr{C}, A \cap B \in mathscr{M}\mathscr{C}\} $$
+			            $$ \mathscr{M}_B = \{ A \in \mathscr{M}\mathscr{C}, A \cap B \in \mathscr{M}\mathscr{C}\} $$
 			            On sait que $\mathscr{C}\subset\mathscr{M}_B$
-			            En effet, $A \in \mathscr{C}$, on a bien $B |in mathscr{M}\mathscr{C}$, donc $A\cap B \in\mathscr{M}\mathscr{C}$ d'apres (*).
-			            de plus, $\mathscr{M}_B$ est une classe monotone, meme preuve que ci-dessous (car dans cette preuve on n'utilise pas que $A \in \mathscr{C}$).
+			            En effet, $A \in \mathscr{C}$, on a bien $B \in \mathscr{M}\mathscr{C}$, donc $A\cap B \in\mathscr{M}\mathscr{C}$ d'après (*).
+			            de plus, $\mathscr{M}_B$ est une classe monotone, même preuve que ci-dessous (car dans cette preuve on n'utilise pas que $A \in \mathscr{C}$).
 			            donc $\mathscr{M}_B = \mathscr{M}\mathscr{C}$ et donc :
 			            $$ \forall B \in \mathscr{M}\mathscr{C}, \forall A \in \mathscr{M}\mathscr{C}, A \cap B \in \mathscr{M}\mathscr{C}$$
 		      \end{itemize}
@@ -80,7 +80,7 @@
 
 \begin{theorem}[Lemme d'unicité des mesures]
 	Soit $\mu$ et $\nu$ deux mesures sur $(E,\mathscr{A})$. On suppose qu'il existe
-	$\mathscr{C}$ stable pr intersections finies tel que $\sigma(\mathscr{C}) = \mathscr{A}$
+	$\mathscr{C}$ stable par intersections finies tel que $\sigma(\mathscr{C}) = \mathscr{A}$
 	et $\forall C \in \mathscr{C}, \mu(C) = \nu(C)$ alors:
 	\begin{itemize}
 		\item Si $\mu(E) = \nu (E) < +\infty$, alors $\mu = \nu$.
@@ -99,7 +99,7 @@
 				            \mu(A \setminus B ) &=& \mu(B)- \mu(A) \\
 				            &=& \nu (B) - \nu(A) = \nu (B\setminus A)
 			            \end{eqnarray*}
-			      \item Si $A_n \in \mathscr{G}$ est une suite coroissante,
+			      \item Si $A_n \in \mathscr{G}$ est une suite croissante,
 			            \begin{eqnarray*}
 				            \mu(\cup A_n) &=& \lim\limits_{n \to \infty} \mu(A_n) \\
 				            &=& \lim\limits_{n \to \infty} \nu(A_n) \\
@@ -108,17 +108,17 @@
 		      \end{itemize}
 		      Donc $\mathscr{G}$ est une classe monotone que contient $\mathscr{C}$.
 		      Donc $\mathscr{G} \supset\mathscr{M}\mathscr{C} = \sigma(\mathscr{C}) = \mathscr{A}$ et
-		      donc $\mathscr{G} = \mathscr{A}$ eto donc $\mu = \nu$.
+		      donc $\mathscr{G} = \mathscr{A}$ et donc $\mu = \nu$.
 		\item
-		      On restraint $\mu$ à $E_n$, $\mu_n A \mapsto \mu(E_n \cap A)$
+		      On restraint $\mu$ à $E_n$, $\mu_n A \mapsto \mu(E_n \cap A)$.
 		      Alors $\mu_n$ est une mesure et $\mu_n < +\infty$
 
-		      On a
+		      On a:
 		      \begin{eqnarray*}
 			      \forall C \in \mathscr{C}, \mu (E_n \cap C) &=& \nu (E_n \cap C) \\
 			      &=& \nu_n(C)
 		      \end{eqnarray*}
-		      donc $\mu_n = \nu_n$ et d'apres le (1) on a $\forall A \in \mathscr{A}, \nu(A) = \lim \mu_n(A)$
+		      donc $\mu_n = \nu_n$ et d'après le (1) on a $\forall A \in \mathscr{A}, \nu(A) = \lim \mu_n(A)$
 	\end{itemize}
 \end{proof}
 
@@ -126,7 +126,7 @@
 \begin{remarque}
 	D'après ce théorème, la fonction de répartition caractérise la loi.
 	$$ \mathscr{C} = \{ ]-\infty, x], x \in \mathbb{R} \} $$
-	$$ \sigma(\mathscr{C}) = \mathscr{B}(\mathbb{R}) \text{et} \mathscr{C} \text{stable par intersections finies}$$
+	$$ \sigma(\mathscr{C}) = \mathscr{B}(\mathbb{R}) \text{ et } \mathscr{C} \text{ stable par intersections finies}$$
 	si $\forall t \in \mathbb{R}, F_X(t) = F_Y(t)$ alors $\forall B \in \mathscr{B}(\mathbb{R}), \mathbb{P}_X(B) = \mathbb{P}_Y(B)$
 \end{remarque}
 
@@ -135,7 +135,7 @@
 	\begin{itemize}
 		\item Si $B \in \mathscr{A}$, on définit $\mu_B : A \mapsto \mu(A \cap B)$ qui est une mesure.
 		\item $\lambda \in \mathbb{R}^+$ alors $\lambda \mu$ est une mesure.
-		\item $\nu$ une msure sur $(E, \mathscr{A})$, alors $\mu + \nu$ est une mesure.
+		\item $\nu$ une mesure sur $(E, \mathscr{A})$, alors $\mu + \nu$ est une mesure.
 	\end{itemize}
 \end{prop}
 

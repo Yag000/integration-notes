@@ -3,7 +3,7 @@
 \begin{definition}
 	Soient $(E, \mathscr{A})$ et $(F, \mathscr{B})$ deux espaces mesurables. Une fonction $f: E \to F$ est dite mesurable si
 	$f^{-1}(B) \in \mathscr{A}$ pour tout $B \in \mathscr{B}$.
-	Dans le cas ou $E$ et $F$ sont munis de leur tribus boréliennes (si elles existent), on dit que $f$ est borélienne.
+	Dans le cas où $E$ et $F$ sont munis de leur tribus boréliennes (si elles existent), on dit que $f$ est borélienne.
 \end{definition}
 
 
@@ -13,7 +13,7 @@
 \end{prop}
 
 \begin{proof}
-	Soitn $C \in \mathscr{C}$. On a que $g^{-1}(C) \in \mathscr{B}$ car $g$ est mesurable et
+	Soit $C \in \mathscr{C}$. On a que $g^{-1}(C) \in \mathscr{B}$ car $g$ est mesurable et
 	$f^{-1}(g^{-1}(C)) \in \mathscr{A}$ car $f$ est mesurable.
 	Comme $f^{-1}(g^{-1}(C)) = (g \circ f)^{-1}(C)$, on a que $g \circ f$ est mesurable.
 \end{proof}
@@ -29,7 +29,7 @@
 
 \begin{proof}
 	Posons $\mathscr{G} = \{ B \in \mathscr{B} \, | \, f^{-1}(B) \in \mathscr{A} \}$. On a que $\mathscr{C} \subset \mathscr{G}$.
-	Montonrs qu $\mathscr{G}$ est une tribu sur $F$.
+	Montrons que $\mathscr{G}$ est une tribu sur $F$.
 	\begin{enumerate}
 		\item $f^{-1}(\emptyset) = \emptyset \in \mathscr{A}$ donc $\emptyset \in \mathscr{G}$.
 		\item Soit $B \in \mathscr{G}$, alors $f^{-1}(B^c) = (f^{-1}(B))^c \in \mathscr{A}$ donc $B^c \in \mathscr{G}$.
@@ -38,7 +38,7 @@
 		      $\bigcup\limits_{n \in \mathbb{N}} B_n \in \mathscr{G}$.
 	\end{enumerate}
 	Ainsi $\mathscr{G}$ est une tribu sur $F$ et $\mathscr{C} \subset \mathscr{G}$.
-	On a donc
+	On a donc:
 	\[ \sigma(\mathscr{B}) = \sigma(\mathscr{C}) \subset \sigma(\mathscr{G}) = \mathscr{G} \]
 	Donc $\mathscr{B} \subset \mathscr{G} \subset \mathscr{B}$, donc $\mathscr{B} = \mathscr{G}$.
 	On a donc que $f$ est mesurable.
@@ -57,12 +57,12 @@
 
 
 \begin{prop}
-	La fonction $\mathscr{1}_A : (E,\mathscr{A}) \rightarrow (\mathbb{R},\mathscr{B}(\mathbb{R}))$ est messurable si et seulement si $A \in \mathscr{A}$.
+	La fonction $\mathscr{1}_A : (E,\mathscr{A}) \rightarrow (\mathbb{R},\mathscr{B}(\mathbb{R}))$ est mesurable si et seulement si $A \in \mathscr{A}$.
 \end{prop}
 
 \begin{proof}
-	$f^{-1}(]-\infty, t] = \emptyset si t < 0, A^c si t \in [0,1[ E si t \geq 1$
-	donc $f$ messirable ssi $A^c\in \mathscr{A}$ ssi $A\in \mathscr{A}$
+	$f^{-1}(]-\infty, t] = \emptyset$ si $t < 0$, $A^c$ si $t \in [0,1[$ et $E$ si $t \geq 1$
+	donc $f$ mesurable si et seulement si $A^c\in \mathscr{A}$, si et seulement si $A\in \mathscr{A}$
 \end{proof}
 
 \begin{prop}
@@ -84,7 +84,7 @@
 
 \begin{prop}
 	Si $f$ et $g (E,\mathscr{A}) \rightarrow (F,\mathscr{B}$
-	sont mesurables, alors les foncntions suivantes sont mesurables:
+	sont mesurables, alors les fonctions suivantes sont mesurables:
 	\begin{itemize}
 		\item $f + g$
 		\item $fg$
@@ -97,7 +97,7 @@
 \begin{proof}
 	$(x,y) \mapsto x + y$
 	$(\mathbb{R}^2, \mathscr{B}(\mathbb{R}) \oplus \mathscr{B}(\mathbb{R})  \mathscr{B} \rightarrow (R,   \mathscr{B}(\mathbb{R})) $
-	est continue donc mesurable. De meme pour le reste.
+	est continue donc mesurable. De même pour le reste.
 \end{proof}
 
 
@@ -132,18 +132,18 @@
 
 
 \begin{remarque}
-	On travaillera avec $\bor(\Rbar)$, les boreliens de $\Rbar$ qui sont
+	On travaillera avec $\bor(\Rbar)$, les boréliens de $\Rbar$ qui sont
 	$$\sigma (\left\{[-\infty, a], a \in \R\right\})$$
 \end{remarque}
 
 
 \begin{remarque}
-	$\limsup a_n$ est la plus grande valeur d'adherance de la suite $a_n$, et 
-	$\liminf a_n$ est la plus petite valeur d'adherance de la suite $a_n$.
+	$\limsup a_n$ est la plus grande valeur d'adhérance de la suite $a_n$, et 
+	$\liminf a_n$ est la plus petite valeur d'adhérance de la suite $a_n$.
 \end{remarque}
 
 \begin{prop}
-	Si $f_n$ est une suite de fonction messurables
+	Si $f_n$ est une suite de fonctions mesurables
 	$$f_n (E,\triA) \rightarrow (\mathbb{R},\bor(\R))$$
 	alors les fonctions suivantes sont mesurables:
 	\begin{itemize}
@@ -164,7 +164,7 @@
 		&=& \bigcup\limits_{n\in \mathbb{N}}f_N^{-1}([-\infty, a[))\\
 		&=& \in \mathscr{A}
 	\end{eqnarray*}
-	de meme pour $\sup$
+	de même pour $\sup$
 
 	\begin{eqnarray*}
 		\liminf f_n &=& \lim\limits_{n \to \infty}\inf\limits_{k \geq n } a_k\\
