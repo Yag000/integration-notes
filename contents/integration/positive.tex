@@ -198,7 +198,7 @@ Soit  $\mathcal{E}_+$ l'ensemble des fonctions étagées positives.
 \end{proof}
 
 \begin{remarque}
-	Les fonctions données par la proposition précédente vérifient les hypothèses du théorème \ref{thm:convergence_monotone}, donc
+	Les fonctions données par la prop précédente vérifient les hypothèses du théorème \ref{thm:convergence_monotone}, donc
 	$$ \int f_n d\mu \to \int f d\mu $$
 \end{remarque}
 
@@ -217,3 +217,179 @@ Soit  $\mathcal{E}_+$ l'ensemble des fonctions étagées positives.
 		+ b \underbrace{\int g_n d\mu}_{ \text{Par } \ref{thm:convergence_monotone} \to \int g d\mu} $$
 \end{proof}
 
+
+
+\begin{prop} [TCM pour les suites ]
+	Soit $f_n$ une suite de fonctions mesurables positives.\\
+	Alors,
+	$$ \int \sum\limits_n^{\infty} f_n d\mu = \sum\limits_n^{\infty} \int f_n d\mu $$
+\end{prop}
+
+\begin{proof}
+	On regarde $S_n(x) = \sum\limits_{k=1}^n f_k(x)$ est une suite de fonctions mesurables poistives.
+	Et $S_{n+1} - S_n = f_{n+1} > 0 $ et donc $S_n$ est une suite croissante de fonctions mesurables positives.
+	D'après le \ref{thm:convergence_monotone}, on a
+	\begin{eqnarray*}
+		\int \lim\limits_{n \to \infty} S_n (x)d\mu (x)&=& \lim\limits_{n \to \infty} \int S_n(x) d\mu(x) \\
+		\int \sum\limits_{n = 1}^{\infty} S_n (x)d\mu (x)&=& \lim\limits_{n \to \infty} \int \sum\limits_{k = 1}^n S_n(x) d\mu(x) \\
+		&=& \lim\limits_{n \to \infty} \sum\limits_{k = 1}^n\int  f_k(x) d\mu(x) \\
+		&=& \sum\limits_{n = 1}^{\infty} \int  f_k(x) d\mu(x) \\
+	\end{eqnarray*}
+\end{proof}
+
+
+\begin{definition}[$\mu$-presque partout]
+	Soit $P$ une propriété sur $x \in E$ ($P(x) \in \{Vrai, Faux\}$)\\
+	On dit que $P$ es vraie $\mu$-presque partout ($\mu-pp$) si
+	$$ \left\{x \in E : P(x)  = Faux \right\} \in \triA \text{ et } \mu\left(\left\{x \in E : P(x)  = Faux \right\}\right) = 0 $$
+	ou s'il existe $B \in \triA$ tel que $\left\{ x \in E : P(x) = Faux \right\} \subset B$ et $\mu(B) = 0$
+\end{definition}
+
+\begin{definition}[mesure à densité]
+	Soit $f$ une fonction mesurable positive. \\
+	On définit $\nu\begin{aligned} %TODO: Fix this
+			\triA & \to \Rbarp                  \\
+			A     & \mapsto \begin{aligned}
+				                 & \int \1_A f d\mu \\
+				                 & = \int_A f\mu
+			                \end{aligned}\end{aligned}$
+	Alors $\nu$ est une mesure sur $(E, \triA)$ et on l'appelle mesure à densité par rapport à $\mu$.
+\end{definition}
+
+\begin{proof}
+	\begin{itemize}
+		\item L'ensemble de départ est mesurable.
+		\item $\nu(\emptyset) = \int \1_{\emptyset} f d\mu = \int 0 d \mu 0$
+		\item $A_n$ suite d'ensembles disjoints on regarde
+		      \begin{eqnarray*}
+			      \nu\left(\bigcup A_n\right) &=& \int \1_{\bigcup A_n} f d\mu \\
+			      &=& \int \left( \sum_{k=1}^{\infty} \1_{A_k} \right) f d\mu \\
+			      &=& \int \sum_{k=1}^{\infty} \1_{A_k} f d\mu \\
+			      &=& \sum_{k=1}^{\infty} \int \1_{A_k} f d\mu
+		      \end{eqnarray*}
+		      d'après le TCM pour les séries, car $\forall k \geq 1, \ \1_{A_k}f$ est mesurable positive.
+	\end{itemize}
+\end{proof}
+
+\begin{remarque} \label{rem:transfert}
+	On veut veut, pout $g$ mesurable positive, montrer que
+	$$ \int g d\nu = \int g f d\mu $$
+\end{remarque}
+
+\begin{proof}
+	\begin{itemize}
+		\item Vrai pour $\1_A$ ?
+		\item Vrai pour $g$ étagée positive ?
+		\item Vrai pour  $g$ étagée positive ?
+	\end{itemize}
+
+	\begin{itemize}
+		\item Si $g = \1_A$, avec $A \in \mathscr{F}$, alors
+		      \begin{eqnarray*}
+			      \int g d \nu &=& \int \1_A d\nu  = \nu(A) \\
+			      &=& \int \1_A f d\mu = \int g f d\mu
+		      \end{eqnarray*}
+		\item Si $g = \sum_{i=1}^n \alpha_i \1_{A_i}$, alors
+		      \begin{eqnarray*}
+			      \int g d \nu = \sum_{i=1}^n \alpha_i \1_{A_i} \nu(A_i)  &=& \sum_{i=1}^n \alpha_i \int f \1_{A_i} d \mu \\
+			      &=&\int \left(\sum_{i=1}^n \alpha_i \1_{A_i}\right) f d \mu \\
+			      &=& \int g f d \mu
+		      \end{eqnarray*}
+		\item Si $g$ est étagée positive, alors
+		      On prend $g_n \uparrow g$ une suite de fonctions étagées positives.
+		      Alors \begin{eqnarray*}
+			      \int g d \nu &=& \lim\limits_{n \to \infty} \int g_n d \nu  \text{ par le théorème \ref{thm:convergence_monotone}}\\
+			      &=& \lim\limits_{n \to \infty} \int g_n f d \mu
+		      \end{eqnarray*}
+		      On remarque que $g_n f$ est unesuite croissante de fonctions mesurables positives et donc
+		      on peut appliue le théorème \ref{thm:convergence_monotone} et donc
+		      \begin{eqnarray*}
+			      \lim\limits_{n \to \infty} \int g_n f d \mu & = & \int  \lim\limits_{n \to \infty} g_n f d \mu \\
+			      &=& \int g f d \mu
+		      \end{eqnarray*}
+	\end{itemize}
+\end{proof}
+
+\begin{example}[la normale sur $\R$] %TODO Add it
+\end{example}
+
+
+
+
+\begin{prop}[Inégalité de Markov]
+	Soit $f$ une fonction mesurable positive.
+	\begin{itemize}
+		\item Pour tout $a > 0$ on a
+		      $$ \mu\left(\left\{ x \in E : f(x) \geq a \right\}\right) \leq \frac{1}{a} \int f d\mu $$
+		\item Si $\int f d\mu < \infty$ alors $f < \infty \ \mu-pp$
+		\item $\int f d\mu = 0$ si et seulement si $f = 0 \ \mu-pp$
+		\item $f=g \ \mu-pp \rightarrow \int f d\mu = \int g d\mu$
+	\end{itemize}
+\end{prop}
+
+\begin{proof}
+	\begin{itemize}
+		\item $f > a \1_{f \geq a}$
+		      $$\int f d \mu \geq a \mu \left( \left\{ x \in E : f(x) \geq a \right\} \right) $$
+		\item $A_k = \left\{ x \in E : f(x) \geq a \right\}$
+		      On a $A_{\infty} = \bigcup_{k=0}^{\infty} A_k$ intersection décroissante.
+		      \begin{eqnarray*}
+			      \mu(A_1) &=& 1 \int f d \mu \text{ d'après  le (1)}\\
+			      &<& \infty \text{ par hypothèse}
+		      \end{eqnarray*}
+		      donc \begin{eqnarray*}
+			      \mu {A_{\infty}} &=& \lim\limits_{n \to \infty} \mu(A_n) \\
+			      \mu(A_{n} &\leq& \frac{1}{n} \int f d u
+		      \end{eqnarray*}
+
+		      Donc $\mu (An) \to 0$ et donc $\mu(A_{\infty}) = 0$.
+		\item $f= 0 \ \mu-pp \rightarrow \int f d\mu = 0$ \\%TODO add reference to separation
+		      $\leftarrow$ Soit  $f$ mesurable positive telle que $\int f d\mu = 0$.\\
+		      $B_n = \left\{ x \in E : f(x) \geq \frac{1}{n} \right\}$\\
+		      $\bigcup B_n$ est une suite croissante. \\
+		      $\bigcup\limits_{n \in \N} = \left\{ x \in E : f(x) > 0 \right\}$\\
+
+		      \begin{eqnarray*} %TODO: Add prof
+		      \end{eqnarray*}
+
+	\end{itemize}
+\end{proof}
+
+
+\begin{theorem}[Lemme de Fatou]
+	Soit $f_n$ est une suite de fonctions mesurables positives.\\
+	Alors
+	$$ \int \liminf f_n d\mu \leq \liminf \int f_n d\mu $$
+\end{theorem}
+
+\begin{proof}
+	$\liminf f_n = \lim\limits_{n \to \infty} \uparrow \inf_{k \geq n} f_k$\\
+	On regarde $g_n = \inf_{k \geq n} f_k$ est une suite croissante de fonctions mesurables positives.\\
+	Donc d'après le théorème \ref{thm:convergence_monotone}, on a
+	$$ \lim\limits_{n \to \infty} \int g_n d\mu = \int \lim\limits_{n \to \infty} g_n d\mu = \int \liminf f_n d\mu $$
+	Si $p \geq n$, alors $g_n \leq f_p$ et donc
+	$$ \int g_n d\mu \leq \int f_p d\mu $$
+	et donc
+	$$ \forall p \geq n, \int f_p d\mu \geq \int g_p d\mu $$
+	Et donc $\forall n \in \N$:
+	$$ \inf_{p \geq n} \int f_p d\mu \geq \int g_n d\mu $$
+	Et en passant à la limite, on
+	$$ \liminf \int f_n d\mu \geq \int \liminf f_n d\mu $$
+\end{proof}
+
+
+\begin{example}
+	%TODO: Add example
+\end{example}
+
+
+\begin{theorem}[Égalité Reinmann-Lebesgue sur un segment, foctions positives]
+	Soit $f$ mesurable positive:
+	$ f : ([a,b], \bor([a,b])) \to \R, \bor(\R)$
+	On suppose $f$ Reinmann intégrable sur $[a,b]$.\\
+	$$ \int_a^b f(x) dx = \int_{[a,b]} f d\lambda $$
+\end{theorem}
+
+\begin{proof} %TODO: Add proof
+
+\end{proof}
