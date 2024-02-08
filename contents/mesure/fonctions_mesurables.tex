@@ -83,7 +83,7 @@
 
 
 \begin{prop}
-	Si $f$ et $g (E,\mathscr{A}) \rightarrow (F,\mathscr{B}$
+	Si $f$ et $g (E,\mathscr{A}) \rightarrow (F,\mathscr{B})$
 	sont mesurables, alors les fonctions suivantes sont mesurables:
 	\begin{itemize}
 		\item $f + g$
@@ -108,8 +108,8 @@
 		\item $a + (+\infty) = +\infty$
 		\item
 		      $a * (+\infty) = \left\{ \begin{array}{cc}
-                      0       & \text{si} \  a = 0 \\
-                      +\infty & \text{sinon}
+				      0       & \text{si} \  a = 0 \\
+				      +\infty & \text{sinon}
 			      \end{array}\right.$
 	\end{itemize}
 \end{definition}
@@ -138,8 +138,8 @@
 
 
 \begin{remarque}
-	$\limsup a_n$ est la plus grande valeur d'adhérance de la suite $a_n$, et 
-	$\liminf a_n$ est la plus petite valeur d'adhérance de la suite $a_n$.
+	$\limsup a_n$ est la plus grande valeur d'adhérence de la suite $a_n$, et
+	$\liminf a_n$ est la plus petite valeur d'adhérence de la suite $a_n$.
 \end{remarque}
 
 \begin{prop}
@@ -147,7 +147,7 @@
 	$$f_n (E,\triA) \rightarrow (\mathbb{R},\bor(\R))$$
 	alors les fonctions suivantes sont mesurables:
 	\begin{itemize}
-        \item $\sup f_n, \quad \text{qui est} \ x\mapsto f_n(x) $
+		\item $\sup f_n, \quad \text{qui est} \ x\mapsto f_n(x) $
 		\item $\inf f_n$
 		\item $\limsup f_n$
 		\item $\liminf f_n$
@@ -156,7 +156,7 @@
 	$\lim f_n = \limsup f_n$ est mesurable. De plus $\{ x \in E, f_n(a) \ \text{converge}\}$ est mesurable.
 \end{prop}
 
-\begin{proof} %TODO: Fix this
+\begin{proof} %TODO: Fix this proof (potential -infty -infty)
 	$f(x) = \inf f_n (x)$
 	\begin{eqnarray*}
 		f^{-1}([-\infty, a[) &=& \{x \in E, \inf f_n < a\} \\
