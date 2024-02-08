@@ -343,7 +343,7 @@ Soit  $\mathcal{E}_+$ l'ensemble des fonctions étagées positives.
 		      \end{eqnarray*}
 
 		      Donc $\mu (An) \to 0$ et donc $\mu(A_{\infty}) = 0$.
-		\item $f= 0 \ \mu-pp \rightarrow \int f d\mu = 0$ \\%TODO add reference to separation
+		\item $f= 0 \ \mu-pp \rightarrow \int f d\mu = 0$ \\ %TODO: add reference to separation
 		      $\leftarrow$ Soit  $f$ mesurable positive telle que $\int f d\mu = 0$.\\
 		      $B_n = \left\{ x \in E : f(x) \geq \frac{1}{n} \right\}$\\
 		      $\bigcup B_n$ est une suite croissante. \\
@@ -378,14 +378,20 @@ Soit  $\mathcal{E}_+$ l'ensemble des fonctions étagées positives.
 \end{proof}
 
 
-\begin{example}
-	%TODO: Add example
+\begin{example} $([0,1], \bor([0,1]),\lambda)$\\
+	\begin{eqnarray*}
+		f_{2k} &=& \1_{[\frac{1}{2}, 1]}\\
+		f_{2k+1} &=& \1_{[0,\frac{1}{2}]}\\
+		\liminf f_n &=& \1_{\{\frac{1}{2}\}}\\
+		\int f_n d \lambda &=& \frac{1}{2}
+	\end{eqnarray*}
+	$$ \frac{1}{2} = \liminf \int f_n d \lambda \geq 0 $$
 \end{example}
 
 
 \begin{theorem}[Égalité Reinmann-Lebesgue sur un segment, foctions positives]
 	Soit $f$ mesurable positive:
-	$ f : ([a,b], \bor([a,b])) \to \R, \bor(\R)$
+	$ f ([a,b], \bor([a,b])) \to \R, \bor(\R)$.\\
 	On suppose $f$ Reinmann intégrable sur $[a,b]$.\\
 	$$ \int_a^b f(x) dx = \int_{[a,b]} f d\lambda $$
 \end{theorem}
