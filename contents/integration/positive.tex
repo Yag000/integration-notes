@@ -98,7 +98,7 @@ Soit  $\mathcal{E}_+$ l'ensemble des fonctions étagées positives.
 \end{remarque}
 
 
-\begin{prop}[Croissance et séparation]
+\begin{prop}[Croissance et séparation] \label{prop:croi-et-sep}
 	\begin{itemize}
 		\item Si $f,g$ mesurables positives $f \leq g$ alors $\int f d\mu \leq \int g d\mu$
 		\item Si $\mu(\left\{x : f(x) > 0\right\}) = 0$ alors $\int f d\mu = 0$
@@ -323,7 +323,7 @@ Soit  $\mathcal{E}_+$ l'ensemble des fonctions étagées positives.
 		      $$ \mu\left(\left\{ x \in E : f(x) \geq a \right\}\right) \leq \frac{1}{a} \int f d\mu $$
 		\item Si $\int f d\mu < \infty$ alors $f < \infty \ \mu-pp$
 		\item $\int f d\mu = 0$ si et seulement si $f = 0 \ \mu-pp$
-		\item $f=g \ \mu-pp \rightarrow \int f d\mu = \int g d\mu$
+		\item $f=g \ \mu-pp \implies \int f d\mu = \int g d\mu$
 	\end{itemize}
 \end{prop}
 
@@ -343,7 +343,7 @@ Soit  $\mathcal{E}_+$ l'ensemble des fonctions étagées positives.
 		      \end{eqnarray*}
 
 		      Donc $\mu (An) \to 0$ et donc $\mu(A_{\infty}) = 0$.
-		\item $f= 0 \ \mu-pp \rightarrow \int f d\mu = 0$ \\ %TODO: add reference to separation
+		\item $f= 0 \ \mu-pp \implies \int f d\mu = 0$  par  \ref{prop:croi-et-sep}.\\
 		      $\leftarrow$ Soit  $f$ mesurable positive telle que $\int f d\mu = 0$.\\
 		      $B_n = \left\{ x \in E : f(x) \geq \frac{1}{n} \right\}$\\
 		      $\bigcup B_n$ est une suite croissante. \\
