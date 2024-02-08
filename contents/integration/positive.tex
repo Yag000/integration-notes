@@ -44,9 +44,9 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 		\item $ f = \sum_{i=1}^n \alpha_i \1_{A_i} $ et $ g = \sum_{j=1}^m \alpha'_j \1_{A'_j} $
 		      On introduit $B_{ij} = A_i \cap A'_j$, $\beta_{ik} = \alpha_i$ et $\beta'_{ik} = \alpha'_k$.
 		      On a alors
-		      $$ f = \sum_{i=1}^n \sum_{j=1}^m \beta_{ij} \1_{B_{ij}} $$ % TODO: Show explicit integral
+		      $$ f = \sum_{i=1}^n \sum_{j=1}^m \beta_{ij} \1_{B_{ij}}, \ \int f \mu = \sum_{i,j} \beta_{ij} \mu(B_{ij}) $$
 		      et
-		      $$ g = \sum_{i=1}^n \sum_{j=1}^m \beta'_{ij} \1_{B_{ij}} $$ % TODO: Show explicit integral
+		      $$ g = \sum_{i=1}^n \sum_{j=1}^m \beta'_{ij} \1_{B_{ij}}, \ \int g \mu = \sum_{i,j} \beta'_{ij} \mu(B_{ij} $$
 		      On a alors
 		      \begin{eqnarray*}
 			      \int (af + bg) d\mu & = & \int \left( \sum_{i=1}^n \sum_{j=1}^m (a\beta_{ij} + b\beta'_{ij}) \1_{B_{ij}} \right) d\mu \\
@@ -245,21 +245,21 @@ Soit  $\mathcal{E}_+$ l'ensemble des fonctions étagées positives.
 	ou s'il existe $B \in \triA$ tel que $\left\{ x \in E : P(x) = Faux \right\} \subset B$ et $\mu(B) = 0$
 \end{definition}
 
-\begin{definition}[mesure à densité]
+\begin{definition}[Mesure à densité]
 	Soit $f$ une fonction mesurable positive. \\
-	On définit $\nu\begin{aligned} %TODO: Fix this
-			\triA & \to \Rbarp                  \\
-			A     & \mapsto \begin{aligned}
-				                 & \int \1_A f d\mu \\
-				                 & = \int_A f\mu
-			                \end{aligned}\end{aligned}$
+	On définit
+	\begin{eqnarray*}
+		\nu : \triA & \to &\Rbarp                  \\
+		A     & \mapsto & \int \1_A f d\mu \\
+		&& = \int_A f\mu
+	\end{eqnarray*}
 	Alors $\nu$ est une mesure sur $(E, \triA)$ et on l'appelle mesure à densité par rapport à $\mu$.
 \end{definition}
 
 \begin{proof}
 	\begin{itemize}
 		\item L'ensemble de départ est mesurable.
-		\item $\nu(\emptyset) = \int \1_{\emptyset} f d\mu = \int 0 d \mu 0$
+		\item $\nu(\emptyset) = \int \1_{\emptyset} f d\mu = \int 0 d \mu = 0$
 		\item $A_n$ suite d'ensembles disjoints on regarde
 		      \begin{eqnarray*}
 			      \nu\left(\bigcup A_n\right) &=& \int \1_{\bigcup A_n} f d\mu \\
@@ -310,7 +310,16 @@ Soit  $\mathcal{E}_+$ l'ensemble des fonctions étagées positives.
 	\end{itemize}
 \end{proof}
 
-\begin{example}[la normale sur $\R$] %TODO Add it
+\begin{example}[la normale sur $\R$]
+	(Même proba sur  $(\R, \bor(\R))$, qui est la loi de $X ~ \mathscr{N}(0,1)$)
+	\begin{eqnarray*}
+		\nu(B) = \Pro_\lambda(B) &= &\Pro(X \in B)  \\
+		&=& \int \1_B(x) \frac{1}{\sqrt{2\pi}} e^{-\frac{X^2}{2}} d \lambda(x)\\
+		&=&\int \1_B f d\lambda
+	\end{eqnarray*}
+
+	Donc $\nu$ a la même densité que $f$ par rapport à la mesure de Lebesgue:
+	$$f (x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{X^2}{2}} $$
 \end{example}
 
 
