@@ -61,9 +61,9 @@
 \end{prop}
 
 \begin{proof}
-    $f^{-1}(]-\infty, t]) = \left\{ \begin{array}{crl}
-			\emptyset & si & t < 0         \\
-			A^c       & si  &  t \in [0,1[ \\
+	$f^{-1}(]-\infty, t]) = \left\{ \begin{array}{crl}
+			\emptyset & si & t < 0       \\
+			A^c       & si & t \in [0,1[ \\
 			E         & si & t \geq 1
 		\end{array}
 		\right.$\\
@@ -71,24 +71,24 @@
 \end{proof}
 
 \begin{prop}
-	$f_1 : (E,\mathscr{A}) \rightarrow (F_1,\mathscr{B_1}$
-	$f_2 : (E,\mathscr{A})) \rightarrow (F_2,\mathscr{B_2}))$,
-	$g: (E \times E,\mathscr{A} \oplus \mathscr{A}) \rightarrow (F_1 \times F_2,\mathscr{B_1} \oplus \mathscr{B_2})$
-	$x\mapsto (f_1(x), f_2(x))$
+	$$f_1 : (E,\mathscr{A}) \rightarrow (F_1,\mathscr{B_1})$$
+	$$f_2 : (E,\mathscr{A}) \rightarrow (F_2,\mathscr{B_2})$$
+	\begin{eqnarray*}
+		g: (E \times E,\mathscr{A} \oplus \mathscr{A}) &\rightarrow& (F_1 \times F_2,\mathscr{B_1} \oplus \mathscr{B_2})\\
+		x &\mapsto& (f_1(x), f_2(x))
+	\end{eqnarray*}
 	alors $g$ est mesurable si $f_1$ et $f_2$ le sont
 \end{prop}
 
 \begin{proof}
-	$\mathscr{B_1} \oplus \mathscr{B_2} = \sigma \left\{ B_1 \times B_2, B_1 \in \mathscr{B_1}, B_2 \in \mathscr{B_2} \right\}...$
-	$g^{-1}(B_1 \times B_2) = {x \in E, f_1(x) \in B_1 et f_2(x) \in B_2  }$
-	$f_1^{-1}(B_1) \cap f_2{-1}(B_2)$
+	$$\mathscr{B_1} \oplus \mathscr{B_2} = \sigma \left\{ B_1 \times B_2, B_1 \in \mathscr{B_1}, B_2 \in \mathscr{B_2} \right\}$$
+	$$g^{-1}(B_1 \times B_2) = {x \in E, f_1(x) \in B_1 et f_2(x) \in B_2  }$$
+	$$ \underbrace{f_1^{-1}(B_1)}_{\in \triA \text{ car } f_1 \text{ mesurable}} \cap \underbrace{f_2^{-1}(B_2)}_{\in \triA \text{ car } f_2 \text{ mesurable}}$$
 	donc $g^{-1}(B_1 \times B_2) \in \mathscr{A}$
 \end{proof}
 
-
-
 \begin{prop}
-	Si $f$ et $g (E,\mathscr{A}) \rightarrow (F,\mathscr{B})$
+	Si $f$ et $g (E,\triA) \rightarrow (F,\B)$
 	sont mesurables, alors les fonctions suivantes sont mesurables:
 	\begin{itemize}
 		\item $f + g$
@@ -100,19 +100,21 @@
 \end{prop}
 
 \begin{proof}
-	$(x,y) \mapsto x + y$
-	$(\mathbb{R}^2, \mathscr{B}(\mathbb{R}) \oplus \mathscr{B}(\mathbb{R})  \mathscr{B} \rightarrow (R,   \mathscr{B}(\mathbb{R})) $
+	\begin{eqnarray*}
+		(\R^2, \bor(\R) \oplus \bor(\R))   &\rightarrow& (\bor(\R), \bor(\R)) \\
+		(x,y) &\mapsto& x + y
+	\end{eqnarray*}
 	est continue donc mesurable. De même pour le reste.
 \end{proof}
 
 
 \begin{definition}
 	On note $\Rbar = \R \cup \{ -\infty, \infty \}$ et $\Rbarp = \R^+ \cup \{  +\infty \}$\\
-	Dans $\Rbarp , \, \forall a \in \Rbarp: $\\
+	Dans $\Rbarp , \, \forall a \in \Rbarp: $
 	\begin{itemize}
 		\item $a + (+\infty) = +\infty$
 		\item
-		      $a * (+\infty) = \left\{ \begin{array}{cc}
+		      $a \cdot (+\infty) = \left\{ \begin{array}{cc}
 				      0       & \text{si} \  a = 0 \\
 				      +\infty & \text{sinon}
 			      \end{array}\right.$
@@ -152,7 +154,7 @@
 	$$f_n (E,\triA) \rightarrow (\mathbb{R},\bor(\R))$$
 	alors les fonctions suivantes sont mesurables:
 	\begin{itemize}
-		\item $\sup f_n, \quad \text{qui est} \ x\mapsto f_n(x) $
+		\item $\sup f_n, \quad \text{qui est} \ x\mapsto \sup f_n(x) $
 		\item $\inf f_n$
 		\item $\limsup f_n$
 		\item $\liminf f_n$
@@ -161,26 +163,29 @@
 	$\lim f_n = \limsup f_n$ est mesurable. De plus $\{ x \in E, f_n(a) \ \text{converge}\}$ est mesurable.
 \end{prop}
 
-\begin{proof} %TODO: Fix this proof (potential -infty -infty)
-	$f(x) = \inf f_n (x)$
-	\begin{eqnarray*}
-		f^{-1}([-\infty, a[) &=& \{x \in E, \inf f_n < a\} \\
-		&=& \{x \in E, \exists N \in \mathbb{N}, f_N (x) < a \}\\
-		&=& \bigcup\limits_{n\in \mathbb{N}}f_N^{-1}([-\infty, a[))\\
-		&=& \in \mathscr{A}
-	\end{eqnarray*}
-	de même pour $\sup$
+\begin{proof}
+	\begin{itemize}
+		\item $f(x) = \inf f_n (x)$
+		      \begin{eqnarray*}
+			      f^{-1}([-\infty, a[) &=& \{x \in E, \inf f_n < a\} \\
+			      &=& \{x \in E, \exists N \in \mathbb{N}, f_N (x) < a \}\\
+			      &=& \bigcup\limits_{N\in \mathbb{N}}f_N^{-1}([-\infty, a[))\\
+			      &\in& \mathscr{A}
+		      \end{eqnarray*}
+		      de même pour $\sup$
+		\item \begin{eqnarray*}
+			      \liminf f_n &=& \lim\limits_{n \to \infty}\uparrow \inf\limits_{k \geq n } a_k\\
+			      &=& \sup _{n\in N} \inf_{k \geq k} f_n\\
+			      &\in& \mathscr{A}
+		      \end{eqnarray*}
 
-	\begin{eqnarray*}
-		\liminf f_n &=& \lim\limits_{n \to \infty}\inf\limits_{k \geq n } a_k\\
-		&=& \sup _{n\in N} \inf_{k \geq k} f_n\\
-		&=& \in \mathscr{A}
-	\end{eqnarray*}
+		      donc $\liminf$ et $\limsup$ sont mesurables.
+		\item
+		      %TODO: Fix this proof (potential -infty + infty)
+		      \begin{eqnarray*}
+			      \{x \in E, f_n \  \text{converge} \}  &=& (\liminf f_n - \limsup f_n)^{-1}(\{0\})\\
+		      \end{eqnarray*}
+		      et $\{ 0 \} \in \bor(\R)$ donc $\left\{ f_n \in E, f_n(x) \ \text{converge} \ \right\} \in \mathscr{A}$.
+	\end{itemize}
 
-	donc $\liminf$ et $\limsup$ sont mesurables.
-
-	\begin{eqnarray*}
-		\{x \in E, f_n \  \text{converge} \}  &=& (\liminf f_n - \limsup f_n)^{-1}(\{0\})\\
-	\end{eqnarray*}
-	et $\{ 0 \} \in \bor(\R)$ donc $\left\{ f_n \in E, f_n(x) \ \text{converge} \ \right\} \in \mathscr{A}$.
 \end{proof}
