@@ -1,8 +1,8 @@
 \subsection{Fonctions mesurables}
 
 \begin{definition}
-	Soient $(E, \mathscr{A})$ et $(F, \mathscr{B})$ deux espaces mesurables. Une fonction $f: E \to F$ est dite mesurable si
-	$f^{-1}(B) \in \mathscr{A}$ pour tout $B \in \mathscr{B}$.
+	Soient $(E, \mathscr{A})$ et $(F, \mathscr{B})$ deux espaces mesurables.\\
+	Une fonction $f: E \to F$ est dite mesurable si $f^{-1}(B) \in \mathscr{A}$ pour tout $B \in \mathscr{B}$.\\
 	Dans le cas où $E$ et $F$ sont munis de leur tribus boréliennes (si elles existent), on dit que $f$ est borélienne.
 \end{definition}
 
@@ -46,7 +46,7 @@
 
 
 \begin{example}[Application]
-	Si $F, \mathscr{B}) = (\mathbb{R}, \mathscr{B}(\mathbb{R}))$, on peut prendre $\mathscr{C} = \{ ]-\infty,\   t[ \, | \, t \in \mathbb{R} \}$. On a que
+	Si $(F, \mathscr{B}) = (\mathbb{R}, \mathscr{B}(\mathbb{R}))$, on peut prendre $\mathscr{C} = \{ ]-\infty,\   t[ \, | \, t \in \mathbb{R} \}$. On a que
 				$\sigma(\mathscr{C}) = \mathscr{B}(\mathbb{R})$. Et donc il suffit d'étudier la mesurabilité de $f^{-1}(]-\infty, t[)$.
 \end{example}
 
@@ -57,11 +57,16 @@
 
 
 \begin{prop}
-	La fonction $\mathscr{1}_A : (E,\mathscr{A}) \rightarrow (\mathbb{R},\mathscr{B}(\mathbb{R}))$ est mesurable si et seulement si $A \in \mathscr{A}$.
+	La fonction $\1_A : (E,\mathscr{A}) \rightarrow (\mathbb{R},\mathscr{B}(\mathbb{R}))$ est mesurable si et seulement si $A \in \mathscr{A}$.
 \end{prop}
 
 \begin{proof}
-	$f^{-1}(]-\infty, t] = \emptyset$ si $t < 0$, $A^c$ si $t \in [0,1[$ et $E$ si $t \geq 1$
+    $f^{-1}(]-\infty, t]) = \left\{ \begin{array}{crl}
+			\emptyset & si & t < 0         \\
+			A^c       & si  &  t \in [0,1[ \\
+			E         & si & t \geq 1
+		\end{array}
+		\right.$\\
 	donc $f$ mesurable si et seulement si $A^c\in \mathscr{A}$, si et seulement si $A\in \mathscr{A}$
 \end{proof}
 
