@@ -1,0 +1,106 @@
+\subsection{Fonctions intégrables}
+
+On travaille sur $(E, \triA, \mu)$.
+
+\begin{definition}
+	Soit $f$ mesurable, $f : (E, \triA) \to (\R, \bor(\R))$.\\
+	On dit que $f$ est intégrable par rapport à $\mu$ si :
+	$$\int f^+ d\mu < +\infty \text{ et } \int f^- d\mu < +\infty$$
+	où $f^+ = \max(f,0)$ et $f^- = -\min(f,0)$.
+	On définit alors
+	$$ \int f d\mu = \int f^+ d\mu - \int f^- d\mu $$
+\end{definition}
+
+\begin{remarque}
+	De façon équivalente, on dit que $f$ est intégrable si
+	$$ \in |f| d\mu < +\infty$$
+\end{remarque}
+
+\begin{remarque}
+	$$ f = f^+ - f^- $$
+	$$ |f| = f^+ + f^- $$
+\end{remarque}
+
+\begin{remarque}
+	$f^+$ et $f^-$ sont mesurables positives, donc $\int f^+d\mu$ et $\int f^- d\mu$ et définie.
+\end{remarque}
+
+\begin{remarque}
+	SI $f \geq 0$ on retrouve bin la définition originale.
+\end{remarque}
+
+\begin{remarque}
+	Par contre si $\int f^+ d\mu = +\infty$ on di que $f$ n'est pas intégrable même si elle est positive.
+\end{remarque}
+
+
+\begin{definition}
+	On note $\Li$ l'espace des fonctions intégrables.
+\end{definition}
+
+\begin{prop}[Propriétés de l'intégrale]
+	\begin{itemize}
+		\item Inégalité triangulaire. $\left| \int f d\mu \right| \leq \int |f| d \mu$.
+		\item Linéarité: $\Li$ est un espace vectoriel.
+		\item Croissance: si $f,g \in \Li$ et $f\leq g$ alors $\int f d\mu \leq \int g d\mu$
+		\item Si $f,g \in \Li$ $f = g \mu-$pp alors $\int f d\mu = \int g d\mu$.
+	\end{itemize}
+\end{prop}
+
+\begin{proof}
+	\begin{itemize}
+		\item  \begin{eqnarray*}
+			      |\int f d\mu| &=& \left|\int f^+ d\mu - \int f^- d\mu \right| \\
+			      &\leq& \left|\int f^+ d\mu \right| + \left|\int f^- d\mu \right| \\
+			      &\leq& \int f^+ d\mu + \int f^- d\mu  \\
+			      \text{linéarité fonctions positives } &\leq& \int f^+ f^- d\mu  \\
+			      &\leq& \int |f| d\mu
+		      \end{eqnarray*}
+		\item %TODO
+		\item $f \leq g$, $g = f + (g-f)$
+		      $$\int g d\mu = \int f d\mu + \int (g-f) d \mu$$
+		      Or $(g-f)^- = 0$, donc $\int (g-f) d\mu > 0$.
+		      Donc $\int f d\mu \leq \int g d\mu$.
+		\item Si $f = g$ $\mu$-pp, alors $f^+ = g^+$ $\mu$-pp et $f^- = g^-$ $\mu$-pp.\\
+		      Donc $\int f d\mu = \int f^+ \mu + \int f^-  d\mu = \int g^+ \mu + \int g^-  d\mu = \int g d\mu$
+	\end{itemize}
+\end{proof}
+
+\begin{definition}[Intégrale des fonctions complexes]
+	$$ F: (E, \triA) \to (\C, \bor(\C)) \text{ mesurable.}$$
+	Ce qui est équivalent a dire que $Re(f)$ et $Im(f)$ sont mesurables.\\
+	On dit que $f$ est intégrable et on note
+	$$ f\in \LiC$$
+	si $$\int |f| d\mu < +\infty$$
+	On pose
+	$$ \int f = \int Re(f) d\mu + \int Im(f) d\mu $$
+\end{definition}
+
+
+\begin{prop}
+	\begin{itemize}
+		\item Inégalité triangulaire. $\left| \int f d\mu \right| \leq \int |f| d \mu$.
+		\item Linéarité: $\LiC$ est un espace vectoriel.
+		\item Si $f,g \in \Li$ $f = g \mu-$pp alors $\int f d\mu = \int g d\mu$.
+	\end{itemize}
+\end{prop}
+
+
+\begin{proof}
+	\begin{itemize}
+		\item $$\forall b \in \C, \ |b| = \sup_{a_1, a_2 \in \R \\ a_1^2 + a_2^2 = 1 } a_1 Re(b) + a_2 Im(b)$$
+		      % TODO
+		\item
+	\end{itemize}
+\end{proof}
+
+
+
+\begin{theorem}[Convergence dominée]
+	Soit $f_n$ une suite de fonctions dans $\Li$ avec:
+	\begin{itemize}
+		\item $f_n \to f, \ \mu-$pp.
+		\item %TODO
+	\end{itemize}
+\end{theorem}
+
