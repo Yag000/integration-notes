@@ -4,10 +4,10 @@
 On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 
 \begin{definition}[Fonction étagée]
-	Soit $f: E, \triA \to \R, \bor(\R)$ une fonction mesurable. On dit que $f$ est une fonction étagée
+	Soit $f: (E, \triA) \to (\R, \bor(\R))$ une fonction mesurable. On dit que $f$ est une fonction étagée
 	si elle prend un nombre fini de valeurs.
 	Si $\alpha_1, \dots, \alpha_n$ sont les valeurs prises par $f$, on note
-	$A_i = f^{-1}(\{\alpha_1\})$ et on a
+	$A_i = f^{-1}(\{\alpha_i\})$ et on a
 	$$ f = \sum_{i=1}^n \alpha_i \1_{A_i} $$
 	on dit que c'est l'écriture canonique de $f$.
 \end{definition}
@@ -67,7 +67,7 @@ Soit  $\mathcal{E}_+$ l'ensemble des fonctions étagées positives.
 
 
 \begin{definition}[Intégrale d'une fonction mesurable positive]
-	Soit $f: E, \triA \to \Rbarp, \bor(\Rbarp)$ une fonction mesurable positive.
+	Soit $f: (E, \triA) \to (\Rbarp, \bor(\Rbarp))$ une fonction mesurable positive.
 	On définit
 	$$ \int f d\mu = \sup\limits_{\substack{g \in \mathcal{E}_+ \\ g \leq f}} \int g d\mu $$
 \end{definition}
@@ -240,7 +240,7 @@ Soit  $\mathcal{E}_+$ l'ensemble des fonctions étagées positives.
 
 \begin{definition}[$\mu$-presque partout]
 	Soit $P$ une propriété sur $x \in E$ ($P(x) \in \{Vrai, Faux\}$)\\
-	On dit que $P$ es vraie $\mu$-presque partout ($\mu-pp$) si
+	On dit que $P$ est vraie $\mu$-presque partout ($\mu-pp$) si
 	$$ \left\{x \in E : P(x)  = Faux \right\} \in \triA \text{ et } \mu\left(\left\{x \in E : P(x)  = Faux \right\}\right) = 0 $$
 	ou s'il existe $B \in \triA$ tel que $\left\{ x \in E : P(x) = Faux \right\} \subset B$ et $\mu(B) = 0$
 \end{definition}
