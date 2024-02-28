@@ -1,0 +1,65 @@
+\subsection{Espace produit, tribu produit}
+
+
+
+\begin{definition}[Tribu produit]
+	Soient $(E,\triA)$ et $(F,\triB)$ deux espaces mesurables on dñefinit la tribu produit.
+	$$\triA \xor \triB = \sigma \left(\left\{ A \times B \mid A\in \triA, B \in \triB \right\}\right)$$º
+\end{definition}
+
+\begin{remarque}
+	Les ensembles de type $A\times B, A\in \triA, B\in\triB$ sont appelés rectangles ou pavés mesurables.
+\end{remarque}
+
+
+
+\begin{definition}
+	On étend la définition à $n$ tribus:
+
+	$$\triA_1 \xor \dots \xor \triA_n = \sigma \left(\left\{ A_0 \times \dots \times A_n \mid A_0\in \triA_0, \dots , A_n \in \triA_n \right\}\right)$$
+
+	Cette définition est associative.
+\end{definition}
+
+\begin{prop}
+	$\bor(\R^2) = \bor(\R) \xor \bor(\R)$
+\end{prop}
+
+\begin{proof}
+	% TODO
+\end{proof}
+
+\begin{notation}
+	Pour $C \subset E \times F$, on note:
+	$$ C_x = \left\{ y \in F \mid (x,y) \in C \right\} $$
+	$$ C^y = \left\{ x \in E \mid (x,y) \in C \right\} $$
+	Pour $f: E \times F \to G$:
+	$$f_x(y) = f(x,y) \quad (\1_C)_x = \1_{C_x}$$
+	$$f^y(x) = f(x,y) \quad (\1_C)^y = \1_{C^y} $$
+\end{notation}
+
+\begin{prop}
+	\begin{itemize}
+		\item Si $c \in \triA \xor \triB$, alors
+		      $$\forall x \in E,\ C_x \in \triB$$
+		      $$\forall y \in F,\ C_y \in \triA$$
+		\item Soit $f (E\times F, \triA \xor \triB) \to (C, \triC)$ mesurable alors:
+		      $$\forall x \in E, \ f_x (F, \triB)  \to (C, \triC) \text{ mesurable}$$
+		      $$\forall y \in F, \ f_y (E, \triB)  \to (C, \triC) \text{ mesurable}$$
+	\end{itemize}
+\end{prop}
+
+
+\begin{proof}
+	\begin{itemize}
+		\item Soit $x \in E$ montrons que $\forall C \in \triA \xor \triB \ C_x \in \triB$.$\forall C \in \triA \xor \triB \ C_x \in \triB$.\\
+		      On regarde $\triT = \left\{ C \in \triA \times  \triB , C_x \in \triB \right\}$ et montrons que c'est une tribu:
+		      \begin{itemize}
+			      \item $\emptyset_x = \emptyset \in \triB$
+			      \item Soit $C$ tel que $C_x \in \triB $ %TODO
+		      \end{itemize}
+
+	\end{itemize}
+\end{proof}
+
+

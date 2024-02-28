@@ -1,0 +1,75 @@
+\subsection{Intégrales dépendant d'un paramètre}
+
+\begin{theorem}[Continuité sous le signe intégrale]
+	Soit $f : U \times E \to \R$ où $(U,D)$ est un espace métrique.\\
+	On suppose:
+	\begin{itemize}
+		\item $\forall u \in U,\ f (u, \dot) : (E, \triA) \to (\R, \bor(\R))$ mesurable.
+		\item $\mu-pp$ (en $x$) $f(\dot, x) : U  \to \R$ est continue en $u_0 \in U$.
+		\item Il existe $g$ intégrable telle que
+		      $$\forall u \in U, \ \left| f(u,x) \right| \leq g(x) \mu-pp \text{ en } x$$
+	\end{itemize}
+	Alors la fonction
+	$$F (u) = \int f(u,x) d\mu(x)$$
+	est bien définie pour tout $u \in U$ et elle est continue en $u_0 \in U$.
+\end{theorem}
+
+
+\begin{proof}
+	Il faut montrer que si $u_n$ et une suite avec $u_n \to u_0, \ n > 0$, alors $F(u_n) \to F(u_0)$.\\
+	%TODO: remark about F being well defined
+	Posons $f_n(x) = f(u_n,x)$ et $f_n(x) \to f(u_0,x)$.\\
+	$$|f_n(x)|= |f(u_n, x)| \leq g(x) \mu-pp$$
+	D'après le TCD , $\int f_n(x)d\mu(x) \to  \int f(u_0, x)d\mu(x)$ %TODO add ref and braces to say it's F
+\end{proof}
+
+\begin{example}
+	%TODO
+\end{example}
+
+
+
+\begin{theorem}[Dérivation sous le signe intégrale]
+	On suppose que $U = I$ est un intervalle ouvert de $\R$
+	$$ f: I\times E \to \R$$
+	\begin{itemize}
+		\item $\forall u \in I, \ fu, \dot) \in \Li_R(E,\triA, \mu)$
+		\item $\mu-pp u \ \mapsto f(u,x)$ est dérivable en $u_0 \in I$ de dérivée $\diffp{f}{u} (u_0, x)$.
+		\item Il existe $g\in \Li$ telle que
+		      $$ \forall u\in I |f(u,x) - f(u_0,x)| \leq g(x)|u-u_0| \mu-pp$$
+	\end{itemize}
+
+	Alors $F(u) = \int f(u,x)d\mu$ est dérivable a point $u_0$ et sa dérivée est $F'(u_0) = \int \diffp{f}{u}(u_0,x)d\mu(x)$
+	%TODO: Add remark
+\end{theorem}
+
+\begin{proof}
+	Soit $u_n \to u_0, \ n > 0, \ u_n \neq u_0$. \\
+	On regarde
+	\begin{eqnarray*}
+		\frac{F(u_n)-F(u_0)}{u_n-u_0} &=& \frac{1}{u_n-u_0} \int f(u_n,x) -(u_0,x)df\mu(x) \\
+		&=& \int \frac{f(u_n,x) - f(u_0,x)}{u_n-u_0}d\mu(x)
+	\end{eqnarray*}
+	\begin{itemize}
+		\item $\frac{f(u_n,x)- f(u_0,x)}{u_n-u_0} \to \diffp{f}{u}(u_0,x)$
+		\item $\left|\frac{f(u_n,x)- f(u_0,x)}{u_n-u_0} \right| \leq g(x)$
+	\end{itemize}
+	Donc d'apres le TCD on a %TDOD: Add ref
+	$$ \frac{F(u_n)- F(u_0)}{u_n-u_0} \to \int \diffp{f}{u}(u_0,x) d\mu(x)$$
+
+	%TODO Add new theorem version and remarks
+\end{proof}
+
+
+\begin{example}[Trasformation de Fourier]
+	Si $\phi \in \Li$ on définie sa transformée de Fourier:
+	$\hat{\phi} = \int e^{iux}\phi(x) d\lambda(x)$
+	alors $\hat{\phi}$ est bien définie dans $\R$ et continue (par le théorème de continuité sous le signe intégrale).\\
+	Si de plus on a $\int |x\phi(x)|d\lambda(x)<\infty$ alors $\hat{\phi}$ est dérivable sur $\R$ de dérivée:
+	$$\hat{\phi}'(x)= \int ixe^{iux}\phi(x)d\lambda(x)$$
+	%TODO add proof
+\end{example}
+
+
+
+
