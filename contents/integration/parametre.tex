@@ -88,7 +88,7 @@
 	\begin{itemize}
 		\item $\mu-pp u \ \mapsto f(u,x)$ est dérivable sur $I$.
 		\item Il existe $g\in \Li$ telle que
-		      $$ \forall u\in I |\diffp{f}{u}(u,x)| \leq g(x) \mu-pp$$
+		      $$ \forall u\in I \left|\diffp{f}{u}(u,x)\right| \leq g(x) \mu-pp$$
 		      Ceci implique , par le théorème des accroissements finis, la majoration de l'hypothèse 3.
 	\end{itemize}
 	et dans e cas on a que $F$ est dérivable sur $I$ tout entier.
@@ -110,4 +110,16 @@
 
 
 
+\begin{theorem}[Régularité $C^k$ sous le signe intégrale]
+	Soit $f: I \times E \to \R$ où $I$ est un intervalle ouvert de $\R$\\
 
+	\begin{itemize}
+		\item $\forall u \in I, \ f(u,\cdot) \in \Li(E,\triA,\mu)$
+		\item $\mu-pp u \ \mapsto f(u,x)$ est $C^k$ sur $I$.
+		\item Il existe $g_k\in \Li$ telle que
+		      $$ \forall u\in I \left|\diffp[i]{f}{u}(u,x)\right| \leq g_k(x) \mu-pp$$
+	\end{itemize}
+
+	Alors $F(u) = \int f(u,x)d\mu$ est $C^k$ sur $I$, avec $F^{(i)}(u) = \int \diffp[i]{f}{u}(u,x)d\mu(x)$
+
+\end{theorem}
