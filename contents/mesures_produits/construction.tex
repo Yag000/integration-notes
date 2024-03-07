@@ -1,0 +1,34 @@
+\subsection{Construction de la mesure produit}
+
+\begin{theorem}
+	Soient $\mu$ et $\nu$ deux mesures $\sigma$-finies sur $(E, \triA)$ et $(F, \triB)$ respectivement.
+
+	\begin{itemize}
+		\item Il existe ne unique mesure $\sigma$-finie sur ($E \times F, \triA \xor \triB)$ telle que $\forall A \in \triA, B \in \triB, \mu \xor \nu(A \times B) = \mu(A) \nu(B)$.
+		\item $\forall C \in \triA \xor \triB. $
+		      $$ \mu \xor \nu(C) = \int \nu(C_x) d \mu(x) = \int_F \mu(C^y) d \nu(y) $$
+	\end{itemize}
+\end{theorem}
+
+\begin{proof}
+	%TODO: It's really long, idk if it's worth it. If someone wants to do it, go ahead.
+\end{proof}
+
+\begin{remarque}
+	On peu itérer $\mu_1 \xor \mu_2 \xor \dots \xor \mu_n = \mu_1 \xor (\mu_2 \xor (\dots \xor \mu_{n-1} \xor \mu_n))$ et c'est associatif.
+	$$ \mu_1 \xor \mu_2 \xor \dots \xor \mu_n(A_1 \times \dots \times A_n) = \prod_{i=1}^n \mu_i(A_i) $$
+\end{remarque}
+
+
+\begin{example}
+	La mesure de Lebesgue sur $\R^n$ est le produit des mesures de Lebesgue sur $\R$:
+
+	$$\lambda_n = \underbrace{\lambda \xor \dots \xor \lambda}_{n \text{ fois}}$$
+	et elle vérifie:
+	$$\lambda_n([a_1, b_1] \times \dots \times [a_n, b_n]) = \prod_{i=1}^n (b_i - a_i)$$
+\end{example}
+
+\begin{remarque}
+	Si $X \indep Y$, alors $\mathbb{P}_{X,Y} = \mathbb{P}_X \xor \mathbb{P}_Y$.
+	%TODO: Add random probability stuff
+\end{remarque}
