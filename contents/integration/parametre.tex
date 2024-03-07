@@ -4,8 +4,8 @@
 	Soit $f : U \times E \to \R$ où $(U,D)$ est un espace métrique.\\
 	On suppose:
 	\begin{itemize}
-		\item $\forall u \in U,\ f (u, \dot) : (E, \triA) \to (\R, \bor(\R))$ mesurable.
-		\item $\mu-pp$ (en $x$) $f(\dot, x) : U  \to \R$ est continue en $u_0 \in U$.
+		\item $\forall u \in U,\ f (u, \cdot) : (E, \triA) \to (\R, \bor(\R))$ mesurable.
+		\item $\mu-pp$ (en $x$) $f(\cdot, x) : U  \to \R$ est continue en $u_0 \in U$.
 		\item Il existe $g$ intégrable telle que
 		      $$\forall u \in U, \ \left| f(u,x) \right| \leq g(x) \mu-pp \text{ en } x$$
 	\end{itemize}
@@ -17,31 +17,55 @@
 
 \begin{proof}
 	Il faut montrer que si $u_n$ et une suite avec $u_n \to u_0, \ n > 0$, alors $F(u_n) \to F(u_0)$.\\
-	%TODO: remark about F being well defined
+	F est bien définie car $\forall u \in U, f(u,\cdot)$ mesurable et $|f(u,\cdot)| \leq g(\cdot)$ qui est intégrable.\\
+
 	Posons $f_n(x) = f(u_n,x)$ et $f_n(x) \to f(u_0,x)$.\\
 	$$|f_n(x)|= |f(u_n, x)| \leq g(x) \mu-pp$$
-	D'après le TCD , $\int f_n(x)d\mu(x) \to  \int f(u_0, x)d\mu(x)$ %TODO add ref and braces to say it's F
+	D'après le TCD , $\underbrace{\int f_n(x)d\mu(x)}_{=F(u_n)} \to  \underbrace{\int f(u_0, x)d\mu(x)}_{= F(u_0)}$
 \end{proof}
 
 \begin{example}
-	%TODO
+	Soit $\mu$ une mesure diffuse sur $(\R, \bor(\R))$ et $\phi \in \Li(\R, \bor(\R), \mu)$.
+	On définit \begin{eqnarray*}
+		F(u) &=&  \int_{]-\infty, u]} \phi(x)d\mu(x)\\
+		& = & \int \phi \1_{]-\infty, u]}(x)d\mu(x)
+	\end{eqnarray*}
+	alors $F$ est continue.
+
+	\begin{proof}
+		On pose $f(u,x) = \phi(x)\1_{]-\infty, u]}(x)$
+		Il suffit de vérifier que $f(\cdot, x)$ est continue et qu'elle est dominée. Le reste est trivial: \\
+		\begin{itemize}
+			\item $u \mapsto f(u,x) = \left\{
+				      \begin{array}{l}
+					      \phi(x) \text{ si } u \geq x \\
+					      0 \text{ sinon}
+				      \end{array}
+				      \right.$ \\
+			      est continue en $\R\setminus\{x\}$. Comme $\mu$ est diffuse, $\mu \{x\} = 0$ et donc $f(\cdot, x)$ est continue $\mu-pp$.
+			\item $|f(u,x)| = |\phi(x)\1_{]-\infty, u]}(x)| \leq |\phi(x)|$ qui est intégrable.
+		\end{itemize}
+	\end{proof}
 \end{example}
 
 
-
 \begin{theorem}[Dérivation sous le signe intégrale]
-	On suppose que $U = I$ est un intervalle ouvert de $\R$
+	On suppose que $U = I$ est un intervalle ouvert de $\R$ et $u_0 \in I$.\\
 	$$ f: I\times E \to \R$$
 	\begin{itemize}
-		\item $\forall u \in I, \ fu, \dot) \in \Li_R(E,\triA, \mu)$
+		\item $\forall u \in I, \ fu, \cdot) \in \Li_R(E,\triA, \mu)$
 		\item $\mu-pp u \ \mapsto f(u,x)$ est dérivable en $u_0 \in I$ de dérivée $\diffp{f}{u} (u_0, x)$.
 		\item Il existe $g\in \Li$ telle que
 		      $$ \forall u\in I |f(u,x) - f(u_0,x)| \leq g(x)|u-u_0| \mu-pp$$
 	\end{itemize}
 
 	Alors $F(u) = \int f(u,x)d\mu$ est dérivable a point $u_0$ et sa dérivée est $F'(u_0) = \int \diffp{f}{u}(u_0,x)d\mu(x)$
-	%TODO: Add remark
 \end{theorem}
+
+\begin{remarque}
+	La fonction $\diffp{f}{u}(u_0,\cdot)$ n'est définie que $\mu-pp$. Il suffit de
+	la prolonger n'importe comment et cela suffit a définir $\int \diffp{f}{u}(u_0,x)d\mu(x)$.
+\end{remarque}
 
 \begin{proof}
 	Soit $u_n \to u_0, \ n > 0, \ u_n \neq u_0$. \\
@@ -54,14 +78,28 @@
 		\item $\frac{f(u_n,x)- f(u_0,x)}{u_n-u_0} \to \diffp{f}{u}(u_0,x)$
 		\item $\left|\frac{f(u_n,x)- f(u_0,x)}{u_n-u_0} \right| \leq g(x)$
 	\end{itemize}
-	Donc d'apres le TCD on a %TDOD: Add ref
+	Donc d'après le TCD on a %TDOD: Add ref
 	$$ \frac{F(u_n)- F(u_0)}{u_n-u_0} \to \int \diffp{f}{u}(u_0,x) d\mu(x)$$
 
-	%TODO Add new theorem version and remarks
 \end{proof}
 
+\begin{remarque}
+	On peu changer les hypothèses 2 et 3 pour avoir une forme plus pratique:
+	\begin{itemize}
+		\item $\mu-pp u \ \mapsto f(u,x)$ est dérivable sur $I$.
+		\item Il existe $g\in \Li$ telle que
+		      $$ \forall u\in I |\diffp{f}{u}(u,x)| \leq g(x) \mu-pp$$
+		      Ceci implique , par le théorème des accroissements finis, la majoration de l'hypothèse 3.
+	\end{itemize}
+	et dans e cas on a que $F$ est dérivable sur $I$ tout entier.
+\end{remarque}
 
-\begin{example}[Trasformation de Fourier]
+\begin{remarque}
+	Si $f$ est à valeurs complexes cela marche aussi.
+\end{remarque}
+
+
+\begin{example}[Trasformée de Fourier]
 	Si $\phi \in \Li$ on définie sa transformée de Fourier:
 	$\hat{\phi} = \int e^{iux}\phi(x) d\lambda(x)$
 	alors $\hat{\phi}$ est bien définie dans $\R$ et continue (par le théorème de continuité sous le signe intégrale).\\
