@@ -1,0 +1,18 @@
+\subsection{Les théorèmes de Fubini}
+
+\begin{theorem}[Fubini-Tonelli]
+	Soient $\mu$ et $\nu$ deux mesures finies sur $(E, \triA)$ et $(F, \triB)$ respectivement.
+	Soit $f: (E \times F, \triA \xor \triB) \to ([0, +\infty], \mathcal{B}([0, +\infty]))$ une fonction mesurable.
+
+	\begin{itemize}
+		\item Les fonctions :
+		      $$ x \mapsto \int f(x, y) d \nu(y)$$
+		      $$ y \mapsto \int f(x, y) d \mu(x)$$
+		      sont respectivement $\triA$ et $\triB$ mesurables.
+		\item On a :
+		      \begin{eqnarray*}
+			      \int_{E \times F} f d(\mu \xor \nu) & = & \int_E  \int_F f(x, y) d \nu(y) d \mu(x) \\
+			      & = & \int_F  \int_E f(x, y) d \mu(x) d \nu(y)
+		      \end{eqnarray*}
+	\end{itemize}
+\end{theorem}
