@@ -9,7 +9,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 	Si $\alpha_1, \dots, \alpha_n$ sont les valeurs prises par $f$, on note
 	$A_i = f^{-1}(\{\alpha_i\})$ et on a
 	$$ f = \sum_{i=1}^n \alpha_i \1_{A_i} $$
-	on dit que c'est l'écriture canonique de $f$.
+	on dit que c'est \textbf{l'écriture canonique} de $f$.
 \end{definition}
 
 \begin{remarque}
@@ -394,21 +394,17 @@ Soit  $\mathcal{E}_+$ l'ensemble des fonctions étagées positives.
 		\liminf f_n &=& \1_{\{\frac{1}{2}\}}\\
 		\int f_n d \lambda &=& \frac{1}{2}
 	\end{eqnarray*}
-	$$ \frac{1}{2} = \liminf \int f_n d \lambda \geq \int \liminf f_n d \lambda = 0 $$
+	$$ 0 = \int \liminf f_n d \lambda \leq \liminf \int f_n d \lambda = \frac{1}{2} $$
 \end{example}
 
 
-\begin{theorem}[Égalité Reinmann-Lebesgue sur un segment, fonctions positives]
+\begin{theorem}[Égalité Rienmann-Lebesgue sur un segment, fonctions positives]
 	Soit $f$ mesurable positive:
 	$ f ([a,b], \bor([a,b])) \to \R, \bor(\R)$.\\
-	On suppose $f$ Reinmann intégrable sur $[a,b]$.\\
+	On suppose $f$ Riemann intégrable sur $[a,b]$.\\
 	$$ \int_a^b f(x) dx = \int_{[a,b]} f d\lambda $$
 \end{theorem}
 
-\begin{proof} %TODO: Add proof
-
-
-
-
-
+\begin{proof}
+	%TODO: Add proof
 \end{proof}
