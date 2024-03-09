@@ -59,12 +59,14 @@
 		      $$ \forall u\in I |f(u,x) - f(u_0,x)| \leq g(x)|u-u_0| \mu-pp$$
 	\end{itemize}
 
-	Alors $F(u) = \int f(u,x)d\mu$ est dérivable a point $u_0$ et sa dérivée est $F'(u_0) = \int \diffp{f}{u}(u_0,x)d\mu(x)$
+	Alors $F(u) = \int f(u,x)d\mu$ est dérivable au point $u_0$ et sa dérivée est $F'(u_0) = \int \diffp{f}{u}(u_0,x)d\mu(x)$
 \end{theorem}
 
 \begin{remarque}
 	La fonction $\diffp{f}{u}(u_0,\cdot)$ n'est définie que $\mu-pp$. Il suffit de
 	la prolonger n'importe comment et cela suffit a définir $\int \diffp{f}{u}(u_0,x)d\mu(x)$.
+	Comme le prolongement se fait sur un ensemble de mesure nulle, cela ne change pas la valeur de l'intégrale,
+	c'est pour cela que l'on peut donner une liberté absolue pour le prolongement, par exemple en lui donnant la valeur 0.
 \end{remarque}
 
 \begin{proof}
@@ -89,7 +91,7 @@
 		\item $\mu-pp\  f(\cdot, x)$ est dérivable sur $I$.
 		\item Il existe $g\in \Li$ telle que
 		      $$ \forall u\in I \left|\diffp{f}{u}(u,x)\right| \leq g(x) \mu-pp$$
-		      Ceci implique, par le théorème des accroissements finis, la majoration de l'hypothèse 3.
+		      Ceci implique , par le théorème des accroissements finis, la majoration de l'hypothèse 3.
 	\end{itemize}
 	et dans e cas on a que $F$ est dérivable sur $I$ tout entier.
 \end{remarque}
