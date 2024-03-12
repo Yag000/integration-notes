@@ -1,13 +1,13 @@
 \subsection{Intégrales dépendant d'un paramètre}
 
 \begin{theorem}[Continuité sous le signe intégrale]
-	Soit $f : U \times E \to \R$ où $(U,D)$ est un espace métrique.\\
+	Soit $f : U \times E \to \R$ où $(U,R)$ est un espace métrique.\\
 	On suppose:
 	\begin{itemize}
 		\item $\forall u \in U,\ f (u, \cdot) : (E, \triA) \to (\R, \bor(\R))$ mesurable.
 		\item $\mu-pp$ (en $x$) $f(\cdot, x) : U  \to \R$ est continue en $u_0 \in U$.
 		\item Il existe $g$ intégrable telle que
-		      $$\forall u \in U, \ \left| f(u,x) \right| \leq g(x) \mu-pp \text{ en } x$$
+		      $$\forall u \in U, \ \left| f(u,x) \right| \leq g(x) \ \mu-pp \text{ en } x$$
 	\end{itemize}
 	Alors la fonction
 	$$F (u) = \int f(u,x) d\mu(x)$$
@@ -56,7 +56,7 @@
 		\item $\forall u \in I, \ f(u, \cdot) \in \Li_R(E,\triA, \mu)$
 		\item $\mu-pp,\  f(\cdot, x)$ est dérivable en $u_0 \in I$ de dérivée $\diffp{f}{u} (u_0, x)$.
 		\item Il existe $g\in \Li$ telle que
-		      $$ \forall u\in I |f(u,x) - f(u_0,x)| \leq g(x)|u-u_0| \mu-pp$$
+		      $$ \forall u\in I,\ |f(u,x) - f(u_0,x)| \leq g(x)|u-u_0| \mu-pp$$
 	\end{itemize}
 
 	Alors $F(u) = \int f(u,x)d\mu$ est dérivable au point $u_0$ et sa dérivée est $F'(u_0) = \int \diffp{f}{u}(u_0,x)d\mu(x)$
@@ -90,7 +90,7 @@
 	\begin{itemize}
 		\item $\mu-pp\  f(\cdot, x)$ est dérivable sur $I$.
 		\item Il existe $g\in \Li$ telle que
-		      $$ \forall u\in I \left|\diffp{f}{u}(u,x)\right| \leq g(x) \mu-pp$$
+		      $$ \forall u\in I \left|\diffp{f}{u}(u,x)\right| \leq g(x) \ \mu-pp$$
 		      Ceci implique , par le théorème des accroissements finis, la majoration de l'hypothèse 3.
 	\end{itemize}
 	et dans e cas on a que $F$ est dérivable sur $I$ tout entier.
@@ -117,11 +117,11 @@
 
 	\begin{itemize}
 		\item $\forall u \in I, \ f(u,\cdot) \in \Li(E,\triA,\mu)$
-		\item $\mu-pp u \ \mapsto f(u,x)$ est $C^k$ sur $I$.
+		\item $\mu-pp, \ u \mapsto f(u,x)$ est $C^k$ sur $I$.
 		\item Il existe $g_k\in \Li$ telle que
-		      $$ \forall u\in I \left|\diffp[i]{f}{u}(u,x)\right| \leq g_k(x) \mu-pp$$
+		      $$ \forall u\in I,\ \left|\diffp[i]{f}{u}(u,x)\right| \leq g_k(x) \ \mu-pp$$
 	\end{itemize}
 
-	Alors $F(u) = \int f(u,x)d\mu$ est $C^k$ sur $I$, avec $F^{(i)}(u) = \int \diffp[i]{f}{u}(u,x)d\mu(x)$
+	Alors $F(u) = \int f(u,x)\ d\mu$ est $C^k$ sur $I$, avec $F^{(i)}(u) = \int \diffp[i]{f}{u}(u,x) \ d\mu(x)$
 
 \end{theorem}
