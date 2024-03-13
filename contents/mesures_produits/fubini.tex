@@ -1,7 +1,7 @@
 \subsection{Les théorèmes de Fubini}
 
 \begin{theorem}[Fubini-Tonelli]
-	Soient $\mu$ et $\nu$ deux mesures finies sur $(E, \triA)$ et $(F, \triB)$ respectivement.
+	Soient $\mu$ et $\nu$ deux mesures $\sigma$-finies sur $(E, \triA)$ et $(F, \triB)$ respectivement.
 	Soit $f: (E \times F, \triA \xor \triB) \to ([0, +\infty], \mathcal{B}([0, +\infty]))$ une fonction mesurable.
 
 	\begin{itemize}
@@ -16,3 +16,53 @@
 		      \end{eqnarray*}
 	\end{itemize}
 \end{theorem}
+
+
+\begin{proof}
+	%TODO
+\end{proof}
+
+
+\begin{theorem}[Fubini-Lebesgue]
+	Soit $f \in \Li(E \times F, \triA \xor \triB, \mu \xor \nu)$.
+
+	\begin{itemize}
+		\item $$ \mu-pp, \ y \mapsto f(x, y) \in \Li(F, \triB, \nu)$$
+		      $$ \nu-pp, \ x \mapsto f(x, y) \in \Li(E, \triA, \mu)$$
+		\item On a :
+		      $\mu-pp, \ y \mapsto \int f(x, y) d \nu(y)$ est bien définie et est dans $\Li(E, \triA, \mu)$.\\
+		      $\nu-pp, \ x \mapsto \int f(x, y) d \mu(x)$ est bien définie et est dans $\Li(F, \triB, \nu)$.
+		\item On a :
+		      \begin{eqnarray*}
+			      \int_{E \times F} f d(\mu \xor \nu) & = & \int_E  \int_F f(x, y) d \nu(y) d \mu(x) \\
+			      & = & \int_F  \int_E f(x, y) d \mu(x) d \nu(y)
+		      \end{eqnarray*}
+	\end{itemize}
+\end{theorem}
+
+
+\begin{proof} %TODO: Make pretty
+	On regarde $|f|$, qui est mesurable positive d'après Fubinni-Tonelli. On a donc :
+	$$ \int |f| d (\mu \xor \nu) = \int \int |f| d \nu (y) d \mu (x) < + \infty$$
+	par hypothèse. \\
+	On a donc $ x   \mapsto \int |f|(x,y) d \nu(y)$ est finie $\mu-pp$ car son intégrale est finie. \\
+	i.e: $\mu-pp, \int |f| d \nu(y) < + \infty, |f|(x,y) \in \Li(F, \triB, \nu)$ \\
+	De plus $\int \left[ \int |f|(x,y) d    \nu(y)   \right] d \mu(x) < + \infty $.
+	Donc $x \mapsto \int f (x,y) d \nu(y)$ est bien définie et est dans $\Li(E, \triA, \mu)$
+	car $\int \left| \int f (x,y) d \nu(y) \right| d \mu(x) < \int \int |f| d \nu(y) d \mu(x) < + \infty$.
+	De même pour les deux autres fonctions.
+
+	$f = f^+ - f^-$, donc on a :
+	\begin{eqnarray*}
+		\int f d (\mu \xor \nu) & = & \int f^+ d (\mu \xor \nu) - \int f^- d (\mu \xor \nu) \\
+		& = & \int \int f^+(x,y) d \nu(y) d \mu(x) - \int \int f^-(x,y) d \nu(y) d \mu(x) \text{ (Fubini-Tonelli)} \\
+		& = & \int \left( \int f^+(x,y) d \nu(y) - \int f^-(x,y) d \nu(y) \right) d \mu(x) \\
+		&=& \int \int f^+(x,y) - f^-(x,y) d \nu(y) d \mu(x) \\
+		&=& \int \int f(x,y) d \nu(y) d \mu(x)
+	\end{eqnarray*}
+	De même dans l'autre sens.
+\end{proof}
+
+\begin{remarque}
+	L'hypothèse $f \in \Li(E \times F, \triA \xor \triB, \mu \xor \nu)$ est indispensable.
+\end{remarque}

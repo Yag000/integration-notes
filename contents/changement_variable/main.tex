@@ -1,0 +1,59 @@
+
+\section{La formule de changement de variables}
+
+
+\begin{prop}[Formule de changement de variable linéaire]
+	Soit $b \in \R^d, \ M \in \mathcal{M}_d(\R)$ inversible et
+	$$ \begin{array}{rcl}
+			f : \R^d & \longrightarrow & \R^d   \\
+			x        & \longmapsto     & Mx + b
+		\end{array} $$
+	Alors, pour tout borélien $A \subset \R^d$,
+	$$ \lambda_d(f(A)) = |\det(M)| \lambda_d(A) $$
+\end{prop}
+
+\begin{remarque}
+	Si $M$ n'est pas inversible, $\lambda_d(f(A)) = 0$, car l'image est incluse dans un hyperplan $H$
+	de $\R^d$, qui est donc de mesure nulle.
+\end{remarque}
+
+\begin{proof}
+	On admet que la mesure de Lebesgue est invariante par translation et c'est la seule a multiplication près (exo). On peut donc supposer
+	$b = 0$. Soit $A \subset \R^d$ borélien.
+
+	$B \mapsto \lambda_d(f(B))$ est une mesure qui est invariante par translation.
+
+	$f (\emptyset) = \emptyset$ et $f$ est bijective, donc l'image d'un d'une famille deux à deux disjoints est aussi deux à deux disjoints, et donc elle est
+	$\sigma$-additive.
+	\begin{eqnarray*}
+		\lambda_d(f([B+a])) &=& \lambda_d(f(B) + f(a)) \\
+		&=& \lambda_d(f(B))
+	\end{eqnarray*}
+	alors elles est un multiple de $\lambda_d$.
+
+	Il suffit de vérifier que $\lambda_d(f([0,1]^d)) = |\det(M)|$.
+
+	\begin{itemize}
+		\item Si $M$ est diagonale $M = \begin{pmatrix} a_1 & & \\ & \ddots & \\ & & a_d \end{pmatrix}$, alors
+		      $$ \lambda_d(f([0,1]^d)) = \lambda_d([0, a_1] \times \cdots \times [0, a_d]) =\left| \prod_{i=1}^d a_i \right|= |\det(M)| $$
+		\item Si $M$ est orthogonale, le coefficient vaut 1 car $M$ conserve la boule unité.
+		\item Si M est symétrique définie positive, le coefficient vaut $\det(M)$ car $M$ est diagonale après un changement de base.
+		\item Dans le cas, $M = PS$ avec $P$ orthogonale et $S$ symétrique définie positive, avec $S =\sqrt{M^tM}$ et $P = M S^{-1}$.
+		      Donc le coefficient vaut $|\det(P)| |\det(S)| = |\det(M)|$.
+	\end{itemize}
+\end{proof}
+
+
+\begin{rappel}
+	$U, D$ ouverts de $\R^d$, $\phi : U \to D$ est un $C^1$-difféomorphisme si $\phi$ est bijective et $C^1$ sur $U$ et $\phi^{-1}$ est $C^1$ sur $D$.
+	Dans ce cas $\forall u \in U, \ \phi'(u)$ est inversible.
+\end{rappel}
+
+
+\begin{theorem}[Changement de variables]
+	Soit $\phi: U \to D$ un $C^1$-difféomorphisme alors pour toute fonction $f : D \to \R^+$mesurable positive:
+	$$\int_D f(x) d\lambda(x) = \int_U f(\phi(u)) |J_\phi (u)| d u $$
+	où $J_\phi =\det(\phi(u))$ est le jacobien de $\phi$ en $u$.
+\end{theorem}
+
+

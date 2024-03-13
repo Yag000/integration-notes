@@ -1,0 +1,71 @@
+\subsection{Définition et premières propriétés}
+
+\begin{definition}
+	On définit lénsemble des fonction (réelles ou complexes) de carré intégrable sur un intervalle $(E, \triA, \mu)$ noté
+	$\Ld (E, \triA, \mu) = \set{ f: (E, \triA) \to (\R, \bor(\R)) \mid \int_E \abs{f}^2 d \mu < \infty }$.
+\end{definition}
+
+
+\begin{prop}
+	Sur $\Ld (E, \triA, \mu)$, la notion $f \sim g \ssi f = g \text{ p.p.}$ définit une relation d'équivalence.
+\end{prop}
+
+\begin{definition}
+	On définit l'espace quotient $L^2(E, \triA, \mu) = \Ld (E, \triA, \mu) / \sim$.
+\end{definition}
+
+\begin{remarque}
+	En fait on fait le travail deans tous les espaces $L^p$.
+
+	$$ \Lp^p (E, \triA, \mu) = \set{ f: (E, \triA) \to (\R, \bor(\R)) \mid \int_E \abs{f}^p d \mu < \infty }$$
+	et en particulier dans $L^1$.
+\end{remarque}
+
+\begin{remarque}
+	Dans la suite on identifie (abusivement) un élément de $L^1$ avec un représentant dans $\Lp^1$.
+	En particulier ils ont la même intégrale.
+
+	Sur $L^2$, on note $\norm{f}_2 = \sqrt{\int_E \abs{f}^2 d \mu}$
+\end{remarque}
+
+
+\begin{theorem}[Inégalité de Cauchy-Schwarz]
+	Soient $f, g$ mesurables sur $(E, \triA, \mu)$, alors
+	$$\int \abs{fg} d \mu \leq \norm{f}_2 \norm{g}_2$$
+	En particulier, $fg \in L^1$ si $f, g \in L^2$.\\
+	Et il y a égalité si  $f$ et $g$ sont colinéaires :
+	$$\exists \lambda \in \R, \ f = \lambda g \text{ ou } g = \lambda f$$
+\end{theorem}
+
+\begin{proof}
+	Si $\norm{f}_2 = 0$, alors $f = 0$ $\mu-pp$ donc $fg = 0$ $\mu-pp$ et l'inégalité est vraie et de
+	même si $\norm{g}_2 = 0$.
+
+	Supposons donc que $\norm{f}_2 > 0$ et $\norm{g}_2 > 0$.\\
+	Soit $t \in \R$, alors on regarde
+	$$ 0 \leq \int (f + tg)^2 d \mu = \int_E f^2 d \mu + 2t \int fg d \mu + t^2 \int g^2 d \mu$$
+	avec $fg \in L^1$ car $\abs{fg} \leq \frac{f^2g^2}{2}$.
+	C'est un polynôme de degré 2 en $t$ qui est positif pour tout $t$ donc son discriminant est négatif.
+	$$  \Delta = (2 \int fg d \mu)^2 - 4 \int f^2 d \mu \int g^2 d \mu \leq 0$$
+	$$ \int fg d \mu \leq \sqrt{\int f^2 d \mu \int g^2 d \mu}$$
+	Le cas d'égalité est immédiat : $\Delta = 0$ Donc :
+	$$\exists t \text {tel que} \int (f + tg)^2 d \mu  = 0$$
+	$$ f + tg = 0 \mu-pp$$
+	$f$ et $g$ sont colinéaires $\mu-pp$.
+
+	Si $\norm{f}_2 = +  \infty$ ou $\norm{g}_2 = +  \infty$, l'inégalité est évidente.
+\end{proof}
+
+\begin{coro}
+	Si $\mu$ est une mesure finie, alors $L^2(E, \triA, \mu) \subset L^1(E, \triA, \mu)$.
+\end{coro}
+
+\begin{proof}
+    \begin{eqnarray*}
+        \int \abs{f} d \mu \leq \int \abs{f}*1 d \mu &\leq& \sqrt{\int f^2 d \mu} \sqrt{\int 1^2 d \mu} \\
+                                                     & \leq & \norm{f}_2 \sqrt{\mu(E)} < \infty
+    \end{eqnarray*}
+\end{proof}
+
+
+
