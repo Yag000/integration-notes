@@ -61,10 +61,13 @@
 \end{coro}
 
 \begin{proof}
-    \begin{eqnarray*}
-        \int \abs{f} d \mu \leq \int \abs{f}*1 d \mu &\leq& \sqrt{\int f^2 d \mu} \sqrt{\int 1^2 d \mu} \\
-                                                     & \leq & \norm{f}_2 \sqrt{\mu(E)} < \infty
-    \end{eqnarray*}
+	\begin{eqnarray*}
+		\int \abs{f} d \mu \leq \int \abs{f}*1 d \mu &\leq& \sqrt{\int f^2 d \mu} \sqrt{\int 1^2 d \mu} \\
+		& \leq & \norm{f}_2 \sqrt{\mu(E)} \\
+		& < & \infty
+	\end{eqnarray*}
+
+	En particulier s $\mu$ est une mesure de probas.
 \end{proof}
 
 
