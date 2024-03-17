@@ -13,5 +13,6 @@ jobs:
         uses: jonhue/pubtex-action@main
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          pre_compile_command:
           files: |
             integration-notes.tex
