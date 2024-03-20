@@ -1,0 +1,66 @@
+\subsection{L'espace de Hilbert L²}
+
+\begin{definition}
+	On dñéfinit, pour $f,g \in L^2(E,\triA, \mu)$.
+	$$\sprod{f}{g} = \int fg d \mu$$
+	est un profit scalaire sur $L^2(E, \triA, \mu)$.
+	\begin{itemize}
+		\item $(f,g) \mapsto \sprod{f}{g}$ est bilinéaire
+		\item $(f,g) \mapsto \sprod{f}{g}$ est symétrique
+		\item $\sprod{f}{f} > 0$ et $\sprod{f}{f} = 0 \ssi f = 0$ (presque partout)
+	\end{itemize}
+\end{definition}
+
+
+\begin{proof}
+	%TODo
+\end{proof}
+
+
+\begin{remarque}
+	En particulier, $\norm{f}_2 = \sqrt{\sprod{f}{f}}$ est une norme sur $L^2_\R(E, \triA, \mu)$.
+\end{remarque}
+
+\begin{definition}
+	On dit que $(E, \sprod{\cdot}{\cdot})$  esuun space de Hilbert si $E$ es muni d'un produit scalaire $\sprod{\cdot}{\cdot}$ et
+	si $E$ est complet pour la norme induite $\norm{\cdot} = \sqrt{\sprod{\cdot}{\cdot}}$.
+\end{definition}
+
+\begin{theorem}[Riesz]
+	$L^2(E, \triA, \mu)$ est un espace de Hilbert.
+\end{theorem}
+
+\begin{proof}
+	Soit $f_m$ une suite de Cuachy dans $L^2(E, \triA, \mu)$, alors il existe une sous-suite $f_{k_n}$ telle que
+	$$\norm{f_{k_{n+1}} - f_{k_n}}_2 \leq 2^{-n}$$
+	On pose $g_m = f_{k_n}$
+	\begin{eqnarray*}
+		\int \left( \sum\limits_{n=1}^\infty \abs{g_{n+1} - g_n} \right)^2 d \mu &=& \lim_{N \to \infty} \int \left( \sum\limits_{n=1}^N \abs{g_{n+1} - g_n} \right)^2 d \mu \\
+		&=& \lim_{N \to \infty} \int \left( \sum\limits_{1 \leq i, j \leq N} \abs{g_{i+1} - g_i} \abs{g_{j+1} - g_j} \right) d \mu \\
+		&=& \lim_{N \to \infty}   \sum\limits_{1 \leq i, j \leq N} \int\abs{g_{i+1} - g_i} \abs{g_{j+1} - g_j}  d \mu \\
+		&\leq& \lim_{N \to \infty} \sum\limits_{1 \leq i, j \leq N} \norm{g_{i+1} - g_i}_2 \norm{g_{j+1} - g_j}_2 \\
+		&\leq& \lim_{N \to \infty} \left( \sum\limits_{n=1}^N \norm{g_{n+1} - g_n}_2 \right)^2 \\
+		&<& \infty
+	\end{eqnarray*}
+	%TODO: Finish this proof
+\end{proof}
+
+\begin{example}
+	$(\N, \mathcal{P}(\N), \mu)$ où $\mu$ est la mesure de comptage.
+	$$l^2(\N) = \set{ a \in \R^\N \mid \sum a_n^2 < \infty} = L^2(\N, \mathcal{P}(\N), \mu)$$
+	$$\sprod{a}{b} = \sum a_n b_n$$
+	$$\norm{a}_2 = \sqrt{\sum a_n^2}$$
+\end{example}
+
+\begin{example}
+	$ E = \R/\Z ( = B_1)$
+	On regarde $\mu$ la mesure de Lebesgue induite sur $[0,1]$.
+	$$ L^2(\R/\Z, \bor (\R/\Z), \mu) = \set{ f: \R \to \R 1- \text{périodique} \mid \int_[0,1] f^2 d\lambda < \infty } $$
+	C'est dans cet space qu'on fera des séries de Fourier.
+\end{example}
+
+\begin{remarque}
+	Si les fonctions sont a valeurs complexes, on définit le produit scalaire par:
+	$$\sprod{f}{g} = \int f \overline{g} d \mu$$
+	Cela munit $L^2(E, \triA, \mu)$ d'une structure de space de Hilbert.
+\end{remarque}
