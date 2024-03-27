@@ -7,7 +7,7 @@
 	\begin{itemize}
 		\item $(f,g) \mapsto \sprod{f}{g}$ est bilinéaire
 		\item $(f,g) \mapsto \sprod{f}{g}$ est symétrique
-		\item $\sprod{f}{f} > 0$ et $\sprod{f}{f} = 0 \ssi f = 0$ (presque partout)
+		\item $\sprod{f}{f} > 0$ et $\sprod{f}{f} = 0 \mssi f = 0$ (presque partout)
 	\end{itemize}
 \end{definition}
 
@@ -22,7 +22,7 @@
 \end{remarque}
 
 \begin{definition}
-	On dit que $(E, \sprod{\cdot}{\cdot})$  esuun space de Hilbert si $E$ es muni d'un produit scalaire $\sprod{\cdot}{\cdot}$ et
+	On dit que $(E, \sprod{\cdot}{\cdot})$  est espace de Hilbert si $E$ es muni d'un produit scalaire $\sprod{\cdot}{\cdot}$ et
 	si $E$ est complet pour la norme induite $\norm{\cdot} = \sqrt{\sprod{\cdot}{\cdot}}$.
 \end{definition}
 
@@ -55,12 +55,12 @@
 \begin{example}
 	$ E = \R/\Z ( = B_1)$
 	On regarde $\mu$ la mesure de Lebesgue induite sur $[0,1]$.
-	$$ L^2(\R/\Z, \bor (\R/\Z), \mu) = \set{ f: \R \to \R 1- \text{périodique} \mid \int_[0,1] f^2 d\lambda < \infty } $$
-	C'est dans cet space qu'on fera des séries de Fourier.
+	$$ L^2(\R/\Z, \bor (\R/\Z), \mu) = \set{ f: \R \to \R, \  1-\text{périodique} \mid \int_{[0,1]} f^2 d\lambda < \infty } $$
+	C'est dans cet espace qu'on fera des séries de Fourier.
 \end{example}
 
 \begin{remarque}
 	Si les fonctions sont a valeurs complexes, on définit le produit scalaire par:
 	$$\sprod{f}{g} = \int f \overline{g} d \mu$$
-	Cela munit $L^2(E, \triA, \mu)$ d'une structure de space de Hilbert.
+	Cela munit $L^2(E, \triA, \mu)$ d'une structure de espace de Hilbert.
 \end{remarque}
