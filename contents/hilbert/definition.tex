@@ -2,12 +2,14 @@
 
 \begin{definition}
 	Soit $H$ un $\R$ ou $\C$-espace vectoriel.
-	Un produit scalaire est une application $\sp{\cdot}{\cdot} : H \times H \to \R$ ou $\C$ telle que
+	Un produit scalaire est une application $\sprod{\cdot}{\cdot} : H \times H \to \R$ ou $\C$ telle que
 	\begin{itemize}
-		\item $\forall y \in H, x \mapsto \sp{x}{y}$ est linéaire
-		\item $\forall x,y \in H, \sp{x}{y} = \overline{\sp{y}{x}}$
-		\item $\forall x \in H, \sp{x}{x} \geq 0$ et $\sp{x}{x} = 0 \iff x = 0$
+		\item $\forall y \in H, x \mapsto \sprod{x}{y}$ est linéaire
+		\item $\forall x,y \in H, \sprod{x}{y} = \overline{\sprod{y}{x}}$
+		\item $\forall x \in H, \sprod{x}{x} \geq 0$ et $\sprod{x}{x} = 0 \iff x = 0$
 	\end{itemize}
+
+	Si $\sprod{\cdot}{\cdot}$ vérifie seulement les deux premières propriétés, on dit que c'est un produit hermitien.
 \end{definition}
 
 \begin{remarque}
@@ -17,3 +19,77 @@
 \end{remarque}
 
 %TODO: a lot of stuff, sorry
+
+\begin{coro}
+	$\norm{x} = \sqrt{\sprod{x}{x}}$ définit une norme sur $H$ si $\sprod{\cdot}{\cdot}$ est un produit scalaire.
+\end{coro}
+
+\begin{proof}
+	\begin{itemize}
+		\item Par définition $\norm{x} \geq 0$.
+		\item \begin{eqnarray*}
+			      \norm{x + y}^2 &=& \sprod{x+y}{x+y} \\
+			      &=&\norm x^2 + 2\Re \sprod{x}{y} + \norm{y}^2 \\
+			      &\leq& \norm{x}^2 + 2\abs{\sprod{x}{y}} + \norm{y}^2 \\
+			      &\leq& \norm{x}^2 + 2\norm{x}\norm{y} + \norm{y}^2 \text{ par Cauchy-Schwarz} \\
+			      &\leq& (\norm{x} + \norm{y})^2
+		      \end{eqnarray*}
+		\item Soit $\lambda$ un scalaire:
+		      \begin{eqnarray*}
+			      \norm{\lambda x}^2 &=& \sprod{\lambda x}{\lambda x} \\
+			      &=& \overline{\lambda}\lambda \sprod{x}{x} \\
+			      &=& \abs{\lambda}^2 \norm{x}^2 \\
+			      \norm{\lambda x} &=& \abs{\lambda} \norm{x}
+		      \end{eqnarray*}
+		\item $\norm{x} = 0 \implies \sprod{x}{x} = 0 \implies x = 0$ par définition du produit scalaire.
+	\end{itemize}
+\end{proof}
+
+\begin{prop}[Identités remarquables]
+	Soient $x,y \in H$ et $\sprod{\cdot}{\cdot}$ un produit scalaire sur $H$ et $H$ un $\C$-espace vectoriel.
+
+	\begin{itemize}
+		\item Identité de Polarisation:
+		      $$\sprod{x}{y} = \frac{1}{4} \left( \norm{x+y}^2 - \norm{x-y}^2 + i\norm{x+iy}^2 - i\norm{x-iy}^2 \right)$$
+		\item Dans un $\R$-espace vectoriel, on a:
+		      $$\sprod{x}{y} = \frac{1}{4} \left( \norm{x+y}^2 - \norm{x-y}^2 \right)$$
+		\item Identité de la médiane / du parallélogramme:
+		      $$\norm{x+y}^2 + \norm{x-y}^2 = 2\left( \norm{x}^2 + \norm{y}^2 \right)$$
+		\item Pythagore: Si $\sprod{x}{y} = 0$, alors
+		      $$ \norm{x+y}^2 = \norm{x}^2 + \norm{y}^2$$
+	\end{itemize}
+\end{prop}
+
+\begin{definition}
+	On dit que $x$ et $y$ sont orthogonaux si $\sprod{x}{y} = 0$.
+\end{definition}
+
+\begin{proof}
+	$$\norm{x+y}^2  = \norm{x}^2 + 2\Re \sprod{x}{y} + \norm{y}^2 $$
+	$$\norm{x-y}^2  = \norm{x}^2 - 2\Re \sprod{x}{y} + \norm{y}^2 $$
+
+	Par différence $\Re \left(\sprod{x}{y}\right) = \frac{1}{4} \left( \norm{x+y}^2 - \norm{x-y}^2 \right)$
+	\begin{itemize}
+		\item
+		      \begin{eqnarray*}
+			      \norm{x+y}^2  &=& \norm{x}^2 + 2\underbrace{\Re \sprod{x}{y} }_{= \Re (-i\sprod{x}{y}) = \Im \sprod{x}{y}} + \norm{y}^2 \\
+			      \norm{x-iy}^2 &=& \norm{x}^2 - 2\Im \sprod{x}{y} + \norm{y}^2 \\
+			      \Im \sprod{x}{y} &=& \frac{1}{4} \left( \norm{x+iy}^2 - \norm{x-iy}^2 \right)\\
+			      \sprod{x}{y} &=& \Re \sprod{x}{y} + i \Im \sprod{x}{y}
+		      \end{eqnarray*}
+		      D'où l'identité de polarisation.
+		\item On démontre la deuxième identité et¡n utilisant la différence, car sur un $\R$-espace vectoriel, $\Re \left(\sprod{x}{y}\right) = \sprod{x}{y}$.
+		\item L'identité de la médiane est immédiate en additionnant les deux premières équations.
+		\item Et enfin, si $\sprod{x}{y} = 0$, alors $\norm{x+y}^2 = \norm{x}^2 + \norm{y}^2$.
+	\end{itemize} %TODO: Maybe add figure
+\end{proof}
+
+
+\begin{remarque}
+	Dans un $\C$-espace vectoriel, le théorème de Pythagore n'admet pas de réciproque.
+\end{remarque}
+
+\begin{definition}
+	$H$ muni de son produit scalaire est un espace de Hilbert s'il est complet pour la norme associée au produit scalaire.
+\end{definition}
+

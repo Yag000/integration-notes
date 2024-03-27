@@ -1,0 +1,150 @@
+\subsection{Projection orthogonale dans un espace de Hilbert}
+
+
+
+\begin{definition}
+	$F$ un sous espace de $H$, on définit l'othogonal de $F$ par $F^\perp = \{y \in H, \forall x \in F, \sprod{x}{y} = 0\}$.
+\end{definition}
+
+\begin{prop}
+	$F, G$ deux sous-espaces vectoriels de $H$, alors:
+	\begin{itemize}
+		\item $F^\perp$ est fermé.
+		\item Si $F \subset G$ alors $G^\perp \subset F^\perp$.
+		\item $F^\perp = \overline{F}^\perp$.
+	\end{itemize}
+\end{prop}
+
+
+\begin{proof}
+	\begin{itemize}
+		\item Soit $x_n \in F^\perp$ tel que $x_n \to x$, montrons que $a \in F^\perp$.
+		      Soit $y \in F$, montrons que $\sprod{x}{y} = 0$.
+		      $$ \abs{\sprod{x_n-x}{y}} \leq  \underbrace{\norm{x_n-x}}_{\to 0} \norm{y} $$
+		      $$ \underbrace{\sprod{x_n}{y}}_{=0} - \sprod{x}{y}  \to 0 $$
+		      donc la suite stationne en 0, donc $\sprod{x}{y} = 0$.
+
+		\item Soit $x \in G^\perp$, montrons que $x \in F^\perp$.\\
+		      Soit $y \in F$ montrons que $\sprod{x}{y} = 0$. Or $F \subset G$ donc $y \in G$ et donc $\sprod{x}{y} = 0$.
+		\item Par le 2 $\overline{F}^\perp \subset F^\perp$.\\
+		      Montrons que $F^\perp \subset \overline{F}^\perp$.\\
+		      Soit $x \in F^\perp$, montrons que $x \in \overline{F}^\perp$.\\
+		      Soit $y \in \overline{F}$, montrons que $\sprod{x}{y} = 0$.\\
+		      Soit $y_n \in F$ tel que $y_n \to y$, on a
+		      $$ \abs{\sprod{x}{y- y_n}} \leq \norm{x} \norm{y-y_n} \to 0 $$
+		      or
+		      $$  \abs{\sprod{x}{y- y_n}} = \sprod{x}{y} -  \underbrace{\sprod{x}{y_n}}_{=0} $$
+		      Donc $\sprod{x}{y} = 0$.
+	\end{itemize}
+\end{proof}
+
+%TODO: Maybe eqnarray this?
+\begin{remarque}
+	D'après Cauchy-Schwarz,
+	$$ \forall x \in H, \  x \mapsto \sprod{x}{y} \text{ est continue} $$
+	$$ \forall y \in H, \  y \mapsto \sprod{x}{y} \text{ est continue} $$
+\end{remarque}
+
+\begin{theorem}[Projection orthogonale sur un sous espace fermé]
+	Soit $F$ un sous espace fermé de $H$.
+
+	\begin{itemize}
+		\item $\forall x \in H, \exists ! y \in F, \norm{x-y} = \dist{x} {F}$.\\
+		      Où $\dist{x} {F} = \inf_{y \in F} \norm{x-y}$.\\
+		      On note $y = p_F(x)$ cet unique point, cela définit une application $p_F : H \to F$.
+		\item $p_F(x)$ est l'unique vecteur de $F$ tel que $x - p_F(x) \in F^\perp$.
+		\item $\forall x \in H,\ \norm{x}^2 = \norm{p_F(x)}^2 + \norm{x - p_F(x)}^2$.
+		\item $p_F$ est linéaire et continue.
+		\item $F$ et $F^\perp$ sont dits supplémentaires orthogonaux.\\
+		      $$ H = F + F^\perp \text{ et } F \cap F^\perp = \{0\} $$
+		      Et $$\forall x \in F , \forall y \in F^\perp, \sprod{x}{y} = 0$$
+		      On note cela $H = F \oplus F^\perp$.
+	\end{itemize}
+\end{theorem}
+
+
+\begin{proof}
+
+	\begin{itemize}
+		\item Soit $y_n \in F$ tel que $\norm{x-y_n} \to \dist{x}{F}$. Comme $H$ est complet, il suffit de montrer que $y_n$ est de Cauchy.\\
+		      On prend $a = x - y_n$ et $b = x - y_m$.
+		      \begin{eqnarray*}
+			      \norm{a + b}^2  + \norm{a - b}^2 & = & 2 \norm{a}^2 + 2 \norm{b}^2\\
+			      \norm {a-b}^2 & = & 2 \left( \norm{a}^2 +  \norm{b}^2 \right) -  \norm{a+b}^2\\
+			      \norm {y_n - y_m}^2 & = & 2 \left( \norm{x-y_n}^2 +  \norm{x-y_m}^2 \right) - 4 \norm{x - \frac{y_n + y_m}{2}}^2 \\
+			      & \leq & 2 \left( \norm{x-y_n}^2 +  \norm{x-y_m}^2 \right) - 4 {\dist x F}^2  %TODO: Underlines
+		      \end{eqnarray*}
+
+		      Si $N$ est assez grand pour que $\forall n \geq N, \abs {\norm{x-y_n}^2 - \dist{x}{F}^2} \leq\frac{\varepsilon}{4}$.\\
+		      Si $n,m \geq N$ on a
+		      \begin{eqnarray*}
+			      \norm {y_n - y_m}^2 & \leq & 2 \left( \dist{x}{F}^2 +   \frac \varepsilon 4 + \dist{x}{F}^2 +   \frac \varepsilon 4 \right) - 4 {\dist x F}^2 \\
+			      &\leq & \varepsilon
+		      \end{eqnarray*}
+		      $y_n$ est donc de Cauchy et donc converge vers un point $y \in H$, $y_n \in F$ donc $y \in F$ car $F$ est fermé.\\
+
+		      Unicité: Supposons que $y$ et $y'$ soient deux points de $F$ qui réalisent le minimum.\\
+		      $$ \norm{y - y'}^2 = 2 \left( {\dist x F}^2 + {\dist x F}^2 \right) - 4 {\dist x F}^2 \leq 0 $$
+		      Donc $y = y'$.
+
+		\item Montrons que $x - p_F(x) \in F^\perp$.\\
+		      Soit $z \in F$, montrons que $\sprod{x - p_F(x)}{z} = 0$.\\
+		      On pose $y = p_F(x) \in F$. Soit $t\in \Rp$, on a $y + t z \in F$ Donc
+		      \begin{eqnarray*}
+			      {\dist x F}^2 & \leq & \norm{x - (y + t z)}^2\\
+			      & \leq & \norm{x - tz - y}^2\\
+			      & = & \norm{x - y}^2 - 2\Re \sprod{x - y}{tz} + t^2 \norm{z}^2\\
+			      & \leq & {\dist x F}^2 - 2t \Re \sprod{x - y}{z} + t^2 \norm{z}^2
+		      \end{eqnarray*}
+
+		      Donc $2t\Re \sprod{x - y}{z} + t^2 \norm{z}^2 \geq 0$ pour tout $t \in \Rp$.
+		      En particulier pour $t = 0$ on a $\Re \sprod{x - y}{z} = 0$ \\
+		      En utilisant $itz$ à la place de $tz$ on trove $\Im \sprod{x - y}{z} = 0$\\
+
+		      Unicité: Supposons $y$ et $y'$ deux points de $F$ tels que $\forall z \in F, \sprod{x - y}{z} = 0$ et $\sprod{x - y'}{z} = 0$.\\
+		      $\forall x \in F, \sprod{y - y'}{z} = 0$, or $y - y' \in F$ donc $\sprod{y - y'}{y - y'} = 0$ donc $y = y'$.
+		\item D'après 2, $x - p_F(x) \perp p_F(x)$, donc par Pythagore,
+		      $$ \norm{x}^2 = \norm{p_F(x)}^2 + \norm{x - p_F(x)}^2 $$
+		\item Montrons que $p:F( x + \lambda y) = p_F(x) + \lambda p_F(y)$.\\
+		      Montrons que $p_F(x) + \lambda p_F(y)$ vérifie 2.\\
+		      Montrons que $x + \lambda y - p_F(x) - \lambda p_F(y) \in F^\perp$.\\
+		      $$ \underbrace{x - p_F(x)}_{\in F^\perp} + \lambda\left( \underbrace{y - p_F(y)}_{\in F^\perp} \right) \in F^\perp $$
+		      Montrons que $p_F$ est continue.\\
+		      Comme $p_F$ est linéaire, il suffit de montrer que $p_F$ est continue en 0.\\
+		      $p_F$ continue \ssi $\exists M, \ \norm{p_F(x)} \leq M \norm{x}$.\\
+
+		      D'après 3, $\norm{p_F(x)}^2 = \norm{x}^2 - \norm{x - p_F(x)}^2 \leq \norm{x}^2$. Donc $p_F$ est continue et
+		      $$ \left| \norm{p_F(x)} \right| \leq 1 $$ %TODO: command for this
+
+		\item $x = \underbrace{p_F(x)}_{\in F} + \underbrace{(x - p_F(x))}_{\in F^\perp \text { d'après 2}}$.
+	\end{itemize}
+\end{proof}
+
+\begin{remarque}
+	Si $F$ est de dimension finie, $(e_1, \ldots, e_n)$ une base orthonormée de $F$, alors $p_F(x) = \sum_{i=1}^n \sprod{x}{e_i} e_i$.
+\end{remarque}
+
+\begin{remarque}
+	Si $F$ n'est pas fermé rien ne fonctionne.
+\end{remarque}
+
+\begin{coro}
+	\begin{itemize}
+		\item Si $F$ est fermé, alors ${F^\perp}^\perp = F$.
+		\item Si $F$ est dense \ssi $F^\perp = \set 0$.
+	\end{itemize}
+\end{coro}
+
+\begin{proof}
+	\begin{itemize}
+		\item C'est le point 5 du théorème.
+		\item $\overline{F}^\perp = F^\perp$
+
+		      \begin{itemize}
+			      \item Si $F$ est dense, $\overline{F}^\perp = H^\perp = \set 0$.
+			      \item Sinon $\overline{F} \subsetneq H$  et $ \overline{F} \oplus \overline{F}^\perp = H$.
+			            Donc $\overline{F}^\perp \neq \set 0$.
+		      \end{itemize}
+	\end{itemize}
+
+\end{proof}
