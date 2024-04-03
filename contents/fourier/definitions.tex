@@ -1,0 +1,21 @@
+\subsection{Définitions}
+
+
+\begin{definition}
+	On note $\T = \R / \Z$ et $\Li(\T, \bor (\T), \lambda_{\T})$ pour $p = 1,2$ l'espace des fonctions mesurables de $\R$ dans $\C$ 1-périodiques, munie de la mesure de Lebesgue restreinte à $[0,1[$
+	telles que leur restriction à $[0,1[$ soit dans $\Lp^p([0,1[), \bor([0,1[), \lambda)$ pour $f \in \Lp_{\C}^p(\T)$.
+
+	$$ {\norm f}_p = \left( \int_{\T} \abs{f}^p d\lambda_{\T} \right)^{\frac{1}{p}} $$
+\end{definition}
+
+\begin{definition}
+	Soit $f \in \Li(\T)$, on note
+	$$ c_n(f) = \int_{[0,1]} f(t) e^{-2i\pi nt} dt $$
+	le coefficient de Fourier de d'ordre $n$ de $f$.
+
+	On appelle la série de Fourier de $f$ la série
+	$$ \sum_{n \in \Z} c_n(f) e^{2i\pi nt} $$
+	vue comme une série de fonctions abstraite.
+	$$ S_N(f) = \sum_{n = -N}^{N} c_n(f) e^{2i\pi nt} $$
+	les sommes partielles de la série de Fourier de $f$.
+\end{definition}

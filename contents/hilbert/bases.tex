@@ -1,0 +1,155 @@
+\subsection{Bases orthonormales}
+
+
+\begin{definition}
+	On dit que $H$ est séparable s'il existe une partie dénombrable dense de $H$. On encore une suite de points dense dans $H$.
+\end{definition}
+
+
+\begin{example}
+	$\Q$ dense dans $\R$.
+\end{example}
+
+\begin{example}
+	$\Ld$ est séparable.
+\end{example}
+
+\begin{proof}
+	On a vu que les fonctions continues à support compacts sont denses dans $\Ld$.
+
+
+	Toute fonction continue a support compact peut être approchée par une fonction étagée à valeurs rationnelles,
+	avec pour ensemble de niveaux des pavés à coordonnées rationnelles.
+	$$ \sum_{k=-n^2}^{n^2} f_{\epsilon} \left(\frac k n\right) \1_{[\frac k n, \frac {k+1} n[} $$
+	avec $f_{\epsilon}$ un rationnel $\frac {\epsilon} 4$-proche de $f\left(\frac k n\right)$.
+
+	\begin{itemize}
+		\item approche $f$ en $\norm{\cdot}_2$.
+	\end{itemize}
+
+	%TODO
+\end{proof}
+
+\begin{example}
+	$\Ld(\N)$ et $\Q^{(\N)}$ l'ensemble des suite nulles à partir d'un certain rang à valeurs rationnelles.
+\end{example}
+
+\begin{definition}[Base orthonormale / hilbertienne]
+	On dit que $(e_n)_{n\in \N}$ est une base orthonormale / hilbertienne de $H$ si
+	\begin{itemize}
+		\item $\norm {e_n} = 1, \ \sprod {e_i} {e_j} = \delta_{ij} = \begin{cases} 1 & \text{si } i=j \\ 0 & \text{sinon} \end{cases}$
+		\item L'ensemble des combinaisons linéaire finies d'éléments $(e_n)_{n\in \N}$ est dense dans $H$.
+	\end{itemize}
+\end{definition}
+
+
+\begin{example}
+	$\Ld(\N)$  et $\sprod  a b = \sum_{k=1}^n a_k \overline{b_k}$.
+	$e_k = (0, \ldots, 0, 1, 0, \ldots)$ avec $1$ en position $k$.
+	$\sprod {e_i} {e_j} = \sum e_i \overline{e_j} = \delta_{ij}$.
+
+	L'ensemble des combinaison linéaires finies d'éléments de $(e_n)_{n\in \N}$ est $\C^{(\N)}$ l'ensemble des suites nulles à partir d'un certain rang, donc dense dans $\Ld(\N)$.
+\end{example}
+
+\begin{example}
+	%TODO
+\end{example}
+
+
+\begin{theorem}
+	Si $H$ est un espace de Hilbert séparable, alors $H$ admet une base hilbertienne.
+\end{theorem}
+
+\begin{proof}
+	Soit $A$ une partie dénombrable dense de $H$.
+
+	\begin{itemize}
+		\item On construite avec $A$ une famille orthonormale.
+		\item On vérifie que c'est une base hilbertienne.
+	\end{itemize}
+
+	$A = \set { a_n }_{n\in \N}$.
+
+	\begin{itemize}
+		\item Montrons le premier point:\\
+
+		      Montrons que $\forall  \in \N, \exists p \leq n$ tel que $(a_1, \dots, a_n)$ est libre dans $H$ et $\vect {f_0, \dots, f_n} = \vect {a_0, \dots, a_n}$.
+
+		      On le montre par récurrence sur $n$.
+
+		      \begin{itemize}
+			      \item $n=0$ : $f_0 = a_0$ si $a_0 \neq 0$. $(a_0)$ est libre. $p = -1$ (famille vide).
+			      \item Hérédité :
+			            \begin{itemize}
+				            \item Si $a_{n+1} \in \vect {a_0, \dots , a_n}$ on garde $(f_0, \dots, f_p)$ convient.
+				            \item Si $a_{n+1} \notin \vect {a_0, \dots , a_n}$, alors $(f_0, \dots, f_n, a_{n+1})$ convient.
+			            \end{itemize}
+		      \end{itemize}
+
+		      On travaille avec $f_0, \dots, f_p$.
+		\item Soit $F$ un sous espace vectoriel fermé. Supposons que $(e_1, \dots, e_n)$ une base orthonormale de $F$.
+
+		      \begin{eqnarray*}
+			      p_F: H & \to & H \\
+			      x & \mapsto & \sum_{k=1}^n \sprod x {e_k} e_k
+		      \end{eqnarray*}
+		      vérifie $x - p_F \in F^{\perp}$. Donc c'est bien la projection orthogonale sur $F$.
+
+		      Posons $F_n = \vect {f_0, \dots, f_n}$.
+		      alors:
+		      \begin{eqnarray*}
+			      e_0 &=& \frac {f_0} {\norm {f_0}} \\
+			      e_1 &=& \frac {f_1 - p_{F_0} f_1} {\norm {f_1 - p_{F_0} f_1}} \\
+			      &\vdots& \\
+			      e_n &=& \frac {f_n - p_{F_{n-1}} f_n} {\norm {f_n - p_{F_{n-1}} f_n}}\\
+			      &=& \frac {f_n - \sum_{k=0}^{n-1} \sprod {f_n} {e_k} e_k} {\norm {f_n - \sum_{k=0}^{n-1} \sprod {f_n} {e_k} e_k}} \\
+			      &\vdots&
+		      \end{eqnarray*}
+
+		      On vérifie que $\norm {e_n} = 1$ et par récurrence $\forall n \in \N, \forall i < n, \sprod {e_i} {e_n} = 0$.
+
+
+		      On a $e_0 \in F_n$ et $\vect {(e_n)_{n\in \N}} \supset A$ Et $\vect {(e_n)_{n\in \N}}$ est l'ensemble des combinaisons linéaires finies. Or $A$ est dense dans $H$, donc
+		      $\vect {(e_n)_{n\in \N}} = H$.
+	\end{itemize}
+\end{proof}
+
+
+\begin{prop}[Inégalité de Bessel]
+	Soit $(e_n)_{n\in \N}$ une famille orthonormale de $H$.
+	Alors $\forall x \in H, \sum_{n=0}^{\infty} \abs{\sprod x {e_n}}^2 \leq \norm x^2$.
+\end{prop}
+
+
+\begin{proof}
+	%TODO
+\end{proof}
+
+
+\begin{prop}[Identité de Parseval]
+	$H$ espace de Hilbert séparable, $(e_n)_{n\in \N}$ une base hilbertienne de $H$,
+	alors:
+	$$ \forall x \in H, x = \sum_{n=0}^{\infty} \sprod x {e_n} e_n $$
+	$$ {\norm x}^2 = \sum_{n=0}^{\infty} \abs{\sprod x {e_n}}^2 $$
+	$$ \forall x,y \in H \sprod x y = \sum_{n=0}^{\infty} \sprod x {e_n} \overline{\sprod y {e_n}} $$
+\end{prop}
+
+\begin{proof}
+	%TODO
+\end{proof}
+
+
+
+\begin{prop}[Unicité des coefficients]
+	Sous les même hypothèses, si
+	$$ \sum_{n=0}^{k} \lambda_n e_n \to_{k\to \infty} x $$
+	alors $\forall n \in \N, \lambda_n = \sprod x {e_n}$.
+
+	On dit que $(\lambda_n)$ est la suite des coefficients de $x$ dans la base (hilbertienne) $(e_n)$.
+\end{prop}
+
+
+\begin{proof}
+	%TODO
+\end{proof}
+
