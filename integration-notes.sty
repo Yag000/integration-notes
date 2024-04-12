@@ -1,28 +1,54 @@
-\newcommand{\indep}{\perp\!\!\! \perp}
+%% Basic maths objects
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Ns}{\N^*}
 
+\newcommand{\Z}{\mathbb{Z}}
 
 \newcommand{\Q}{\mathbb{Q}}
 
 \newcommand{\R}{\mathbb{R}}
-\newcommand{\Rbar}{\overline{\R}}
-\newcommand{\Rbarp}{\overline{\R^+}}
 \newcommand{\Rn}{\R^n}
 \newcommand{\Rp}{\R^p}
+\newcommand{\Rbar}{\overline{\R}}
+\newcommand{\Rbarp}{\overline{\R^+}}
 
-
-\newcommand{\Z}{\mathbb{Z}}
 \newcommand{\C}{\mathbb{C}}
+
+
+%% Logic notation
+
+\newcommand{\set}[1]{\left\{#1\right\}}
+
+\newcommand{\ssi}{si et seulement si }
+\newcommand{\mssi}{\text{ si et seulement si }}
+
+%% Vector spaces
+
+\newcommand{\sprod}[2]{\left\langle #1, #2 \right\rangle}
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[1]{\abs{\abs{#1}}}
+\newcommand{\normop}[1]{\abs{\abs{\abs{#1}}}}
+
+\newcommand{\dist}[2]{\text{ d}\left(#1, #2\right)}
+\newcommand{\vect}[1]{\text{Vect}\left( #1 \right)}
+
+%% Probability notation
+
+\newcommand{\indep}{\perp\!\!\! \perp}
+
+\newcommand{\Pro}{\mathscr{P}}
+
 \newcommand{\E}{\mathbb{E}}
+
+\newcommand{\1}{\mathds{1}}
 
 \newcommand{\Lp}{\mathbb{L}}
 \newcommand{\Li}{\Lp^1}
 \newcommand{\Ld}{\Lp^2}
 \newcommand{\LiC}{\mathbb{L}^1_{\C}}
 
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Ns}{\N^*}
-
-\newcommand{\T}{\mathbb{T}}
+%% Mesure theory
 
 \newcommand{\triA}{\mathscr{A}}
 \newcommand{\triB}{\mathscr{B}}
@@ -30,24 +56,17 @@
 \newcommand{\triM}{\mathscr{M}}
 \newcommand{\triT}{\mathscr{T}}
 \newcommand{\triF}{\mathscr{F}}
-\newcommand{\bor}{\mathscr{B}}
-\newcommand{\Pro}{\mathscr{P}}
 
-\newcommand{\1}{\mathds{1}}
+\newcommand{\bor}{\mathscr{B}}
 
 \newcommand{\xor}{\otimes}
 
-\newcommand{\set}[1]{\left\{#1\right\}}
-\newcommand{\abs}[1]{\left|#1\right|}
-\newcommand{\norm}[1]{\abs{\abs{#1}}}
-\newcommand{\normop}[1]{\abs{\abs{\abs{#1}}}}
-\newcommand{\ssi}{si et seulement si }
-\newcommand{\mssi}{\text{ si et seulement si }}
-\newcommand{\sprod}[2]{\left\langle #1, #2 \right\rangle}
-\newcommand{\dist}[2]{\text{ d}\left(#1, #2\right)}
+%% Fourier analysis
 
-\newcommand{\vect}[1]{\text{Vect}\left( #1 \right)}
+\newcommand{\T}{\mathbb{T}}
 
+
+%% Environments
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Théorème}[section]
@@ -55,7 +74,7 @@
 \newtheorem{lemma}{Lemme}[section]
 \newtheorem{prop}{Proposition}[section]
 
-\theoremstyle{definition} 
+\theoremstyle{definition}
 \newtheorem{definition}{Définition}[section]
 \newtheorem{example}{Exemple}[subsection]
 \newtheorem{exercice}{Exercice}[subsection]
