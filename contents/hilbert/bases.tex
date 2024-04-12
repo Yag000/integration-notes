@@ -44,9 +44,9 @@
 
 
 \begin{example}
-	$\Ld(\N)$  et $\sprod  a b = \sum_{k=1}^n a_k \overline{b_k}$.
+	$\Ld(\N)$  et $\sprod  a b = \sum\limits_{k=1}^n a_k \overline{b_k}$.
 	$e_k = (0, \ldots, 0, 1, 0, \ldots)$ avec $1$ en position $k$.
-	$\sprod {e_i} {e_j} = \sum e_i \overline{e_j} = \delta_{ij}$.
+	$$ \sprod {e_i} {e_j} = \sum e_i \overline{e_j} = \delta_{ij} $$
 
 	L'ensemble des combinaison linéaires finies d'éléments de $(e_n)_{n\in \N}$ est $\C^{(\N)}$ l'ensemble des suites nulles à partir d'un certain rang, donc dense dans $\Ld(\N)$.
 \end{example}
@@ -102,7 +102,7 @@
 			      e_1 &=& \frac {f_1 - p_{F_0} f_1} {\norm {f_1 - p_{F_0} f_1}} \\
 			      &\vdots& \\
 			      e_n &=& \frac {f_n - p_{F_{n-1}} f_n} {\norm {f_n - p_{F_{n-1}} f_n}}\\
-			      &=& \frac {f_n - \sum_{k=0}^{n-1} \sprod {f_n} {e_k} e_k} {\norm {f_n - \sum_{k=0}^{n-1} \sprod {f_n} {e_k} e_k}} \\
+			      &=& \frac {f_n - \sum\limits_{k=0}^{n-1} \sprod {f_n} {e_k} e_k} {\norm {f_n - \sum\limits_{k=0}^{n-1} \sprod {f_n} {e_k} e_k}} \\
 			      &\vdots&
 		      \end{eqnarray*}
 
