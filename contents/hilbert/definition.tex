@@ -14,11 +14,42 @@
 
 \begin{remarque}
 	$ y \to \sprod{x}{\lambda y} = \overline{\lambda} \sprod{x}{y} $.
-	$(x,y) \mapsto \sprod{x}{y}$ est dite sesquilinéaire ( linéaire en la première variable et anitlinéaire en la seconde).
+	$(x,y) \mapsto \sprod{x}{y}$ est dite sesquilinéaire (linéaire en la première variable et anitlinéaire en la seconde).
 	On note en général $\norm{x}_2 = \sqrt{\sprod{x}{x}}$, on notera que c'est une norme.
 \end{remarque}
 
-%TODO: a lot of stuff, sorry
+\begin{remarque}
+	\begin{eqnarray*}
+		\norm{x + y}_2^2 &=& \sprod{x + y}{x + y}\\
+		&=& \sprod{x}{x} + \sprod{x}{y} + \sprod{y}{x} + \sprod{y}{y}\\
+		&=& \norm{x}_2^2 + 2\Re \sprod{x}{y} + \norm{y}_2^2
+	\end{eqnarray*}
+\end{remarque}
+
+\begin{prop}[Inégalité de Cauchy-Schwarz]
+	Soit $H$ un espace de Hilbert, alors
+	$$ \forall x,y \in H, \abs{\sprod{x}{y}} \leq \norm{x}_2 \norm{y}_2 $$
+\end{prop}
+
+\begin{proof}
+	\begin{itemize}
+		\item Si $\norm y = 0, \ 0 \leq 0$.
+		\item Sinon on regarde
+		      $$ 0 \leq \norm{x + ty}^2 = \norm{x}^2 + 2t\Re \sprod{x}{y} + t^2 \norm{y}^2 $$
+		      qui est un polynôme du second degré en $t$.
+		      On pose $\Delta = 4\Re \sprod{x}{y}^2 - 4\norm{x}^2\norm{y}^2 \leq 0$.
+		      Donc $\abs{\Re \sprod{x}{y}} \leq \norm x \norm y$.
+
+		      Si on est dans un $\R$-espace vectoriel on a fini. Sinon:
+		      \begin{eqnarray*}
+			      \sprod x y &=& \abs{\sprod x y} e^{i\theta} \\
+			      \abs{\sprod x y} &=& e^{-i\theta} \sprod x y \\
+			      &=&    \sprod {e^{-i\theta} x} y
+		      \end{eqnarray*}
+		      Or $\abs{\sprod x y} = \abs {\Re ( \sprod {e^{-i\theta} x} y )} \leq \norm {e^{-i\theta} x} \norm y = \norm x \norm y$.
+	\end{itemize}
+\end{proof}
+
 
 \begin{coro}
 	$\norm{x} = \sqrt{\sprod{x}{x}}$ définit une norme sur $H$ si $\sprod{\cdot}{\cdot}$ est un produit scalaire.
