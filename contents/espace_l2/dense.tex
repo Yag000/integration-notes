@@ -1,16 +1,23 @@
 \subsection{Classes denses de fonctions}
 
 \begin{theorem}
-	Dans $\R^d, \bor (\R^d), \lambda_d$:
+	Dans $(\R^d, \bor (\R^d), \lambda_d)$:
 
 	\begin{itemize}
 		\item L'espace des fonctions étagées intégrables est dense dans $L^2(\R^d, \bor (\R^d), \lambda_d)$.
-		\item L'espace des fonction continues (à support compact) est dense dans $L^2(\R^d, \bor (\R^d), \lambda_d)$.
+		\item L'espace des fonctions continues (à support compact) est dense dans $L^2(\R^d, \bor (\R^d), \lambda_d)$ (pour la norme de l'espace de Hilbert).
 	\end{itemize}
 \end{theorem}
 
 \begin{proof}
-	%TODO
+	\begin{itemize}
+		\item $ f \in L^2(\R^d, \bor (\R^d), \lambda_d), f = f^+ + f^-$
+		Il suffit d'approcher $f^+$. On sait qu'il existe une suite \underline{croissante} $f_n$ de fonctions étagées positives avec $f_n -> f^+ \mu-pp$ %todo add limit
+		$0 \leq f_n \leq f^+$ donc les $f_n$ sont intégrables.
+		$0\leq f_n^2 \leq f^{+2} \leq f^2$ donc $\int f_n^2 d \lambda_d \leq \int f^2d \lambda_d \le \infty$ donc $f_n \in L^2_\R$
+		%TODO finish proof
+		\item admis
+	\end{itemize}
 \end{proof}
 
 
