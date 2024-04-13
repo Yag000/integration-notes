@@ -14,7 +14,7 @@ C'est quoi la loi?
 	B &\mapsto& \Pro(X  \in B)
 \end{eqnarray*}
 
-$(\Pro_x) est une mesure sur (\R,  \bor(\R)).$ 
+$(\Pro_x)$ est une mesure sur $(\R,  \bor(\R)).$
 
 Soit $X$ une variable aléatoire réelle positive\\
 \begin{eqnarray*}
@@ -37,18 +37,21 @@ De plus,
 
 En particulier, si $\Pro_X = fd\lambda$, "X est à densité par rapport à Lebesgue", alors $\forall g$ mesurable positive,
 $$\int g(x) d \Pro_X(x) = \int g(x) f(x) d \lambda(x)$$
-et donc ("formule de transfert") : 
+et donc ("formule de transfert") :
 $$ \E[g(X)] = \int g(x) f(x) d \lambda(x)$$
 
-Ex. : regarder par exemple par rapport à la mesure de comptage.
+\begin{example}
+	Soit $\mu$ une mesure et $f$ une fonction mesurable positive.\\
+	Si $\nu(A) = \int f \1_A d \mu$, alors $\nu$ est la mesure de densité $f$ par rapport à $\mu$.
+\end{example}
 
 
 \subsubsection{Sur l'indépendance}
 
-$X \indep Y, \quad \forall A,B \in \bor (\R)$ 
+$X \indep Y, \quad \forall A,B \in \bor (\R)$
 
 \begin{eqnarray*}
-	\Pro_{(X,Y)}(A,B)= \Pro (X \in A \text{ et } Y \in B) 
+	\Pro_{(X,Y)}(A,B)= \Pro (X \in A \text{ et } Y \in B)
 	&=& \Pro(X\in A) \Pro(Y\in B)\\
 	&=& \Pro_X(A) \Pro_Y( B)
 \end{eqnarray*}
@@ -59,5 +62,5 @@ $$\forall A,B\Pro_{(X,Y)}(A\times B) = \Pro (X\in A \text{ et } Y \in B)$$
 
 donc $X \indep Y\iff \Pro_{(X,Y)} = \Pro_x \xor \Pro_y$.
 
-De même pour $(X_1, \dots, X_n)$, ils sont indépendants ssi $\Pro_{(X_1,.., X_n)} =\Pro_{x_1} \xor ... \xor  \Pro_{x_n} $
+De même pour $(X_1, \dots, X_n)$, ils sont indépendants \ssi $\Pro_{(X_1,.., X_n)} =\Pro_{x_1} \xor ... \xor  \Pro_{x_n} $
 
