@@ -3,9 +3,9 @@
 
 
 
-Sot $(\Omega, \triF, \Pro)$ espace probabilisé.
+Soit $(\Omega, \triF, \Pro)$ espace probabilisé.
 
-$X : \Omega,    \triF) \to (\R,  \bor(\R)) $ mesurable "variable aléatoire".
+$X : (\Omega,    \triF) \to (\R,  \bor(\R)) $ mesurable "variable aléatoire".
 
 C'est quoi la loi?
 
@@ -14,12 +14,14 @@ C'est quoi la loi?
 	B &\mapsto& \Pro(X  \in B)
 \end{eqnarray*}
 
-Soit $X$ une variable aléatoire positive\\
+$(\Pro_x)$ est une mesure sur $(\R,  \bor(\R)).$
+
+Soit $X$ une variable aléatoire réelle positive\\
 \begin{eqnarray*}
 	\E[X] &=& \int_0^{+\infty} \Pro (X> t) d t\\
 	&=& \int_0^{+\infty}\int_\R \1_{X(\omega)>t}d \Pro (\omega) d t\\
 	&=& \int_{\R^+} \int_{\R} \1_{X(\omega)>t}d \Pro (\omega) d \lambda(t) \\ %TODO add remark
-	&=& \int_{\Omega} \int_{\R^+} \1_{X(\omega)>t}d d \lambda(t) \Pro (\omega)  \\%TODO add underbrace
+	&=& \int_{\Omega} \int_{\R^+} \1_{X(\omega)>t}d \lambda(t) d \Pro (\omega)  \\%TODO add underbrace
 	&=& \int_{\Omega} X(\omega) d \Pr(\omega)
 \end{eqnarray*}
 
@@ -27,29 +29,38 @@ De plus,
 
 
 \begin{eqnarray*}
-	\E[X] &=& \int{\R^+} \Pro_X(]t, +\infty[) d \lambda (t) \\
+	\E[X] &=& \int_{\R^+} \Pro_X(]t, +\infty[) d \lambda (t) \\
 	&=& \int_{\R^+} \int_{\R^+} \1_{X(\omega)>t}d \Pro_X (\omega) d \lambda(t) \\
 	&=& \int_{\R^+} \int_{\R^+} \1_{X(\omega)>t}d \lambda(t) d\Pro_X (\omega)  \\ %TODO underbrace
 	&=& \int_{\R^+} x d\Pro_X (x)
 \end{eqnarray*}
 
-%TODO: add stuff
+En particulier, si $\Pro_X = fd\lambda$, "X est à densité par rapport à Lebesgue", alors $\forall g$ mesurable positive,
+$$\int g(x) d \Pro_X(x) = \int g(x) f(x) d \lambda(x)$$
+et donc ("formule de transfert") :
+$$ \E[g(X)] = \int g(x) f(x) d \lambda(x)$$
+
+\begin{example}
+	Soit $\mu$ une mesure et $f$ une fonction mesurable positive.\\
+	Si $\nu(A) = \int f \1_A d \mu$, alors $\nu$ est la mesure de densité $f$ par rapport à $\mu$.
+\end{example}
 
 
 \subsubsection{Sur l'indépendance}
 
-$X \indep Y, \quad \forall C,B \in \bor (\R)$ %TODO: Change for big a
+$X \indep Y, \quad \forall A,B \in \bor (\R)$
 
 \begin{eqnarray*}
-	\Pro_{(X,Y)}(C,B)= \Pro (C    in C \text{ et }) Y \in B) &=& \Pro(X\in c) \Pro(Y\in B)\\
-	&=& \Pro_X(C) \Pro_Y( B)
+	\Pro_{(X,Y)}(A,B)= \Pro (X \in A \text{ et } Y \in B)
+	&=& \Pro(X\in A) \Pro(Y\in B)\\
+	&=& \Pro_X(A) \Pro_Y( B)
 \end{eqnarray*}
 
 
 $\Pro_{(X,Y)} \to [0,1]$ mesure sur $\R \times \R$ telle que
-$$\forall C,B\Pro_{X,Y)}(C\times B) = \Pro (X\in C \text{ et } Y \in B)$$
+$$\forall A,B\Pro_{(X,Y)}(A\times B) = \Pro (X\in A \text{ et } Y \in B)$$
 
-donc $X \indep Y\iff \Pro_{(X,Y)} = \Pro_x \Pro_y$.
+donc $X \indep Y\iff \Pro_{(X,Y)} = \Pro_x \xor \Pro_y$.
 
-De même pour $(X1, \dots, X_n)$
+De même pour $(X_1, \dots, X_n)$, ils sont indépendants \ssi $\Pro_{(X_1,.., X_n)} =\Pro_{x_1} \xor ... \xor  \Pro_{x_n} $
 

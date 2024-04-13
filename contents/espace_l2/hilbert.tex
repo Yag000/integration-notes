@@ -1,7 +1,7 @@
 \subsection{L'espace de Hilbert $L^2$}
 
 \begin{definition}
-	On dñéfinit, pour $f,g \in L^2(E,\triA, \mu)$.
+	On définit pour $f,g \in L^2(E,\triA, \mu)$.
 	$$\sprod{f}{g} = \int fg d \mu$$
 	est un profit scalaire sur $L^2(E, \triA, \mu)$.
 	\begin{itemize}
@@ -13,17 +13,21 @@
 
 
 \begin{proof}
-	%TODO
+	\begin{itemize}
+		\item par linéarité de l'intégrale
+		\item évident
+		\item $ \int f^2 d \mu = 0 \iff f^2 = 0 \ \mu \ pp \ (2.1.12)$
+	\end{itemize}
 \end{proof}
 
 
 \begin{remarque}
-	En particulier, $\norm{f}_2 = \sqrt{\sprod{f}{f}}$ est une norme sur $L^2_\R(E, \triA, \mu)$.
+	En particulier, $\norm{f}_2 = \sqrt{\sprod{f}{f}}$ est une norme sur l'espace vectoriel $L^2_\R(E, \triA, \mu)$.
 \end{remarque}
 
 \begin{definition}
-	On dit que $(E, \sprod{\cdot}{\cdot})$  est espace de Hilbert si $E$ es muni d'un produit scalaire $\sprod{\cdot}{\cdot}$ et
-	si $E$ est complet pour la norme induite $\norm{\cdot} = \sqrt{\sprod{\cdot}{\cdot}}$.
+	On dit que $(E, \sprod{\cdot}{\cdot})$  est un espace de Hilbert si $E$ est muni d'un produit scalaire $\sprod{\cdot}{\cdot}$ et
+	si $E$ est complet pour la norme induite $\norm{\cdot} = \sqrt{\sprod{\cdot}{\cdot}^2}$.
 \end{definition}
 
 \begin{theorem}[Riesz]
@@ -31,9 +35,9 @@
 \end{theorem}
 
 \begin{proof}
-	Soit $f_m$ une suite de Cuachy dans $L^2(E, \triA, \mu)$, alors il existe une sous-suite $f_{k_n}$ telle que
+	Soit $f_n$ une suite de Cauchy dans $L^2(E, \triA, \mu)$, alors il existe une sous-suite $f_{k_n}$ telle que
 	$$\norm{f_{k_{n+1}} - f_{k_n}}_2 \leq 2^{-n}$$
-	On pose $g_m = f_{k_n}$
+	On pose $g_n = f_{k_n}$
 	\begin{eqnarray*}
 		\int \left( \sum\limits_{n=1}^\infty \abs{g_{n+1} - g_n} \right)^2 d \mu &=& \lim_{N \to \infty} \int \left( \sum\limits_{n=1}^N \abs{g_{n+1} - g_n} \right)^2 d \mu \\
 		&=& \lim_{N \to \infty} \int \left( \sum\limits_{1 \leq i, j \leq N} \abs{g_{i+1} - g_i} \abs{g_{j+1} - g_j} \right) d \mu \\
@@ -42,7 +46,10 @@
 		&\leq& \lim_{N \to \infty} \left( \sum\limits_{n=1}^N \norm{g_{n+1} - g_n}_2 \right)^2 \\
 		&<& \infty
 	\end{eqnarray*}
-	%TODO: Finish this proof
+	car $\norm{g_{n+1} - g_n}_2 \leq 2^{-n}$.\\
+	En particulier, $\left( \sum\limits_{n=1}^\infty \abs{g_{n+1} - g_n} \right)^2$ est $\mu$-intégrable, donc finie $\mu-pp$ donc $ \sum\limits_{n=1}^\infty \abs{g_{n+1} - g_n} $ est finie $\mu-pp$.
+	$ \sum\limits_{n=1}^\infty g_{n+1}(x) - g_n(x)$ est absolument convergente $\mu-pp$ (en x).
+	%TODO finish proof (gl)
 \end{proof}
 
 \begin{example}
@@ -60,7 +67,7 @@
 \end{example}
 
 \begin{remarque}
-	Si les fonctions sont a valeurs complexes, on définit le produit scalaire par:
+	Si les fonctions sont à valeurs complexes, on définit le produit scalaire par:
 	$$\sprod{f}{g} = \int f \overline{g} d \mu$$
-	Cela munit $L^2(E, \triA, \mu)$ d'une structure de espace de Hilbert.
+	Cela munit $L^2(E, \triA, \mu)$ d'une structure de espace de Hilbert complexe.
 \end{remarque}
