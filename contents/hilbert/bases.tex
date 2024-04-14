@@ -7,7 +7,7 @@
 
 
 \begin{example}
-	$\Q$ dense dans $\R$.
+	$\R$ est séparable ($\Q$ est dense dans $\R$ et dénombrable).
 \end{example}
 
 \begin{example}
@@ -15,10 +15,10 @@
 \end{example}
 
 \begin{proof}
-	On a vu que les fonctions continues à support compacts sont denses dans $\Ld$.
+	On a vu que les fonctions continues à support compact sont denses dans $\Ld$.
 
 
-	Toute fonction continue a support compact peut être approchée par une fonction étagée à valeurs rationnelles,
+	Toute fonction continue à support compact peut être approchée par une fonction étagée à valeurs rationnelles,
 	avec pour ensemble de niveaux des pavés à coordonnées rationnelles.
 	$$ \sum_{k=-n^2}^{n^2} f_{\epsilon} \left(\frac k n\right) \1_{[\frac k n, \frac {k+1} n[} $$
 	avec $f_{\epsilon}$ un rationnel $\frac {\epsilon} 4$-proche de $f\left(\frac k n\right)$.
@@ -31,14 +31,14 @@
 \end{proof}
 
 \begin{example}
-	$\Ld(\N)$ et $\Q^{(\N)}$ l'ensemble des suite nulles à partir d'un certain rang à valeurs rationnelles.
+	$\Ld(\N)$ et $\Q^{(\N)}$ l'ensemble des suites nulles à partir d'un certain rang à valeurs rationnelles.
 \end{example}
 
 \begin{definition}[Base orthonormale / hilbertienne]
-	On dit que $(e_n)_{n\in \N}$ est une base orthonormale / hilbertienne de $H$ si
+	On dit que $(e_n)_{n\in \N}$ est une base orthonormale/hilbertienne de $H$ si
 	\begin{itemize}
 		\item $\norm {e_n} = 1, \ \sprod {e_i} {e_j} = \delta_{ij} = \begin{cases} 1 & \text{si } i=j \\ 0 & \text{sinon} \end{cases}$
-		\item L'ensemble des combinaisons linéaire finies d'éléments $(e_n)_{n\in \N}$ est dense dans $H$.
+		\item L'ensemble des combinaisons linéaires finies d'éléments $(e_n)_{n\in \N}$ est dense dans $H$.
 	\end{itemize}
 \end{definition}
 
@@ -48,7 +48,7 @@
 	$e_k = (0, \ldots, 0, 1, 0, \ldots)$ avec $1$ en position $k$.
 	$$ \sprod {e_i} {e_j} = \sum e_i \overline{e_j} = \delta_{ij} $$
 
-	L'ensemble des combinaison linéaires finies d'éléments de $(e_n)_{n\in \N}$ est $\C^{(\N)}$ l'ensemble des suites nulles à partir d'un certain rang, donc dense dans $\Ld(\N)$.
+	L'ensemble des combinaisons linéaires finies d'éléments de $(e_n)_{n\in \N}$ est $\C^{(\N)}$ l'ensemble des suites nulles à partir d'un certain rang, donc dense dans $\Ld(\N)$.
 \end{example}
 
 \begin{example}
@@ -64,7 +64,7 @@
 	Soit $A$ une partie dénombrable dense de $H$.
 
 	\begin{itemize}
-		\item On construite avec $A$ une famille orthonormale.
+		\item On construit avec $A$ une famille orthonormale.
 		\item On vérifie que c'est une base hilbertienne.
 	\end{itemize}
 
@@ -73,12 +73,12 @@
 	\begin{itemize}
 		\item Montrons le premier point:\\
 
-		      Montrons que $\forall  \in \N, \exists p \leq n$ tel que $(a_1, \dots, a_n)$ est libre dans $H$ et $\vect {f_0, \dots, f_n} = \vect {a_0, \dots, a_n}$.
+		      Montrons que $\forall n \in \N, \exists p \leq n \exists f_0, \dots, f_p \subset \set {a_0, \dots, a_n}$ tel que $(f_0, \dots, f_p)$ est libre dans $H$ et $\vect {f_0, \dots, f_p} = \vect {a_0, \dots, a_n}$.
 
 		      On le montre par récurrence sur $n$.
 
 		      \begin{itemize}
-			      \item $n=0$ : $f_0 = a_0$ si $a_0 \neq 0$. $(a_0)$ est libre. $p = -1$ (famille vide).
+			      \item $n=0$ : $f_0 = a_0$ si $a_0 \neq 0$. $(a_0)$ est libre, sinon $p = -1$ (la famille est vide).
 			      \item Hérédité :
 			            \begin{itemize}
 				            \item Si $a_{n+1} \in \vect {a_0, \dots , a_n}$ on garde $(f_0, \dots, f_p)$ convient.
@@ -99,17 +99,17 @@
 		      alors:
 		      \begin{eqnarray*}
 			      e_0 &=& \frac {f_0} {\norm {f_0}} \\
-			      e_1 &=& \frac {f_1 - p_{F_0} f_1} {\norm {f_1 - p_{F_0} f_1}} \\
+			      e_1 &=& \frac {f_1 - p_{F_0} (f_1)} {\norm {f_1 - p_{F_0} (f_1)}} \\
 			      &\vdots& \\
-			      e_n &=& \frac {f_n - p_{F_{n-1}} f_n} {\norm {f_n - p_{F_{n-1}} f_n}}\\
+			      e_n &=& \frac {f_n - p_{F_{n-1}} (f_n)} {\norm {f_n - p_{F_{n-1}} (f_n)}}\\
 			      &=& \frac {f_n - \sum\limits_{k=0}^{n-1} \sprod {f_n} {e_k} e_k} {\norm {f_n - \sum\limits_{k=0}^{n-1} \sprod {f_n} {e_k} e_k}} \\
 			      &\vdots&
 		      \end{eqnarray*}
 
-		      On vérifie que $\norm {e_n} = 1$ et par récurrence $\forall n \in \N, \forall i < n, \sprod {e_i} {e_n} = 0$.
+		      On vérifie que $\norm {e_n} = 1$ et par récurrence $\forall n \in \N, \forall i < n, \sprod {e_n} {e_i} = 0$.
 
 
-		      On a $e_0 \in F_n$ et $\vect {(e_n)_{n\in \N}} \supset A$ Et $\vect {(e_n)_{n\in \N}}$ est l'ensemble des combinaisons linéaires finies. Or $A$ est dense dans $H$, donc
+		      Or $e_n \in F_n$ et $\vect {(e_n)_{n\in \N}} \supset A$ Et $\vect {(e_n)_{n\in \N}}$ est l'ensemble des combinaisons linéaires finies. Or $A$ est dense dans $H$, donc
 		      $\vect {(e_n)_{n\in \N}} = H$.
 	\end{itemize}
 \end{proof}
@@ -131,7 +131,7 @@
 	alors:
 	$$ \forall x \in H, x = \sum_{n=0}^{\infty} \sprod x {e_n} e_n $$
 	$$ {\norm x}^2 = \sum_{n=0}^{\infty} \abs{\sprod x {e_n}}^2 $$
-	$$ \forall x,y \in H \sprod x y = \sum_{n=0}^{\infty} \sprod x {e_n} \overline{\sprod y {e_n}} $$
+	$$ \forall x,y \in H, \sprod x y = \sum_{n=0}^{\infty} \sprod x {e_n} \overline{\sprod y {e_n}} $$
 \end{prop}
 
 \begin{proof}
@@ -141,8 +141,8 @@
 
 
 \begin{prop}[Unicité des coefficients]
-	Sous les même hypothèses, si
-	$$ \sum_{n=0}^{k} \lambda_n e_n \to_{k\to \infty} x $$
+	Sous les mêmes hypothèses, si
+	$$ \sum_{n=0}^{k} \lambda_n e_n \to_{k \to \infty} x $$
 	alors $\forall n \in \N, \lambda_n = \sprod x {e_n}$.
 
 	On dit que $(\lambda_n)$ est la suite des coefficients de $x$ dans la base (hilbertienne) $(e_n)$.
