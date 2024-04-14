@@ -44,7 +44,7 @@
 
 
 \begin{example}
-	$\Ld(\N)$  et $\sprod  a b = \sum\limits_{k=1}^n a_k \overline{b_k}$.
+	$\ld(\N)$  et $\sprod  a b = \sum\limits_{k=1}^n a_k \overline{b_k}$.
 	$e_k = (0, \ldots, 0, 1, 0, \ldots)$ avec $1$ en position $k$.
 	$$ \sprod {e_i} {e_j} = \sum e_i \overline{e_j} = \delta_{ij} $$
 
@@ -52,7 +52,21 @@
 \end{example}
 
 \begin{example}
-	%TODO
+	$$\ld_{\C}([0,1], \bor([0,1]), \lambda)$$
+	$$\sprod f g = \int_{[0,1]} f \overline g d \lambda$$
+
+	on pose \begin{align*}
+		e_n : [0,1] & \to \C               \\
+		t           & \mapsto e^{2ni\pi t}
+	\end{align*}
+
+	\begin{eqnarray*}
+		\sprod {e_n} {e_m} &=& \int e^{2ni\pi t} e^{-2mi\pi t} d \lambda (t) \\
+		&=& \int  e^{2i\pi (n-m) t} d \lambda (t) \\
+		&=& \begin{cases} 1 & \text{si } n=m \\ 0 & \text{sinon} \end{cases}
+	\end{eqnarray*}
+
+	car $\int_0^1 cos (2 \pi t) d t = 0 = \int_0^1 sin(2 \pi t) d t$.
 \end{example}
 
 
