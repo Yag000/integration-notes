@@ -43,7 +43,7 @@ On travaille sur $(E, \triA, \mu)$.
 		\item Inégalité triangulaire. $\left| \int f d\mu \right| \leq \int |f| d \mu$.
 		\item Linéarité: $\Li$ est un espace vectoriel.
 		\item Croissance: si $f,g \in \Li$ et $f\leq g$ alors $\int f d\mu \leq \int g d\mu$
-		\item Si $f,g \in \Li$ $f = g \mu-$pp alors $\int f d\mu = \int g d\mu$.
+		\item Si $f,g \in \Li$ $f = g \mupp$ alors $\int f d\mu = \int g d\mu$.
 	\end{itemize}
 \end{prop}
 
@@ -61,7 +61,7 @@ On travaille sur $(E, \triA, \mu)$.
 		      $$\int g d\mu = \int f d\mu + \int (g-f) d \mu$$
 		      Or $(g-f)^- = 0$, donc $\int (g-f) d\mu > 0$.
 		      Donc $\int f d\mu \leq \int g d\mu$.
-		\item Si $f = g$ $\mu$-pp, alors $f^+ = g^+$ $\mu$-pp et $f^- = g^-$ $\mu$-pp.\\
+		\item Si $f = g$ $\mupp$, alors $f^+ = g^+$ $\mupp$ et $f^- = g^-$ $\mu$pp.\\
 		      Donc $\int f d\mu = \int f^+ \mu + \int f^-  d\mu = \int g^+ \mu + \int g^-  d\mu = \int g d\mu$
 	\end{itemize}
 \end{proof}
@@ -81,7 +81,7 @@ On travaille sur $(E, \triA, \mu)$.
 	\begin{itemize}
 		\item Inégalité triangulaire. $\left| \int f d\mu \right| \leq \int |f| d \mu$.
 		\item Linéarité: $\LiC$ est un espace vectoriel.
-		\item Si $f,g \in \Li$ $f = g \mu-$pp alors $\int f d\mu = \int g d\mu$.
+		\item Si $f,g \in \Li$ $f = g \mupp$ alors $\int f d\mu = \int g d\mu$.
 	\end{itemize}
 \end{prop}
 
@@ -99,9 +99,9 @@ On travaille sur $(E, \triA, \mu)$.
 \begin{theorem}[Convergence dominée]
 	Soit $f_n$ une suite de fonctions dans $\Li$ avec:
 	\begin{itemize}
-		\item Il existe $f$ mesurable à valeurs dans $\R$ telle que $f_n \to f, \ \mu-$pp.
+		\item Il existe $f$ mesurable à valeurs dans $\R$ telle que $f_n \to f, \ \mupp$.
 		\item Il existe $g : (E,A) \to \R^+, \bor(\R^+)$ mesurable positive avec $\int g d\mu < +\infty$ telle que
-		      $$\forall n \in\N,\ |f_n(x)| \leq g(x)\ \mu-pp$$
+		      $$\forall n \in\N,\ |f_n(x)| \leq g(x)\ \mupp$$
 	\end{itemize}
 
 	Alors $f \in \Li$ et
@@ -112,6 +112,6 @@ On travaille sur $(E, \triA, \mu)$.
 
 
 \begin{example}[Contre-exemple sans domination]
-	$$f_n =\frac{1}{n} \1_{[0,n[} \to 0 \ \mu-pp$$
+	$$f_n =\frac{1}{n} \1_{[0,n[} \to 0 \ \mupp$$
 	$$ \forall n, \ \int f_n d\mu = 1 \to 1 \neq 0 = \int 0 d\mu$$
 \end{example}

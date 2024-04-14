@@ -5,9 +5,9 @@
 	On suppose:
 	\begin{itemize}
 		\item $\forall u \in U,\ f (u, \cdot) : (E, \triA) \to (\R, \bor(\R))$ mesurable.
-		\item $\mu-pp$ (en $x$) $f(\cdot, x) : U  \to \R$ est continue en $u_0 \in U$.
+		\item $\mupp$ (en $x$) $f(\cdot, x) : U  \to \R$ est continue en $u_0 \in U$.
 		\item Il existe $g$ intégrable telle que
-		      $$\forall u \in U, \ \left| f(u,x) \right| \leq g(x) \ \mu-pp \text{ en } x$$
+		      $$\forall u \in U, \ \left| f(u,x) \right| \leq g(x) \ \mupp \text{ en } x$$
 	\end{itemize}
 	Alors la fonction
 	$$F (u) = \int f(u,x) d\mu(x)$$
@@ -20,7 +20,7 @@
 	F est bien définie car $\forall u \in U, f(u,\cdot)$ mesurable et $|f(u,\cdot)| \leq g(\cdot)$ qui est intégrable.\\
 
 	Posons $f_n(x) = f(u_n,x)$ et $f_n(x) \to f(u_0,x)$.\\
-	$$|f_n(x)|= |f(u_n, x)| \leq g(x) \mu-pp$$
+	$$|f_n(x)|= |f(u_n, x)| \leq g(x) \mupp$$
 	D'après le TCD , $\underbrace{\int f_n(x)d\mu(x)}_{=F(u_n)} \to  \underbrace{\int f(u_0, x)d\mu(x)}_{= F(u_0)}$
 \end{proof}
 
@@ -42,7 +42,7 @@
 					      0 \text{ sinon}
 				      \end{array}
 				      \right.$ \\
-			      est continue en $\R\setminus\{x\}$. Comme $\mu$ est diffuse, $\mu \{x\} = 0$ et donc $f(\cdot, x)$ est continue $\mu-pp$.
+			      est continue en $\R\setminus\{x\}$. Comme $\mu$ est diffuse, $\mu \{x\} = 0$ et donc $f(\cdot, x)$ est continue $\mupp$.
 			\item $|f(u,x)| = |\phi(x)\1_{]-\infty, u]}(x)| \leq |\phi(x)|$ qui est intégrable.
 		\end{itemize}
 	\end{proof}
@@ -54,16 +54,16 @@
 	$$ f: I\times E \to \R$$
 	\begin{itemize}
 		\item $\forall u \in I, \ f(u, \cdot) \in \Li_R(E,\triA, \mu)$
-		\item $\mu-pp,\  f(\cdot, x)$ est dérivable en $u_0 \in I$ de dérivée $\diffp{f}{u} (u_0, x)$.
+		\item $\mupp,\  f(\cdot, x)$ est dérivable en $u_0 \in I$ de dérivée $\diffp{f}{u} (u_0, x)$.
 		\item Il existe $g\in \Li$ telle que
-		      $$ \forall u\in I,\ |f(u,x) - f(u_0,x)| \leq g(x)|u-u_0| \mu-pp$$
+		      $$ \forall u\in I,\ |f(u,x) - f(u_0,x)| \leq g(x)|u-u_0| \mupp$$
 	\end{itemize}
 
 	Alors $F(u) = \int f(u,x)d\mu$ est dérivable au point $u_0$ et sa dérivée est $F'(u_0) = \int \diffp{f}{u}(u_0,x)d\mu(x)$
 \end{theorem}
 
 \begin{remarque}
-	La fonction $\diffp{f}{u}(u_0,\cdot)$ n'est définie que $\mu-pp$. Il suffit de
+	La fonction $\diffp{f}{u}(u_0,\cdot)$ n'est définie que $\mupp$. Il suffit de
 	la prolonger n'importe comment et cela suffit à définir $\int \diffp{f}{u}(u_0,x)d\mu(x)$.
 	Comme le prolongement se fait sur un ensemble de mesure nulle, cela ne change pas la valeur de l'intégrale,
 	c'est pour cela que l'on peut donner une liberté absolue pour le prolongement, par exemple en lui donnant la valeur 0.
@@ -88,9 +88,9 @@
 \begin{remarque}
 	On peut changer les hypothèses 2 et 3 pour avoir une forme plus pratique:
 	\begin{itemize}
-		\item $\mu-pp\  f(\cdot, x)$ est dérivable sur $I$.
+		\item $\mupp\  f(\cdot, x)$ est dérivable sur $I$.
 		\item Il existe $g\in \Li$ telle que
-		      $$ \forall u\in I \left|\diffp{f}{u}(u,x)\right| \leq g(x) \ \mu-pp$$
+		      $$ \forall u\in I \left|\diffp{f}{u}(u,x)\right| \leq g(x) \ \mupp$$
 		      Ceci implique, par le théorème des accroissements finis, la majoration de l'hypothèse 3.
 	\end{itemize}
 	et dans ce cas on a que $F$ est dérivable sur $I$ tout entier.
@@ -117,9 +117,9 @@
 
 	\begin{itemize}
 		\item $\forall u \in I, \ f(u,\cdot) \in \Li(E,\triA,\mu)$
-		\item $\mu-pp, \ u \mapsto f(u,x)$ est $C^k$ sur $I$.
+		\item $\mupp, \ u \mapsto f(u,x)$ est $C^k$ sur $I$.
 		\item Il existe $g_k\in \Li$ tel que
-		      $$ \forall u\in I,\ \left|\diffp[i]{f}{u}(u,x)\right| \leq g_k(x) \ \mu-pp$$
+		      $$ \forall u\in I,\ \left|\diffp[i]{f}{u}(u,x)\right| \leq g_k(x) \ \mupp$$
 	\end{itemize}
 
 	Alors $F(u) = \int f(u,x)\ d\mu$ est $C^k$ sur $I$, avec $F^{(i)}(u) = \int \diffp[i]{f}{u}(u,x) \ d\mu(x)$

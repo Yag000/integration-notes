@@ -241,7 +241,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 
 \begin{definition}[$\mu$-presque partout]
 	Soit $P$ une propriété sur $x \in E$ ($P(x) \in \{Vrai, Faux\}$)\\
-	On dit que $P$ est vraie $\mu$-presque partout ($\mu-pp$) si
+	On dit que $P$ est vraie $\mu$-presque partout ($\mupp$) si
 	$$ \left\{x \in E : P(x)  = Faux \right\} \in \triA \text{ et } \mu\left(\left\{x \in E : P(x)  = Faux \right\}\right) = 0 $$
 	ou s'il existe $B \in \triA$ tel que $\left\{ x \in E : P(x) = Faux \right\} \subset B$ et $\mu(B) = 0$
 \end{definition}
@@ -331,9 +331,9 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 	\begin{itemize}
 		\item Pour tout $a > 0$ on a
 		      $$ \mu\left(\left\{ x \in E : f(x) \geq a \right\}\right) \leq \frac{1}{a} \int f d\mu $$
-		\item Si $\int f d\mu < \infty$ alors $f < \infty \ \mu-pp$
-		\item $\int f d\mu = 0$ si et seulement si $f = 0 \ \mu-pp$
-		\item $f=g \ \mu-pp \implies \int f d\mu = \int g d\mu$
+		\item Si $\int f d\mu < \infty$ alors $f < \infty \ \mupp$
+		\item $\int f d\mu = 0$ si et seulement si $f = 0 \ \mupp$
+		\item $f=g \ \mupp \implies \int f d\mu = \int g d\mu$
 	\end{itemize}
 \end{prop}
 
@@ -353,7 +353,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 		      \end{eqnarray*}
 
 		      Donc $\mu (An) \to 0$ et donc $\mu(A_{\infty}) = 0$.
-		\item $f= 0 \ \mu-pp \implies \int f d\mu = 0$  par  \ref{prop:croi-et-sep}.\\
+		\item $f= 0 \ \mupp \implies \int f d\mu = 0$  par  \ref{prop:croi-et-sep}.\\
 		      $\leftarrow$ Soit  $f$ mesurable positive telle que $\int f d\mu = 0$.\\
 		      $B_n = \left\{ x \in E : f(x) \geq \frac{1}{n} \right\}$\\
 		      $\bigcup B_n$ est une suite croissante. \\
