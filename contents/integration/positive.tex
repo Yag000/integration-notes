@@ -172,7 +172,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 
 \begin{prop}
 	Soit $f$ mesurable positive.\\
-	Alors il existe $f_n$ suite croissante de fonctions étagées positives telles
+	Alors il existe $f_n$ suite croissante de fonctions étagées positives telles que
 	$$\forall x \in E, f_n(x) \to f(x)$$
 \end{prop}
 
@@ -261,7 +261,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 	\begin{itemize}
 		\item L'ensemble de départ est mesurable.
 		\item $\nu(\emptyset) = \int \1_{\emptyset} f d\mu = \int 0 d \mu = 0$
-		\item $A_n$ suite d'ensembles disjoints on regarde
+		\item $A_n$ suite d'ensembles disjoints, on regarde
 		      \begin{eqnarray*}
 			      \nu\left(\bigcup A_n\right) &=& \int \1_{\bigcup A_n} f d\mu \\
 			      &=& \int \left( \sum_{k=1}^{\infty} \1_{A_k} \right) f d\mu \\
@@ -273,7 +273,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 \end{proof}
 
 \begin{remarque} \label{rem:transfert}
-	On veut veut, pour $g$ mesurable positive, montrer que
+	On veut, pour $g$ mesurable positive, montrer que
 	$$ \int g d\nu = \int g f d\mu $$
 \end{remarque}
 
@@ -383,7 +383,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 	$$ \forall p \geq n, \int f_p d\mu \geq \int g_p d\mu $$
 	Et donc $\forall n \in \N$:
 	$$ \inf_{p \geq n} \int f_p d\mu \geq \int g_n d\mu $$
-	Et en passant à la limite, on
+	Et en passant à la limite, on a
 	$$ \liminf \int f_n d\mu \geq \int \liminf f_n d\mu $$
 \end{proof}
 
@@ -399,7 +399,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 \end{example}
 
 
-\begin{theorem}[Égalité Rienmann-Lebesgue sur un segment, fonctions positives]
+\begin{theorem}[Égalité Riemann-Lebesgue sur un segment, fonctions positives]
 	Soit $f$ mesurable positive:
 	$ f ([a,b], \bor([a,b])) \to \R, \bor(\R)$.\\
 	On suppose $f$ Riemann intégrable sur $[a,b]$.\\
