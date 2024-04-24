@@ -19,3 +19,39 @@
 	$$ S_N(f) = \sum_{n = -N}^{N} c_n(f) e^{2i\pi nt} $$
 	les sommes partielles de la série de Fourier de $f$.
 \end{definition}
+
+\begin{prop}[Lemme de Riemann-Lebesgue]
+	Si $f \in \Li(\T)$, alors $\lim_{n \to \infty} c_n(f) = 0$.
+\end{prop}
+
+\begin{proof}
+	%TODO
+\end{proof}
+
+\begin{remarque}
+	Comme on travaille avec des fonctions $1$-périodiques
+	$$ c_n(f) = \int_0^1 f(t) e^{-2i\pi nt} dt  = \int_{\frac{1}{2}}^{\frac{1}{2}} f(t) e^{-2i\pi nt} dt $$
+\end{remarque}
+
+
+
+\begin{definition}[Coefficients de Fourier réels]
+	On piet travailler avec (de preference si $f$ est a valeurs réelles)
+	$$ a_0() = \int_0^1 f(t) dt $$
+	$$ a_n(f) = 2\int_0^1 f(t) \cos(2\pi nt) dt $$
+	$$ b_n(f) = 2\int_0^1 f(t) \sin(2\pi nt) dt $$
+	$\forall n \in \N^*$, on a
+	$$ a_n(f) = c_n(f) + c_{-n}(f) $$
+	$$ b_n(f) = i(c_n(f) - c_{-n}(f)) $$
+	et
+	$$ c_n(f) = \frac{a_n(f) - ib_n(f)}{2} $$
+	$$ c_{-n}(f) = \frac{a_n(f) + ib_n(f)}{2} $$
+\end{definition}
+
+
+\begin{prop}[Parité]
+	\begin{itemize}
+		\item Si $f$ est paire, alors $b_n(f) = 0$ et $c_{-n}(f) = c_n(f)$.
+		\item Si $f$ est impaire, alors $a_n(f) = 0$ et $c_{-n}(f) = -c_n(f)$.
+	\end{itemize}
+\end{prop}

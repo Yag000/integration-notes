@@ -1,0 +1,17 @@
+\subsection{Convergence ponctuelle des séries de Fourier}
+
+\begin{prop}
+	Soit $f \in \Li(\T)$ et $c_n(f)$ sommables, alors $\exists \tilde f \in \mathscr {C}^0(\T)$ telle que $f =_{\Li} \tilde f$  et
+	$$ \norm {S_N(f) - \tilde f}_{\infty} \to_{N\to \infty} 0$$
+\end{prop}
+
+\begin{prop} %TODO Def par morceaux
+	Si $f$ est continue, $1$-périodique et $\mathscr {C}^1$ par morceaux, alors $f$ est limite uniforme de la série de Fourier.
+\end{prop}
+
+
+\begin{theorem}[Dirichlet]
+	Soit $f \in \Li(\T)$, $\mathscr {C}^1$ par morceaux, alors
+	$$\lim_{N\to \infty} S_N(f)(x) = \frac {f(x^+) + f(x^-)}{2}$$
+	%TODO: add picture, maybe???
+\end{theorem}
