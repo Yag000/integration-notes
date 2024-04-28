@@ -7,7 +7,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: yag000/open-dyslexic-latex
 
     steps:
       - uses: actions/checkout@main
@@ -15,12 +14,28 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: "3.x"
+
       - name: Build dyslexia file
         run: python scripts/dyslexia.py
-      - name: Compile document
-        run: lualatex integration-notes.tex
-      - name: Compile Dyslexia document
-        run: lualatex integration-notes-dyslexia.tex
+
+      - name: Download fonts
+        run: wget wget https://github.com/antijingoist/opendyslexic/releases/download/v0.91.12/opendyslexic-0.910.12-rc2-2019.10.17.zip || true # ignore if it fails
+      - name: Unzip fonts
+        run: unzip opendyslexic-0.910.12-rc2-2019.10.17.zip
+      - name: Remove opendyslexic pdf
+        run: rm opendyslexic-characters.pdf
+
+      - uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            integration-notes.tex
+            integration-notes-dyslexia.tex
+          latexmk_use_xelatex: true
+          extra_fonts: |
+            ./OpenDyslexic-Bold.otf
+            ./OpenDyslexic-Bold-Italic.otf
+            ./OpenDyslexic-Italic.otf
+            ./OpenDyslexic-Regular.otf
 
       # From here it is copied from : https://github.com/jonhue/pubtex-action
       # with a few modifications
