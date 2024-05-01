@@ -13,7 +13,7 @@ On travaille sur $(E, \triA, \mu)$.
 
 \begin{remarque}
 	De façon équivalente, on dit que $f$ est intégrable si
-	$$ \in |f| d\mu < +\infty$$
+	$$ \int |f| d\mu < +\infty$$
 \end{remarque}
 
 \begin{remarque}
@@ -22,7 +22,7 @@ On travaille sur $(E, \triA, \mu)$.
 \end{remarque}
 
 \begin{remarque}
-	$f^+$ et $f^-$ sont mesurables positives, donc $\int f^+d\mu$ et $\int f^- d\mu$ et définie.
+	$f^+$ et $f^-$ sont mesurables positives, donc $\int f^+d\mu$ et $\int f^- d\mu$ sont définies.
 \end{remarque}
 
 \begin{remarque}
@@ -73,7 +73,7 @@ On travaille sur $(E, \triA, \mu)$.
 	$$ f\in \LiC$$
 	si $$\int |f| d\mu < +\infty$$
 	On pose
-	$$ \int f = \int Re(f) d\mu + \int Im(f) d\mu $$
+	$$ \int f d\mu = \int Re(f) d\mu + \int Im(f) d\mu $$
 \end{definition}
 
 
@@ -100,7 +100,7 @@ On travaille sur $(E, \triA, \mu)$.
 	Soit $f_n$ une suite de fonctions dans $\Li$ avec:
 	\begin{itemize}
 		\item Il existe $f$ mesurable à valeurs dans $\R$ telle que $f_n \to f, \ \mupp$.
-		\item Il existe $g : (E,A) \to \R^+, \bor(\R^+)$ mesurable positive avec $\int g d\mu < +\infty$ telle que
+		\item Il existe $g : (E,A) \to (\R^+, \bor(\R^+))$ mesurable positive avec $\int g d\mu < +\infty$ telle que
 		      $$\forall n \in\N,\ |f_n(x)| \leq g(x)\ \mupp$$
 	\end{itemize}
 
