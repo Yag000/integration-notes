@@ -75,14 +75,14 @@
 	$$f_1 : (E,\mathscr{A}) \rightarrow (F_1,\mathscr{B_1})$$
 	$$f_2 : (E,\mathscr{A}) \rightarrow (F_2,\mathscr{B_2})$$
 	\begin{eqnarray*}
-		g: (E \times E,\mathscr{A} \oplus \mathscr{A}) &\rightarrow& (F_1 \times F_2,\mathscr{B_1} \oplus \mathscr{B_2})\\
+		g: (E \times E,\mathscr{A} \otimes \mathscr{A}) &\rightarrow& (F_1 \times F_2,\mathscr{B_1} \otimes \mathscr{B_2})\\
 		x &\mapsto& (f_1(x), f_2(x))
 	\end{eqnarray*}
 	alors $g$ est mesurable si $f_1$ et $f_2$ le sont
 \end{prop}
 
 \begin{proof}
-	$$\mathscr{B_1} \oplus \mathscr{B_2} = \sigma \left\{ B_1 \times B_2, B_1 \in \mathscr{B_1}, B_2 \in \mathscr{B_2} \right\}$$
+	$$\mathscr{B_1} \otimes \mathscr{B_2} = \sigma \left\{ B_1 \times B_2, B_1 \in \mathscr{B_1}, B_2 \in \mathscr{B_2} \right\}$$
 	$$g^{-1}(B_1 \times B_2) = {x \in E, f_1(x) \in B_1 et f_2(x) \in B_2  }$$
 	$$ \underbrace{f_1^{-1}(B_1)}_{\in \triA \text{ car } f_1 \text{ mesurable}} \cap \underbrace{f_2^{-1}(B_2)}_{\in \triA \text{ car } f_2 \text{ mesurable}}$$
 	donc $g^{-1}(B_1 \times B_2) \in \mathscr{A}$
