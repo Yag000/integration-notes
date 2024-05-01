@@ -1,0 +1,47 @@
+\subsection{Observations dans $\Ld_{\C}(\T)$}
+
+
+On pose $e_n : \begin{array}{rcl}
+		\R & \to     & \C           \\
+		t  & \mapsto & e^{2i\pi nt}
+	\end{array}$
+
+$\sprod {e_n} {e_m} = \delta_{nm}$.
+
+On veut montrer que $(e_n)_{n\in \Z}$ est une base hilbertienne de $\Ld_{\C}(\T)$.
+$\vect {(e_n)}$ est l'ensemble  des polynômes trigonométriques.
+
+
+\begin{theorem}
+	$\vect {(e_n)}$ est dense dans $\Ld_{\C}(\T)$ (l'ensemble des polygones trigonométriques est dense dans $\Ld_{\C}(\T)$).
+\end{theorem}
+
+\begin{proof}
+	%TODO
+\end{proof}
+
+
+\begin{coro}[Conséquences]
+
+	\begin{itemize}
+		\item Bessel: $$\forall f \in \Ld_{\C}(\T), \ \norm {S_N(f))}_{L^2(\T)} \leq \norm f_{L^2(\T)}$$
+		\item Parseval:
+		      \begin{eqnarray*}
+			      \forall f \in \Ld_{\C}(\T),& \ \lim_{N\to \infty} \norm {S_N(f) - f}_{L^2(\T)} = 0 \\
+			      \forall f \in \Ld_{\C}(\T),& \ \norm f_{L^2(\T)}^2 = \sum_{n\in \Z} \abs {c_n(f)}^2 \\
+			      \forall f, g \in \Ld_{\C}(\T),& \ \int f\bar g d \lambda = \sum_{n\in \Z} c_n(f) \bar c_n(g)
+		      \end{eqnarray*}
+	\end{itemize}
+
+	Inversement, si $(a_n)$ est une suite de $l^2(\Z)$, alors les sommes partielles $\sum_{n=-N}^N a_n e^{2i\pi nt}$ forment
+	une suite de Cauchy dans $\Ld_{\C}(\T)$, donc elle converge dans $\Ld_{\C}(\T)$ vers une limite $f$ et
+	$\sprod f {e_n} = \lim_{N\to \infty} \sprod {\sum_{n=-N}^N a_n e^{2i\pi nt}} {e_n} = a_n$.
+\end{coro}
+
+
+\begin{theorem}
+	$$\begin{array}{rcl}
+			\Ld_{\C}(\T) & \to     & l^2(\Z)            \\
+			f            & \mapsto & (c_n(f))_{n\in \Z}
+		\end{array}$$ est une isométrie.
+\end{theorem}
