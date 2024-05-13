@@ -6,14 +6,14 @@ On pose $e_n : \begin{array}{rcl}
 		t  & \mapsto & e^{2i\pi nt}
 	\end{array}$
 
-$\sprod {e_n} {e_m} = \delta_{nm}$.
+$\sprod {e_n} {e_m} = \delta_{n,m}$.
 
 On veut montrer que $(e_n)_{n\in \Z}$ est une base hilbertienne de $\Ld_{\C}(\T)$.
 $\vect {(e_n)}$ est l'ensemble  des polynômes trigonométriques.
 
 
 \begin{theorem}
-	$\vect {(e_n)}$ est dense dans $\Ld_{\C}(\T)$ (l'ensemble des polygones trigonométriques est dense dans $\Ld_{\C}(\T)$).
+	$\vect {(e_n)}$ est dense dans $\Ld_{\C}(\T)$ (l'ensemble des polynômes trigonométriques est dense dans $\Ld_{\C}(\T)$).
 \end{theorem}
 
 \begin{proof}
@@ -35,7 +35,7 @@ $\vect {(e_n)}$ est l'ensemble  des polynômes trigonométriques.
 
 	Inversement, si $(a_n)$ est une suite de $l^2(\Z)$, alors les sommes partielles $\sum_{n=-N}^N a_n e^{2i\pi nt}$ forment
 	une suite de Cauchy dans $\Ld_{\C}(\T)$, donc elle converge dans $\Ld_{\C}(\T)$ vers une limite $f$ et
-	$\sprod f {e_n} = \lim_{N\to \infty} \sprod {\sum_{n=-N}^N a_n e^{2i\pi nt}} {e_n} = a_n$.
+	$\sprod f {e_m} = \lim_{N\to \infty} \sprod {\sum_{n=-N}^N a_n e^{2i\pi nt}} {e_m} = a_m$.
 \end{coro}
 
 
