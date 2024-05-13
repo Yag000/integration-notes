@@ -232,7 +232,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 	D'après le \ref{thm:convergence_monotone}, on a
 	\begin{eqnarray*}
 		\int \lim\limits_{n \to \infty} S_n (x)d\mu (x)&=& \lim\limits_{n \to \infty} \int S_n(x) d\mu(x) \\
-		\int \sum\limits_{n = 1}^{\infty} S_n (x)d\mu (x)&=& \lim\limits_{n \to \infty} \int \sum\limits_{k = 1}^n S_n(x) d\mu(x) \\
+		\int \sum\limits_{n = 1}^{\infty} S_n (x)d\mu (x)&=& \lim\limits_{n \to \infty} \int \sum\limits_{k = 1}^n f_k(x) d\mu(x) \\
 		&=& \lim\limits_{n \to \infty} \sum\limits_{k = 1}^n\int  f_k(x) d\mu(x) \\
 		&=& \sum\limits_{n = 1}^{\infty} \int  f_k(x) d\mu(x) \\
 	\end{eqnarray*}
@@ -311,7 +311,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 	\end{itemize}
 \end{proof}
 
-\begin{example}[la normale sur $\R$]
+\begin{example}[loi normale sur $\R$]
 	(Même proba sur  $(\R, \bor(\R))$, qui est la loi de $X ~ \mathscr{N}(0,1)$)
 	\begin{eqnarray*}
 		\nu(B) = \Pro_\lambda(B) &= &\Pro(X \in B)  \\
