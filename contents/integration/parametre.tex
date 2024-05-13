@@ -1,7 +1,7 @@
 \subsection{Intégrales dépendant d'un paramètre}
 
 \begin{theorem}[Continuité sous le signe intégrale]
-	Soit $f : U \times E \to \R$ où $(U,R)$ est un espace métrique.\\
+	Soit $f : U \times E \to \R$ où $(U,E)$ est un espace métrique.\\
 	On suppose:
 	\begin{itemize}
 		\item $\forall u \in U,\ f (u, \cdot) : (E, \triA) \to (\R, \bor(\R))$ mesurable.
@@ -16,7 +16,7 @@
 
 
 \begin{proof}
-	Il faut montrer que si $u_n$ et une suite avec $u_n \to u_0, \ n > 0$, alors $F(u_n) \to F(u_0)$.\\
+	Il faut montrer que si $u_n$ est une suite avec $u_n \to u_0, \ n > 0$, alors $F(u_n) \to F(u_0)$.\\
 	F est bien définie car $\forall u \in U, f(u,\cdot)$ mesurable et $|f(u,\cdot)| \leq g(\cdot)$ qui est intégrable.\\
 
 	Posons $f_n(x) = f(u_n,x)$ et $f_n(x) \to f(u_0,x)$.\\
@@ -103,10 +103,10 @@
 
 \begin{example}[Transformée de Fourier]
 	Si $\phi \in \Li$ on définit sa transformée de Fourier:
-	$\hat{\phi} = \int e^{iux}\phi(x) d\lambda(x)$
+	$\hat{\phi}(u) = \int e^{iux}\phi(x) d\lambda(x)$
 	alors $\hat{\phi}$ est bien définie dans $\R$ et continue (par le théorème de continuité sous le signe intégrale).\\
 	Si de plus on a $\int |x\phi(x)|d\lambda(x)<\infty$ alors $\hat{\phi}$ est dérivable sur $\R$ de dérivée:
-	$$\hat{\phi}'(x)= \int ixe^{iux}\phi(x)d\lambda(x)$$
+	$$\hat{\phi}'(u)= \int ixe^{iux}\phi(x)d\lambda(x)$$
 	%TODO add proof
 \end{example}
 
