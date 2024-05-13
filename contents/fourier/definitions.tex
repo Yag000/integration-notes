@@ -2,8 +2,8 @@
 
 
 \begin{definition}
-	On note $\T = \R / \Z$ et $\Li(\T, \bor (\T), \lambda_{\T})$ pour $p = 1,2$ l'espace des fonctions mesurables de $\R$ dans $\C$ 1-périodiques, munie de la mesure de Lebesgue restreinte à $[0,1[$
-	telles que leur restriction à $[0,1[$ soit dans $\Lp^p([0,1[), \bor([0,1[), \lambda)$ pour $f \in \Lp_{\C}^p(\T)$.
+	On note $\T = \R / \Z$ et $\Lp^p(\T, \bor (\T), \lambda_{\T})$ pour $p = 1,2$ l'espace des fonctions mesurables de $\R$ dans $\C$ 1-périodiques, munie de la mesure de Lebesgue restreinte à $[0,1[$
+	telles que leur restriction à $[0,1[$ soit dans $\Lp^p([0,1[, \bor([0,1[), \lambda)$ pour $f \in \Lp_{\C}^p(\T)$.
 
 	$$ {\norm f}_p = \left( \int_{\T} \abs{f}^p d\lambda_{\T} \right)^{\frac{1}{p}} $$
 \end{definition}
@@ -30,14 +30,14 @@
 
 \begin{remarque}
 	Comme on travaille avec des fonctions $1$-périodiques
-	$$ c_n(f) = \int_0^1 f(t) e^{-2i\pi nt} dt  = \int_{\frac{1}{2}}^{\frac{1}{2}} f(t) e^{-2i\pi nt} dt $$
+	$$ c_n(f) = \int_0^1 f(t) e^{-2i\pi nt} dt  = \int_{\frac{1}{2}}^{\frac{-1}{2}} f(t) e^{-2i\pi nt} dt $$
 \end{remarque}
 
 
 
 \begin{definition}[Coefficients de Fourier réels]
 	On peut travailler avec (de préférence si $f$ est à valeurs réelles)
-	$$ a_0() = \int_0^1 f(t) dt $$
+	$$ a_0(f) = \int_0^1 f(t) dt $$
 	$$ a_n(f) = 2\int_0^1 f(t) \cos(2\pi nt) dt $$
 	$$ b_n(f) = 2\int_0^1 f(t) \sin(2\pi nt) dt $$
 	$\forall n \in \N^*$, on a
