@@ -43,11 +43,11 @@
 			      \item  $\mathscr{M}(\mathscr{C})$ est stable par passage au complémentaire car
 			            on peut prendre $B = E$ et alors $A \subset B$ et $B\setminus A = A^c$
 			      \item Stabilité par union dénombrable: \\
-
 			            Idée: $\cup A_n = \cup_{n\in \N} B_n$, avec $B_n = \cup_{k<n} A_k$ et l'union est croissante.
 			            Il faut montrer que $\mathscr{M}(\mathscr{C})$ est stable par union finie.
 			            On peut montrer que $\mathscr{M}(\mathscr{C})$ stable par intersection finie. On peut juste montrer qu'elle est stable par intersection de 2 éléments.
 
+			            % TODO: Fix MC to M(C)
 			            Fixons $A \in \mathscr{M}(\mathscr{C})$. On regarde $\mathscr{M}_A = \{B \in \mathscr{M}(\mathscr{C}) , A \cap B \in \mathscr{M}(\mathscr{C})\}$
 			            On veut montrer que $\mathscr{M}_A = \mathscr{M}\mathscr{C}$.
 			            On va montrer que $\mathscr{M}_A$ est une classe monotone. On a deja $\mathscr{C} \subset \mathscr{M}_A$.
@@ -68,9 +68,9 @@
 			            Soit $B\in \mathscr{M}\mathscr{C}$.
 			            $$ \mathscr{M}_B = \{ A \in \mathscr{M}\mathscr{C}, A \cap B \in \mathscr{M}\mathscr{C}\} $$
 			            On sait que $\mathscr{C}\subset\mathscr{M}_B$
-			            En effet, $A \in \mathscr{C}$, on a bien $B \in \mathscr{M}\mathscr{C}$, donc $A\cap B \in\mathscr{M}\mathscr{C}$ d'après (*).
-			            de plus, $\mathscr{M}_B$ est une classe monotone, même preuve que ci-dessous (car dans cette preuve on n'utilise pas que $A \in \mathscr{C}$).
-			            donc $\mathscr{M}_B = \mathscr{M}\mathscr{C}$ et donc :
+			            En effet, $A \in \mathscr{C}$, on a bien $B \in \mathscr{M}\mathscr{C}$, donc $A\cap B \in\mathscr{M}\mathscr{C}$ d'après (*).\\
+			            De plus, $\mathscr{M}_B$ est une classe monotone, même preuve que ci-dessous (car dans cette preuve on n'utilise pas que $A \in \mathscr{C}$).\\
+			            Donc $\mathscr{M}_B = \mathscr{M}\mathscr{C}$ et donc :
 			            $$ \forall B \in \mathscr{M}\mathscr{C}, \forall A \in \mathscr{M}\mathscr{C}, A \cap B \in \mathscr{M}\mathscr{C}$$
 		      \end{itemize}
 	\end{itemize}
