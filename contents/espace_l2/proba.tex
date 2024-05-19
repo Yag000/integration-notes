@@ -10,11 +10,11 @@ $X : (\Omega,    \triF) \to (\R,  \bor(\R)) $ mesurable "variable aléatoire".
 C'est quoi la loi?
 
 \begin{eqnarray*}
-    \Pro_x: \bor (\R) &\to& [0,1] \\
+	\Pro_X: \bor (\R) &\to& [0,1] \\
 	B &\mapsto& \Pro(X  \in B)
 \end{eqnarray*}
 
-$(\Pro_x)$ est une mesure sur $(\R,  \bor(\R)).$
+$\Pro_X$ est une mesure sur $(\R,  \bor(\R)).$
 
 Soit $X$ une variable aléatoire réelle positive\\
 \begin{eqnarray*}
@@ -22,7 +22,7 @@ Soit $X$ une variable aléatoire réelle positive\\
 	&=& \int_0^{+\infty}\int_\R \1_{X(\omega)>t}d \Pro (\omega) d t\\
 	&=& \int_{\R^+} \int_{\R} \1_{X(\omega)>t}d \Pro (\omega) d \lambda(t) \\ %TODO add remark
 	&=& \int_{\Omega} \int_{\R^+} \1_{X(\omega)>t}d \lambda(t) d \Pro (\omega)  \\%TODO add underbrace
-	&=& \int_{\Omega} X(\omega) d \Pr(\omega)
+	&=& \int_{\Omega} X(\omega) d \Pro(\omega)
 \end{eqnarray*}
 
 De plus,
@@ -60,7 +60,7 @@ $X \indep Y, \quad \forall A,B \in \bor (\R)$
 $\Pro_{(X,Y)} \to [0,1]$ mesure sur $\R \times \R$ telle que
 $$\forall A,B\Pro_{(X,Y)}(A\times B) = \Pro (X\in A \text{ et } Y \in B)$$
 
-donc $X \indep Y\iff \Pro_{(X,Y)} = \Pro_x \xor \Pro_y$.
+donc $X \indep Y\iff \Pro_{(X,Y)} = \Pro_X \xor \Pro_Y$.
 
-De même pour $(X_1, \dots, X_n)$, ils sont indépendants \ssi $\Pro_{(X_1,.., X_n)} =\Pro_{x_1} \xor ... \xor  \Pro_{x_n} $
+De même pour $(X_1, \dots, X_n)$, ils sont indépendants \ssi $\Pro_{(X_1,.., X_n)} =\Pro_{X_1} \xor ... \xor  \Pro_{X_n} $
 
