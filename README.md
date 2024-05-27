@@ -1,12 +1,14 @@
-# Integration and Fourier series notes
+# Notes sur l'intégration et les séries de Fourier
 
-Notes from my Integration and Fourier series course at the University Paris Cité.
+Notes de mon cours sur l'intégration et les séries de Fourier à l'Université Paris Cité.
 
-The pdf is available [here](https://yag000.github.io/integration-notes/integration-notes.pdf).
+Le pdf est disponible [ici](https://yag000.github.io/integration-notes/integration-notes.pdf).
 
-If you suffer from dyslexia you can use this version over [here](https://yag000.github.io/integration-notes/integration-notes-dyslexia.pdf). If you still have trouble and you
-think another font or font size would help, feel free to open an issue, I'll be happy to help.
+Si vous souffrez de dyslexie, vous pouvez utiliser cette version [ici](https://yag000.github.io/integration-notes/integration-notes-dyslexia.pdf).
+Si vous avez encore des difficultés et pensez qu'une autre police ou taille de police pourrait vous aider, n'hésitez pas à ouvrir une issue, 
+je serai heureux de vous aider.
 
-## Contributing
+## Contribuer
 
-Feel free to open an issue or a pull request if you find a typo or a mistake. For basic latex symbols see [this](https://www.caam.rice.edu/~heinken/latex/symbols.pdf) or [this](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols).
+N'hésitez pas à ouvrir une issue ou une pull request si vous trouvez une faute de frappe ou une erreur. Pour les symboles de latex de base, 
+voir [ici](https://www.caam.rice.edu/~heinken/latex/symbols.pdf) ou [ici](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols).
