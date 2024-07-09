@@ -39,16 +39,16 @@ On travaille sur $(E, \triA, \mu)$.
 \end{definition}
 
 \begin{prop}[Propriétés de l'intégrale]
-	\begin{itemize}
+	\begin{enumerate}
 		\item Inégalité triangulaire. $\left| \int f d\mu \right| \leq \int |f| d \mu$.
 		\item Linéarité: $\Li$ est un espace vectoriel.
 		\item Croissance: si $f,g \in \Li$ et $f\leq g$ alors $\int f d\mu \leq \int g d\mu$
 		\item Si $f,g \in \Li$ $f = g \mupp$ alors $\int f d\mu = \int g d\mu$.
-	\end{itemize}
+	\end{enumerate}
 \end{prop}
 
 \begin{proof}
-	\begin{itemize}
+	\begin{enumerate}
 		\item  \begin{eqnarray*}
 			      |\int f d\mu| &=& \left|\int f^+ d\mu - \int f^- d\mu \right| \\
 			      &\leq& \left|\int f^+ d\mu \right| + \left|\int f^- d\mu \right| \\
@@ -63,7 +63,7 @@ On travaille sur $(E, \triA, \mu)$.
 		      Donc $\int f d\mu \leq \int g d\mu$.
 		\item Si $f = g$ $\mupp$, alors $f^+ = g^+$ $\mupp$ et $f^- = g^-$ $\mu$pp.\\
 		      Donc $\int f d\mu = \int f^+ \mu + \int f^-  d\mu = \int g^+ \mu + \int g^-  d\mu = \int g d\mu$
-	\end{itemize}
+	\end{enumerate}
 \end{proof}
 
 \begin{definition}[Intégrale des fonctions complexes]
@@ -78,20 +78,20 @@ On travaille sur $(E, \triA, \mu)$.
 
 
 \begin{prop}
-	\begin{itemize}
+	\begin{enumerate}
 		\item Inégalité triangulaire. $\left| \int f d\mu \right| \leq \int |f| d \mu$.
 		\item Linéarité: $\LiC$ est un espace vectoriel.
 		\item Si $f,g \in \Li$ $f = g \mupp$ alors $\int f d\mu = \int g d\mu$.
-	\end{itemize}
+	\end{enumerate}
 \end{prop}
 
 
 \begin{proof}
-	\begin{itemize}
+	\begin{enumerate}
 		\item $$\forall b \in \C, \ |b| = \sup_{a_1, a_2 \in \R \\ a_1^2 + a_2^2 = 1 } a_1 Re(b) + a_2 Im(b)$$
 		      % TODO
 		\item
-	\end{itemize}
+	\end{enumerate}
 \end{proof}
 
 

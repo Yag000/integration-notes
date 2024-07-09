@@ -3,15 +3,15 @@
 \begin{theorem}
 	Soient $\mu$ et $\nu$ deux mesures $\sigma$-finies sur $(E, \triA)$ et $(F, \triB)$ respectivement.
 
-	\begin{itemize}
+	\begin{enumerate}
 		\item Il existe une unique mesure $\sigma$-finie sur ($E \times F, \triA \xor \triB)$ telle que $\forall A \in \triA, B \in \triB, \mu \xor \nu(A \times B) = \mu(A) \nu(B)$.
 		\item $\forall C \in \triA \xor \triB. $
 		      $$ \mu \xor \nu(C) = \int_E \nu(C_x) d \mu(x) = \int_F \mu(C^y) d \nu(y) $$
-	\end{itemize}
+	\end{enumerate}
 \end{theorem}
 
 \begin{proof}
-	\begin{itemize}
+	\begin{enumerate}
 		\item  Unicité:\\
 		      $\mu$ et $\nu$ sont $\sigma$-finies, on se donne donc $E_n \uparrow E$ et $F_n \uparrow F$ tels que $\mu(E_n) < +\infty$ et $\nu(F_n) < +\infty$.\\
 		      On pose $C_n = E_n \times F_n$ et on a que $C_n \uparrow E \times F$.\\
@@ -26,7 +26,7 @@
 			      \item $m_1 (C_n) = m_2(C_n) < +\infty$ et $C_n \uparrow E \times F$ donc $m_1 = m_2$ d'après le théorème d'unicité des mesures.
 		      \end{itemize}
 		      %TODO: It's really long, idk if it's worth it. If someone wants to do it, go ahead.
-	\end{itemize}
+	\end{enumerate}
 \end{proof}
 
 \begin{remarque}

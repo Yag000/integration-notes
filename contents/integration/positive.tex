@@ -40,7 +40,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 \end{prop}
 
 \begin{proof}
-	\begin{itemize}
+	\begin{enumerate}
 		\item $ f = \sum_{i=1}^n \alpha_i \1_{A_i} $ et $ g = \sum_{j=1}^m \alpha'_j \1_{A'_j} $
 		      On introduit $B_{ij} = A_i \cap A'_j$, $\beta_{ik} = \alpha_i$ et $\beta'_{ik} = \alpha'_k$.
 		      On a alors
@@ -60,7 +60,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 			      & = & \int f d\mu + \underbrace{\int (g-f)}_{\geq 0} d\mu
 		      \end{eqnarray*}
 		      Donc $\int g d\mu \geq \int f d\mu$.
-	\end{itemize}
+	\end{enumerate}
 \end{proof}
 
 \begin{notation}
@@ -100,14 +100,14 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 
 
 \begin{prop}[Croissance et séparation] \label{prop:croi-et-sep}
-	\begin{itemize}
+	\begin{enumerate}
 		\item Si $f,g$ mesurables positives $f \leq g$ alors $\int f d\mu \leq \int g d\mu$
 		\item Si $\mu(\left\{x : f(x) > 0\right\}) = 0$ alors $\int f d\mu = 0$
-	\end{itemize}
+	\end{enumerate}
 \end{prop}
 
 \begin{proof}
-	\begin{itemize}
+	\begin{enumerate}
 		\item $\left\{ h \in \mathcal{E}_+ : h \leq f \right\} \subset \left\{ h \in \mathcal{E}_+ : h \leq g \right\}$ donc
 		      $$ \int f d\mu \leq \int g d\mu $$
 		\item Soit $h$ étagée positive telle que $h \leq f$.
@@ -117,7 +117,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 		      Alors $A_i \subset h^{-1}(\{0\})$ et donc $\mu(A_i) = 0$.
 		      Donc $\int h d\mu = 0$.
 		      et donc $\int f d\mu = 0$.
-	\end{itemize}
+	\end{enumerate}
 \end{proof}
 
 
@@ -258,7 +258,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 \end{definition}
 
 \begin{proof}
-	\begin{itemize}
+	\begin{enumerate}
 		\item L'ensemble de départ est mesurable.
 		\item $\nu(\emptyset) = \int \1_{\emptyset} f d\mu = \int 0 d \mu = 0$
 		\item $A_n$ suite d'ensembles disjoints, on regarde
@@ -269,7 +269,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 			      &=& \sum_{k=1}^{\infty} \int \1_{A_k} f d\mu
 		      \end{eqnarray*}
 		      d'après le TCM pour les séries, car $\forall k \geq 1, \ \1_{A_k}f$ est mesurable positive.
-	\end{itemize}
+	\end{enumerate}
 \end{proof}
 
 \begin{remarque} \label{rem:transfert}
@@ -278,13 +278,14 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 \end{remarque}
 
 \begin{proof}
-	\begin{itemize}
+	Nous allons utiliser ce schéma de preuve:
+	\begin{enumerate}
 		\item Vrai pour $\1_A$ ?
 		\item Vrai pour $g$ étagée positive ?
 		\item Vrai pour  $g$ mesurable positive ?
-	\end{itemize}
+	\end{enumerate}
 
-	\begin{itemize}
+	\begin{enumerate}
 		\item Si $g = \1_A$, avec $A \in \mathscr{F}$, alors
 		      \begin{eqnarray*}
 			      \int g d \nu &=& \int \1_A d\nu  = \nu(A) \\
@@ -307,7 +308,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 			      \lim\limits_{n \to \infty} \int g_n f d \mu & = & \int  \lim\limits_{n \to \infty} g_n f d \mu \\
 			      &=& \int g f d \mu
 		      \end{eqnarray*}
-	\end{itemize}
+	\end{enumerate}
 \end{proof}
 
 \begin{example}[loi normale sur $\R$]
@@ -327,17 +328,17 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 
 \begin{prop}[Inégalité de Markov]
 	Soit $f$ une fonction mesurable positive.
-	\begin{itemize}
+	\begin{enumerate}
 		\item Pour tout $a > 0$ on a
 		      $$ \mu\left(\left\{ x \in E : f(x) \geq a \right\}\right) \leq \frac{1}{a} \int f d\mu $$
 		\item Si $\int f d\mu < \infty$ alors $f < \infty \ \mupp$
 		\item $\int f d\mu = 0$ si et seulement si $f = 0 \ \mupp$
 		\item $f=g \ \mupp \implies \int f d\mu = \int g d\mu$
-	\end{itemize}
+	\end{enumerate}
 \end{prop}
 
 \begin{proof}
-	\begin{itemize}
+	\begin{enumerate}
 		\item $f \geq a \1_{f \geq a}$
 		      $$\int f d \mu \geq a \mu \left( \left\{ x \in E : f(x) \geq a \right\} \right) $$
 		\item $A_k = \left\{ x \in E : f(x) \geq a \right\}$
@@ -361,7 +362,7 @@ On travaille avec $(E,\triA,\mu)$ un espace mesuré.
 		      \begin{eqnarray*} %TODO: Add prof
 		      \end{eqnarray*}
 
-	\end{itemize}
+	\end{enumerate}
 \end{proof}
 
 

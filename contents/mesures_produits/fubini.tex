@@ -4,7 +4,7 @@
 	Soient $\mu$ et $\nu$ deux mesures $\sigma$-finies sur $(E, \triA)$ et $(F, \triB)$ respectivement.
 	Soit $f: (E \times F, \triA \xor \triB) \to ([0, +\infty], \mathcal{B}([0, +\infty]))$ une fonction mesurable.
 
-	\begin{itemize}
+	\begin{enumerate}
 		\item Les fonctions :
 		      $$ x \mapsto \int f(x, y) d \nu(y)$$
 		      $$ y \mapsto \int f(x, y) d \mu(x)$$
@@ -14,7 +14,7 @@
 			      \int_{E \times F} f d(\mu \xor \nu) & = & \int_E  \int_F f(x, y) d \nu(y) d \mu(x) \\
 			      & = & \int_F  \int_E f(x, y) d \mu(x) d \nu(y)
 		      \end{eqnarray*}
-	\end{itemize}
+	\end{enumerate}
 \end{theorem}
 
 
@@ -26,7 +26,7 @@
 \begin{theorem}[Fubini-Lebesgue]
 	Soit $f \in \Li(E \times F, \triA \xor \triB, \mu \xor \nu)$.
 
-	\begin{itemize}
+	\begin{enumerate}
 		\item $$\mupp, \ y \mapsto f(x, y) \in \Li(F, \triB, \nu)$$
 		      $$\nupp, \ x \mapsto f(x, y) \in \Li(E, \triA, \mu)$$
 		\item On a que les fonctions suivantes sont bien définies sauf sur un ensemble de mesure nulle et que:
@@ -37,7 +37,7 @@
 			      \int_{E \times F} f d(\mu \xor \nu) & = & \int_E  \int_F f(x, y) d \nu(y) d \mu(x) \\
 			      & = & \int_F  \int_E f(x, y) d \mu(x) d \nu(y)
 		      \end{eqnarray*}
-	\end{itemize}
+	\end{enumerate}
 \end{theorem}
 
 

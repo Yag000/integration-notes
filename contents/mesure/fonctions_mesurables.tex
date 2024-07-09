@@ -114,8 +114,7 @@
 	Dans $\Rbarp , \, \forall a \in \Rbarp: $
 	\begin{itemize}
 		\item $a + (+\infty) = +\infty$
-		\item
-		      $a \cdot (+\infty) = \left\{ \begin{array}{cc}
+		\item $a \cdot (+\infty) = \left\{ \begin{array}{cc}
 				      0       & \text{si} \  a = 0 \\
 				      +\infty & \text{sinon}
 			      \end{array}\right.$
@@ -154,18 +153,18 @@
 	Si $f_n$ est une suite de fonctions mesurables
 	$$f_n (E,\triA) \rightarrow (\mathbb{R},\bor(\R))$$
 	alors les fonctions suivantes sont mesurables:
-	\begin{itemize}
+	\begin{enumerate}
 		\item $\sup f_n, \quad \text{qui est} \ x\mapsto \sup f_n(x) $
 		\item $\inf f_n$
 		\item $\limsup f_n$
 		\item $\liminf f_n$
-	\end{itemize}
+	\end{enumerate}
 	En particulier si $f_n$ converge simplement dans $\Rbar$ alors
 	$\lim f_n = \limsup f_n$ est mesurable. De plus $\{ x \in E, f_n(a) \ \text{converge}\}$ est mesurable.
 \end{prop}
 
 \begin{proof}
-	\begin{itemize}
+	\begin{enumerate}
 		\item $f(x) = \inf f_n (x)$
 		      \begin{eqnarray*}
 			      f^{-1}([-\infty, a[) &=& \{x \in E, \inf f_n < a\} \\
@@ -173,7 +172,7 @@
 			      &=& \bigcup\limits_{N\in \mathbb{N}}f_N^{-1}([-\infty, a[))\\
 			      &\in& \mathscr{A}
 		      \end{eqnarray*}
-		      de même pour $\sup$
+		\item On peut faire de même pour $\sup$
 		\item \begin{eqnarray*}
 			      \liminf f_n &=& \lim\limits_{n \to \infty}\uparrow \inf\limits_{k \geq n } a_k\\
 			      &=& \sup _{n\in N} \inf_{k \geq n} f_n\\
@@ -187,6 +186,6 @@
 			      \{x \in E, f_n \  \text{converge} \}  &=& (\liminf f_n - \limsup f_n)^{-1}(\{0\})\\
 		      \end{eqnarray*}
 		      et $\{ 0 \} \in \bor(\R)$ donc $\left\{ f_n \in E, f_n(x) \ \text{converge} \ \right\} \in \mathscr{A}$.
-	\end{itemize}
+	\end{enumerate}
 
 \end{proof}
