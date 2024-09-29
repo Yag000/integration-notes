@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@main
         with:
           submodules: 'true'
-     - name: Compile LaTeX document
+      - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
           root_file: integration-notes.tex
