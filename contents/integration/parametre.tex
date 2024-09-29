@@ -24,7 +24,7 @@
 	D'après le TCD , $\underbrace{\int f_n(x)d\mu(x)}_{=F(u_n)} \to  \underbrace{\int f(u_0, x)d\mu(x)}_{= F(u_0)}$
 \end{proof}
 
-\begin{example}
+\begin{exemple}
 	Soit $\mu$ une mesure diffuse sur $(\R, \bor(\R))$ et $\phi \in \Li(\R, \bor(\R), \mu)$.
 	On définit \begin{eqnarray*}
 		F(u) &=&  \int_{]-\infty, u]} \phi(x)d\mu(x)\\
@@ -46,7 +46,7 @@
 			\item $|f(u,x)| = |\phi(x)\1_{]-\infty, u]}(x)| \leq |\phi(x)|$ qui est intégrable.
 		\end{itemize}
 	\end{proof}
-\end{example}
+\end{exemple}
 
 
 \begin{theorem}[Dérivation sous le signe intégrale]
@@ -102,14 +102,14 @@
 \end{remarque}
 
 
-\begin{example}[Transformée de Fourier]
+\begin{exemple}[Transformée de Fourier]
 	Si $\phi \in \Li$ on définit sa transformée de Fourier:
 	$\hat{\phi}(u) = \int e^{iux}\phi(x) d\lambda(x)$
 	alors $\hat{\phi}$ est bien définie dans $\R$ et continue (par le théorème de continuité sous le signe intégrale).\\
 	Si de plus on a $\int |x\phi(x)|d\lambda(x)<\infty$ alors $\hat{\phi}$ est dérivable sur $\R$ de dérivée:
 	$$\hat{\phi}'(u)= \int ixe^{iux}\phi(x)d\lambda(x)$$
 	%TODO add proof
-\end{example}
+\end{exemple}
 
 
 

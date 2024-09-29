@@ -1,0 +1,3 @@
+[submodule "base-yago"]
+	path = base-yago
+	url = https://github.com/Yag000/base-yago.git
